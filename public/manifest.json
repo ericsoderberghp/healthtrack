@@ -1,0 +1,20 @@
+{
+  "short_name": "Health Track",
+  "name": "Health Tracker Tool",
+  "icons": [
+    {
+      "src": "shortcut-icon.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "mobile-app-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#6FFFB0",
+  "background_color": "#7D4CDB"
+}
