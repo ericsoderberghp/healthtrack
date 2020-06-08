@@ -62,15 +62,16 @@ const nextRandom = () => {
   random += 1;
   return random;
 };
-const now = new Date();
-const date = new Date(now);
-date.setDate(now.getDate() - 5);
+const yesterday = new Date();
+yesterday.setDate(yesterday.getDate() - 1);
+const date = new Date(yesterday);
+date.setDate(yesterday.getDate() - 5);
 let id = 1;
 const nextId = () => {
   id += 1;
   return id;
 };
-while (date <= now) {
+while (date <= yesterday) {
   initialTrack.data.unshift({
     id: nextId(),
     date: date.toISOString(),

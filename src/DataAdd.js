@@ -24,20 +24,36 @@ const DataAdd = () => {
   const [track, setTrack] = useTrack();
   const [search, setSearch] = useState('');
   const [starters, setStarters] = useState();
+
+  // set starters from categories and data, using search if any
   useEffect(() => {
     if (track) {
-      const today = new Date().toISOString().split('T')[0];
-      const newCategories = track.categories.filter(
-        (c) => c.date && c.date.split('T')[0] === today,
-      );
-      const latestData = track.data[0] && track.data[0].date.split('T')[0];
-      const recentData = latestData
-        ? track.data.filter((d) => d.date.split('T')[0] === latestData)
-        : [];
-      setStarters([...newCategories, ...recentData, ...track.categories]);
+      if (search) {
+        const exp = new RegExp(search, 'i');
+        const matchedNames = {};
+        const matchedData = track.data.filter((d) => {
+          if (exp.test(d.value) && !matchedNames[d.value]) {
+            matchedNames[d.value] = true;
+            return true;
+          }
+          return false;
+        });
+        const matchedCategories = track.categories.filter((c) =>
+          exp.test(c.name),
+        );
+        setStarters([...matchedData, ...matchedCategories]);
+      } else {
+        const latestData = track.data[0] && track.data[0].date.split('T')[0];
+        const recentData = latestData
+          ? track.data.filter((d) => d.date.split('T')[0] === latestData)
+          : [];
+        setStarters([...recentData, ...track.categories]);
+      }
     }
   }, [search, track]);
+
   const [data, setData] = useState();
+
   const category = useMemo(
     () =>
       track && data && data.category
@@ -45,7 +61,22 @@ const DataAdd = () => {
         : undefined,
     [data, track],
   );
+
+  const suggestions = useMemo(() => {
+    if (category && category.type === 'name') {
+      return Array.from(
+        new Set(
+          track.data
+            .filter((d) => d.category === category.id)
+            .map((d) => d.name),
+        ),
+      );
+    }
+    return undefined;
+  }, [category, track]);
+
   const inputRef = useRef();
+
   useEffect(() => {
     if (data && !data.value && inputRef.current) inputRef.current.focus();
   }, [data]);
@@ -96,21 +127,24 @@ const DataAdd = () => {
             <List
               data={starters}
               primaryKey="name"
+              secondaryKey={(item) => {
+                if (item.date && item.category)
+                  return new Date(item.date).toLocaleString(undefined, {
+                    month: 'short',
+                    day: 'numeric',
+                  });
+                return null;
+              }}
               onClickItem={({ item }) => {
-                if (item.category) {
-                  setData({
-                    ...item,
-                    date: new Date().toISOString(),
-                    id: undefined,
-                  });
-                } else {
-                  setData({
-                    category: item.id,
-                    name: '',
-                    date: new Date().toISOString(),
-                    id: undefined,
-                  });
-                }
+                const base = item.category
+                  ? item
+                  : { category: item.id, name: '' };
+                setData({
+                  ...base,
+                  date: new Date().toISOString(),
+                  id: undefined,
+                  value: '',
+                });
               }}
             />
           </Box>
@@ -155,6 +189,7 @@ const DataAdd = () => {
                   name="value"
                   size="xlarge"
                   placeholder="name"
+                  suggestions={suggestions}
                 />
               </FormField>
             )}
