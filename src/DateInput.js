@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { Calendar, Drop, FormContext, MaskedInput } from 'grommet';
+import { Calendar, Drop, DropButton, FormContext, MaskedInput } from 'grommet';
 import { Calendar as CalendarIcon } from 'grommet-icons';
 
 const formatRegexp = /([mdy]+)([^\w]*)([mdy]+)([^\w]*)([mdy]+)/i;
@@ -13,7 +13,8 @@ const valueToText = (value) =>
 
 const DateInput = ({
   defaultValue,
-  format = 'mm/dd/yyyy',
+  format,
+  inline,
   name,
   onChange,
   value: valueArg,
@@ -21,11 +22,14 @@ const DateInput = ({
 }) => {
   const { useFormInput } = useContext(FormContext);
   const [value, setValue] = useFormInput(name, valueArg, defaultValue);
+
+  // textValue is only used when a format is provided
   const [textValue, setTextValue] = useState(valueToText(value));
   useEffect(() => {
     if (value) setTextValue(valueToText(value));
   }, [value]);
   const mask = useMemo(() => {
+    if (!format) return [];
     const match = format.match(formatRegexp);
     const result = match.slice(1).map((part) => {
       if (part[0] === 'm' || part[0] === 'd' || part[0] === 'y')
@@ -36,6 +40,34 @@ const DateInput = ({
   }, [format]);
   const [open, setOpen] = useState();
   const ref = useRef();
+  const range = Array.isArray(value);
+
+  const calendar = (
+    <Calendar
+      range={range}
+      date={range ? undefined : value}
+      dates={range ? [value] : undefined}
+      onSelect={(nextValue) => {
+        console.log('!!! DI onSelect', nextValue);
+        setValue(Array.isArray(nextValue) ? nextValue[0] : nextValue);
+        if (onChange) onChange({ value: nextValue });
+        if (open) setOpen(false);
+      }}
+    />
+  );
+
+  if (inline) return calendar;
+
+  if (!format) {
+    // When no format is specified, we don't give the user a way to type
+    return (
+      <DropButton
+        icon={<CalendarIcon />}
+        dropProps={{ align: { top: 'bottom' } }}
+        dropContent={calendar}
+      />
+    );
+  }
 
   return (
     <>
@@ -60,13 +92,7 @@ const DateInput = ({
           onEsc={() => setOpen(false)}
           onClickOutside={() => setOpen(false)}
         >
-          <Calendar
-            date={value}
-            onSelect={(nextValue) => {
-              setValue(nextValue);
-              setOpen(false);
-            }}
-          />
+          {calendar}
         </Drop>
       )}
     </>

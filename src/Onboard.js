@@ -18,7 +18,7 @@ const Onboard = () => {
   const [track, setTrack] = useState(initialTrack);
 
   return (
-    <Box fill align="center" justify="center" background="background-back">
+    <Box align="center" justify="center" background="background-back">
       <Box
         background="background-front"
         pad="large"

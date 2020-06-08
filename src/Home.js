@@ -5,7 +5,7 @@ import RoutedButton from './RoutedButton';
 import { useTrack } from './track';
 
 const Home = () => {
-  const [track] = useTrack();
+  const [track, setTrack] = useTrack();
 
   if (!track) return null;
 
@@ -25,10 +25,12 @@ const Home = () => {
         <RoutedButton label="Setup categories" path="/categories" />
         <Button label="Change password" disabled />
         <Button label="Sign out" disabled />
-        <RoutedButton
+        <Button
           label="Delete my track"
-          path="/loading"
-          onClick={() => localStorage.removeItem('track')}
+          onClick={() => {
+            localStorage.removeItem('track');
+            setTrack(false);
+          }}
         />
       </Box>
     </Page>

@@ -1,84 +1,202 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import {
-  Box,
-  Button,
-  DataChart,
-  Form,
-  Header,
-  Heading,
-  RadioButtonGroup,
-  Select,
-  Text,
-} from 'grommet';
-import { Next, Previous } from 'grommet-icons';
+import { Box, Button, DataChart, Header, Heading, Select } from 'grommet';
+import { Add, Trash } from 'grommet-icons';
 import Page from './Page';
-import { useTrack } from './track';
+import DateInput from './DateInput';
+import { getCategory, useTrack } from './track';
+
+const now = new Date();
+const sevenDaysAgo = new Date(now);
+sevenDaysAgo.setDate(now.getDate() - 7);
+const dateFormat = new Intl.DateTimeFormat(undefined, {
+  month: 'short',
+  day: 'numeric',
+});
 
 const Correlate = () => {
   const [track] = useTrack();
-  const [filter, setFilter] = useState();
+  const [dates, setDates] = useState([
+    sevenDaysAgo.toISOString(),
+    now.toISOString(),
+  ]);
+  const [categories, setCategories] = useState([]);
+  const [showCalendar, setShowCalendar] = useState();
 
+  // initialize the first category to the latest symptom
   useEffect(() => {
-    if (track && !filter) {
-      setFilter({
-        referenceCategory:
-          track.categories.filter((c) => c.type === 'symptom')[0] ||
-          track.categories[0],
-        duration: 'week',
-        end: new Date().toISOString(),
-      });
+    if (track && !categories.length && track.data.length) {
+      setCategories([getCategory(track, track.data[0].category)]);
     }
-  }, [filter, track]);
+  }, [categories, track]);
 
   const data = useMemo(() => {
-    if (track && filter && filter.referenceCategory)
-      return track.data.filter(
-        (d) => d.category === filter.referenceCategory.id,
+    const data = [];
+    if (track && categories.length > 0) {
+      const date1 = new Date(dates[0]);
+      const date2 = new Date(dates[1]);
+
+      // prune the data down to just what the filter matches
+      const start = date1.toISOString().split('T')[0];
+      const end = date2.toISOString().split('T')[0];
+      const categoryData = categories.map((category) =>
+        track.data.filter(
+          (datum) =>
+            datum.category === category.id &&
+            datum.date >= start &&
+            datum.date <= end,
+        ),
       );
-    return [];
-  }, [filter, track]);
 
-  if (!filter) return null;
+      // generate the DataChart data
+      const date = new Date(date1);
+      const max = 10;
+      const min = 0;
+      // create an object for each day
+      while (date <= date2) {
+        const current = date.toISOString().split('T')[0];
+        const datum = { date: current };
+        // create a keyed value on the current day for each category
+        categories.forEach((category, index) => {
+          let keyName = category.name;
+          let dayValue = 0;
+          categoryData[index]
+            // filter out to the data just for the current day
+            .filter((d) => d.date.split('T')[0] === current)
+            .forEach((dayData) => {
+              // normalize the values so they can be overlaid within min-max
+              if (category.type === 'yes/no') {
+                // yes/no existence -> max
+                dayValue = max;
+              } else if (category.type === 'rating') {
+                // rating 1-5 -> min-max
+                const normalizedValue = dayData.value * (max / 5);
+                // if multiple on the same day, take the largest
+                dayValue = Math.max(datum[keyName] || 0, normalizedValue);
+              } else if (category.type === 'number') {
+                // number -> within min/max
+                // if multiple on the same day, add them
+                dayValue = Math.min(
+                  max,
+                  Math.max(min, (dayValue || 0) + dayData.value),
+                );
+              } else if (category.type === 'name') {
+                // value -> within min/max
+                keyName = dayData.name;
+                // allow for multiple on the same day, add them up
+                dayValue = Math.min(
+                  max,
+                  Math.max(min, (dayValue || 0) + dayData.value),
+                );
+              }
+            });
+          datum[keyName] = dayValue;
+        });
 
-  console.log('!!! Correlate', data);
+        data.push(datum);
+        date.setDate(date.getDate() + 1);
+      }
+    }
+    return data;
+  }, [categories, dates, track]);
+
+  const charts = useMemo(
+    () =>
+      categories.map((category, index) => ({
+        key: category.name,
+        type: 'line',
+        round: true,
+        color: `graph-${index}`,
+      })),
+    [categories],
+  );
+
+  if (!track) return null;
 
   return (
     <Page>
       <Box pad={{ horizontal: 'medium' }}>
         <Header>
           <Heading>correlate</Heading>
+          <Button
+            label={`${dateFormat.format(
+              new Date(dates[0]),
+            )} - ${dateFormat.format(new Date(dates[1]))}`}
+            hoverIndicator
+            onClick={() => setShowCalendar(!showCalendar)}
+          />
         </Header>
-
-        <Form value={filter} onChange={setFilter}>
-          <Box direction="row-responsive" gap="medium" justify="between">
-            <Select
-              name="referenceCategory"
-              options={track.categories}
-              labelKey="name"
-              valueKey="id"
+        {showCalendar && (
+          <Box align="end" margin={{ bottom: 'medium' }}>
+            <DateInput
+              name="dates"
+              inline
+              value={dates}
+              onChange={({ value }) => setDates(value)}
             />
-            <Box direction="row-responsive" gap="medium">
-              <RadioButtonGroup
-                name="duration"
-                options={['week', 'month']}
-                direction="row"
-                border="between"
-              >
-                {(option, { checked, hover }, ref) => (
-                  <Box key={option} ref={ref} pad="xsmall" round="xsmall">
-                    <Text weight={checked ? 'bold' : undefined}>{option}</Text>
-                  </Box>
-                )}
-              </RadioButtonGroup>
-              <Box direction="row" border="between" gap="small">
-                <Button icon={<Previous />} hoverIndicator />
-                <Button icon={<Next />} hoverIndicator />
-              </Box>
-            </Box>
           </Box>
-        </Form>
+        )}
+        <Box gap="small">
+          {categories.map((category, index) => (
+            <Box
+              key={index}
+              direction="row"
+              gap="medium"
+              justify="between"
+              align="center"
+            >
+              <Box direction="row" gap="small" align="center">
+                <Box pad="small" background={`graph-${index}`} round="full" />
+                <Select
+                  options={track.categories}
+                  labelKey="name"
+                  valueKey="id" // not reduced
+                  value={category}
+                  onChange={({ option }) => {
+                    const nextCategories = [...categories];
+                    nextCategories[index] = option;
+                    setCategories(nextCategories);
+                  }}
+                />
+              </Box>
+              {categories.length > 0 && (
+                <Button
+                  icon={<Trash />}
+                  hoverIndicator
+                  onClick={() => {
+                    const nextCategories = [...categories];
+                    nextCategories.splice(index, 1);
+                    setCategories(nextCategories);
+                  }}
+                />
+              )}
+            </Box>
+          ))}
+          <Box direction="row" justify="end">
+            <Button
+              icon={<Add />}
+              hoverIndicator
+              onClick={() => {
+                const nextCategories = [...categories];
+                nextCategories.push('');
+                setCategories(nextCategories);
+              }}
+            />
+          </Box>
+        </Box>
 
-        <DataChart data={data} chart={{ key: 'value' }} />
+        {data && categories.length > 0 && (
+          <Box margin={{ vertical: 'large' }}>
+            <DataChart
+              data={data}
+              chart={charts}
+              xAxis={{ key: 'date', guide: true }}
+              pad="small"
+              gap="medium"
+              thickness="small"
+              size={{ width: 'fill', height: 'small' }}
+            />
+          </Box>
+        )}
       </Box>
     </Page>
   );

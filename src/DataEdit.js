@@ -80,7 +80,7 @@ const DataEdit = ({ id: idArg }) => {
                 {(option, { checked, hover }) => {
                   let color;
                   if (hover) color = 'active-text';
-                  else if (option <= data.value) color = 'brand';
+                  else if (option <= data.value) color = 'control';
                   else color = 'status-disabled';
                   return <Star key={option} color={color} />;
                 }}

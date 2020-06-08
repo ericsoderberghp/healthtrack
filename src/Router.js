@@ -1,11 +1,17 @@
-import React, { Children } from 'react';
+import React, {
+  Children,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 
-export const RouterContext = React.createContext({});
+export const RouterContext = createContext({});
 
 export const Router = ({ children, initialPath }) => {
-  const [path, setPath] = React.useState(initialPath);
+  const [path, setPath] = useState(initialPath);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const onPopState = () => setPath(document.location.pathname);
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
@@ -31,7 +37,7 @@ export const Router = ({ children, initialPath }) => {
 };
 
 const pathMatch = (path, contextPath) => {
-  if (path === contextPath) return {};
+  if (path === contextPath || path === '*') return {};
   // check for something like /categories/:id
   const contextParts = contextPath.split('/');
   const pathParts = path.split('/');
@@ -49,18 +55,17 @@ const pathMatch = (path, contextPath) => {
 };
 
 // only renders at most one child
-export const Routes = ({ children, redirect }) => {
-  const { path: contextPath, push } = React.useContext(RouterContext);
+export const Routes = ({ children }) => {
+  const { path: contextPath } = useContext(RouterContext);
   let found;
   Children.forEach(children, (child) => {
     if (!found && pathMatch(child.props.path, contextPath)) found = child;
   });
-  if (!found) push(redirect);
   return found;
 };
 
 export const Route = ({ Component, path }) => {
-  const { path: contextPath } = React.useContext(RouterContext);
+  const { path: contextPath } = useContext(RouterContext);
 
   if (contextPath === path) return <Component />;
 

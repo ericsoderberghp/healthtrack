@@ -14,7 +14,7 @@ const Data = () => {
     const result = {};
     if (track)
       track.data.forEach((d) => {
-        result[d.id] = getCategory(track, d.category);
+        result[d.category] = getCategory(track, d.category);
       });
     return result;
   }, [track]);
@@ -37,7 +37,7 @@ const Data = () => {
       <List
         data={track.data}
         primaryKey={(item, _, ref) => {
-          const category = categoryMap[item.id];
+          const category = categoryMap[item.category];
           const parts = [];
           if (category.type === 'number' || category.type === 'name')
             parts.push(

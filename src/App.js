@@ -55,6 +55,7 @@ const App = () => {
           <Route path="/notes" Component={Notes} />
           <Route path="/notes/add" Component={NoteAdd} />
           <Route path="/notes/:id" Component={NoteEdit} />
+          <Route path="*" Component={Onboard} />
         </Routes>
       </Grommet>
     </Router>

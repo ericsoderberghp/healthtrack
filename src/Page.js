@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Box, Grid, Nav, ResponsiveContext } from 'grommet';
-import { LineChart, List, Note, User } from 'grommet-icons';
+import { Test, List, Note, User } from 'grommet-icons';
 import RoutedButton from './RoutedButton';
 
 const MainNav = ({ pin }) => {
@@ -9,6 +9,7 @@ const MainNav = ({ pin }) => {
       direction="row"
       justify="center"
       background={{ color: 'brand' }}
+      round={{ size: 'small', corner: pin ? 'top' : 'bottom' }}
       style={
         pin ? { position: 'fixed', bottom: 0, left: 0, right: 0 } : undefined
       }
@@ -17,7 +18,7 @@ const MainNav = ({ pin }) => {
       <RoutedButton title="data" icon={<List />} hoverIndicator path="/data" />
       <RoutedButton
         title="correlate"
-        icon={<LineChart />}
+        icon={<Test />}
         hoverIndicator
         path="/correlate"
       />
