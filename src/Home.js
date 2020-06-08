@@ -14,11 +14,11 @@ const Home = () => {
       <Box pad={{ horizontal: 'medium' }}>
         <Heading>{track.name}</Heading>
         <Paragraph>
-          Set up categories you would like to keep track of. They can be
-          behaviors you have, symptoms you experience, or treatments you try.
-          Once you've set up the categories, you can start recording data. Then,
-          when you've recorded data for a while, you can start looking for
-          correlations.
+          Begin by setting up categories you would like to keep track of. These
+          can be behaviors you have, symptoms you experience, or remedies you
+          try. Once you've set up the categories, you can start recording data.
+          When you've got some data, you can start looking for correlations.
+          Hopefully, you will uncover something helpful!
         </Paragraph>
       </Box>
       <Box margin={{ top: 'xlarge' }} pad="medium" align="start" gap="medium">
