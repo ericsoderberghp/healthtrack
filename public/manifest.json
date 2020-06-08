@@ -9,12 +9,12 @@
     },
     {
       "src": "mobile-app-icon.png",
-      "sizes": "180x180",
+      "sizes": "120x120",
       "type": "image/png"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#6FFFB0",
-  "background_color": "#7D4CDB"
+  "theme_color": "#4d648d",
+  "background_color": "#d0e1f9"
 }
