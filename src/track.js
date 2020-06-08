@@ -4,9 +4,9 @@ export const apiUrl =
   'https://us-central1-grommet-designer.cloudfunctions.net/healthtracks';
 
 export const initialTrack = {
-  name: 'my name',
-  email: 'my@email',
-  password: 'password',
+  name: '',
+  email: '',
+  password: '',
   categories: [
     {
       id: 1,
@@ -23,34 +23,39 @@ export const initialTrack = {
   notes: [],
 };
 
+const developmentTrack = JSON.parse(JSON.stringify(initialTrack));
+developmentTrack.name = 'my name';
+developmentTrack.email = 'my@email';
+developmentTrack.password = 'password';
+
 // load with more for development
-initialTrack.categories.push({
+developmentTrack.categories.push({
   id: 5,
   name: 'weight',
   aspect: 'behavior',
   type: 'number',
   units: 'pounds',
 });
-initialTrack.categories.push({
+developmentTrack.categories.push({
   id: 6,
   name: 'nap',
   aspect: 'behavior',
   type: 'yes/no',
   date: new Date().toISOString(),
 });
-initialTrack.categories.push({
+developmentTrack.categories.push({
   id: 7,
   name: 'fatigue',
   aspect: 'symptom',
   type: 'rating',
 });
-initialTrack.categories.push({
+developmentTrack.categories.push({
   id: 8,
   name: 'headache',
   aspect: 'symptom',
   type: 'yes/no',
 });
-initialTrack.categories.push({
+developmentTrack.categories.push({
   id: 9,
   name: 'ibuprofen',
   aspect: 'remedy',
@@ -72,7 +77,7 @@ const nextId = () => {
   return id;
 };
 while (date <= yesterday) {
-  initialTrack.data.unshift({
+  developmentTrack.data.unshift({
     id: nextId(),
     date: date.toISOString(),
     category: 1, // sleep
@@ -80,7 +85,7 @@ while (date <= yesterday) {
     value: 6 + (nextRandom() % 3),
   });
   if (!(nextRandom() % 3)) {
-    initialTrack.data.unshift({
+    developmentTrack.data.unshift({
       id: nextId(),
       date: date.toISOString(),
       category: 3, // food
@@ -89,7 +94,7 @@ while (date <= yesterday) {
     });
   }
   if (nextRandom() % 2) {
-    initialTrack.data.unshift({
+    developmentTrack.data.unshift({
       id: nextId(),
       date: date.toISOString(),
       category: 2, // exercise
@@ -97,7 +102,7 @@ while (date <= yesterday) {
       value: true,
     });
   }
-  initialTrack.data.unshift({
+  developmentTrack.data.unshift({
     id: nextId(),
     date: date.toISOString(),
     category: 4, // water
@@ -112,8 +117,8 @@ export const useTrack = () => {
   useEffect(() => {
     const stored = localStorage.getItem('track');
     if (stored) setTrack(JSON.parse(stored));
-    // TODO: else setTrack(false);
-    else setTrack(initialTrack);
+    else setTrack(false);
+    // else setTrack(developmentTrack);
   }, []);
   return [
     track,
