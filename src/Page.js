@@ -10,6 +10,8 @@ const MainNav = ({ pin }) => {
       justify="center"
       background={{ color: 'brand' }}
       round={{ size: 'small', corner: pin ? 'top' : 'bottom' }}
+      pad={pin ? { bottom: 'medium' } : undefined}
+      responsive={false}
       style={
         pin ? { position: 'fixed', bottom: 0, left: 0, right: 0 } : undefined
       }
@@ -39,8 +41,13 @@ const Page = ({ children }) => {
       columns={['flex', ['small', 'large'], 'flex']}
       rows={['100%']}
       areas={[{ name: 'content', start: [1, 0], end: [1, 0] }]}
+      style={{ minHeight: '100%' }}
     >
-      <Box gridArea="content" pad={{ bottom: 'xlarge' }}>
+      <Box
+        gridArea="content"
+        pad={{ bottom: 'xlarge' }}
+        margin={{ bottom: 'xlarge' }}
+      >
         {size !== 'small' && <MainNav />}
         {children}
         {size === 'small' && <MainNav pin />}

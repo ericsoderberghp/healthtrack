@@ -23,7 +23,7 @@ const Data = () => {
 
   return (
     <Page>
-      <Box pad={{ horizontal: 'medium' }}>
+      <Box pad={{ horizontal: 'medium' }} responsive={false}>
         <Header>
           <Heading>data</Heading>
           <RoutedButton

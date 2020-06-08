@@ -102,7 +102,7 @@ const DataAdd = () => {
 
   return (
     <Page>
-      <Box pad={{ horizontal: 'medium' }}>
+      <Box pad={{ horizontal: 'medium' }} flex="grow" responsive={false}>
         <Header>
           <Box direction="row" align="center">
             {/* {data && (
@@ -126,7 +126,13 @@ const DataAdd = () => {
             />
             <List
               data={starters}
-              primaryKey="name"
+              primaryKey={(item) => (
+                <Text weight="bold">
+                  {item.category && typeof item.value === 'string'
+                    ? item.value
+                    : item.name}
+                </Text>
+              )}
               secondaryKey={(item) => {
                 if (item.date && item.category)
                   return new Date(item.date).toLocaleString(undefined, {

@@ -45,7 +45,7 @@ const CategoryAdd = () => {
 
   return (
     <Page>
-      <Box pad={{ horizontal: 'medium' }}>
+      <Box pad={{ horizontal: 'medium' }} responsive={false}>
         <Header>
           <Heading>add category</Heading>
           <RoutedButton icon={<Close />} hoverIndicator path="/categories" />
@@ -71,12 +71,12 @@ const CategoryAdd = () => {
               <TextInput name="units" />
             </FormField>
           )}
-          {(category.type === 'number' || category.type === 'name') && (
+          {/* {(category.type === 'number' || category.type === 'name') && (
             <FormField label="options" name="options">
               <TextArea name="options" />
             </FormField>
-          )}
-          <Box margin={{ top: 'medium' }} align="start">
+          )} */}
+          <Box margin={{ top: 'large' }} align="start">
             <Button type="submit" label="Add" primary />
           </Box>
         </Form>

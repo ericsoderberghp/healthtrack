@@ -114,7 +114,7 @@ const Correlate = () => {
 
   return (
     <Page>
-      <Box pad={{ horizontal: 'medium' }}>
+      <Box pad={{ horizontal: 'medium' }} responsive={false}>
         <Header>
           <Heading>correlate</Heading>
           <Button

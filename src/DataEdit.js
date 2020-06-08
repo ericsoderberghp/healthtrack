@@ -49,7 +49,7 @@ const DataEdit = ({ id: idArg }) => {
 
   return (
     <Page>
-      <Box pad={{ horizontal: 'medium' }}>
+      <Box pad={{ horizontal: 'medium' }} flex="grow" responsive={false}>
         <Header>
           <Heading>edit {category.name}</Heading>
           <RoutedButton icon={<Close />} hoverIndicator path="/data" />
@@ -97,18 +97,23 @@ const DataEdit = ({ id: idArg }) => {
             <Button type="submit" label="Update" primary />
           </Box>
         </Form>
-        <Box margin={{ top: 'xlarge' }} align="start">
-          <Button
-            label="Delete"
-            onClick={() => {
-              const nextTrack = JSON.parse(JSON.stringify(track));
-              const index = nextTrack.data.findIndex((d) => d.id === id);
-              nextTrack.data.splice(index, 1);
-              setTrack(nextTrack);
-              push('/data');
-            }}
-          />
-        </Box>
+      </Box>
+      <Box
+        margin={{ top: 'xlarge' }}
+        pad={{ horizontal: 'medium' }}
+        align="start"
+        responsive={false}
+      >
+        <Button
+          label="Delete"
+          onClick={() => {
+            const nextTrack = JSON.parse(JSON.stringify(track));
+            const index = nextTrack.data.findIndex((d) => d.id === id);
+            nextTrack.data.splice(index, 1);
+            setTrack(nextTrack);
+            push('/data');
+          }}
+        />
       </Box>
     </Page>
   );

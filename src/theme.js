@@ -64,4 +64,9 @@ export default {
       },
     },
   },
+  list: {
+    item: {
+      pad: { horizontal: 'large', vertical: 'medium' },
+    },
+  },
 };

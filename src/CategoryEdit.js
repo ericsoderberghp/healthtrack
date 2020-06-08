@@ -39,7 +39,7 @@ const CategoryEdit = ({ id: idArg }) => {
 
   return (
     <Page>
-      <Box pad={{ horizontal: 'medium' }}>
+      <Box pad={{ horizontal: 'medium' }} flex="grow" responsive={false}>
         <Header>
           <Heading>edit category</Heading>
           <RoutedButton icon={<Close />} hoverIndicator path="/categories" />
@@ -65,27 +65,32 @@ const CategoryEdit = ({ id: idArg }) => {
               <TextInput name="units" />
             </FormField>
           )}
-          {(category.type === 'number' || category.type === 'name') && (
+          {/* {(category.type === 'number' || category.type === 'name') && (
             <FormField label="options" name="options">
               <TextArea name="options" />
             </FormField>
-          )}
-          <Box margin={{ top: 'medium' }} align="start">
+          )} */}
+          <Box margin={{ top: 'large' }} align="start">
             <Button type="submit" label="Update" primary />
           </Box>
         </Form>
-        <Box margin={{ top: 'xlarge' }} align="start">
-          <Button
-            label="Delete"
-            onClick={() => {
-              const nextTrack = JSON.parse(JSON.stringify(track));
-              const index = nextTrack.categories.findIndex((c) => c.id === id);
-              nextTrack.categories.splice(index, 1);
-              setTrack(nextTrack);
-              push('/categories');
-            }}
-          />
-        </Box>
+      </Box>
+      <Box
+        margin={{ top: 'xlarge' }}
+        pad={{ horizontal: 'medium' }}
+        align="start"
+        responsive={false}
+      >
+        <Button
+          label="Delete"
+          onClick={() => {
+            const nextTrack = JSON.parse(JSON.stringify(track));
+            const index = nextTrack.categories.findIndex((c) => c.id === id);
+            nextTrack.categories.splice(index, 1);
+            setTrack(nextTrack);
+            push('/categories');
+          }}
+        />
       </Box>
     </Page>
   );

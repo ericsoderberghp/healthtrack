@@ -27,7 +27,7 @@ const NoteEdit = ({ id: idArg }) => {
 
   return (
     <Page>
-      <Box pad={{ horizontal: 'medium' }}>
+      <Box pad={{ horizontal: 'medium' }} flex="grow" responsive={false}>
         <Header>
           <Heading>edit note</Heading>
           <RoutedButton icon={<Close />} hoverIndicator path="/notes" />
@@ -46,22 +46,27 @@ const NoteEdit = ({ id: idArg }) => {
           <FormField name="text" required>
             <TextArea name="text" rows={8} />
           </FormField>
-          <Box margin={{ top: 'medium' }} align="start">
+          <Box margin={{ top: 'large' }} align="start">
             <Button type="submit" label="Update" primary />
           </Box>
         </Form>
-        <Box margin={{ top: 'xlarge' }} align="start">
-          <Button
-            label="Delete"
-            onClick={() => {
-              const nextTrack = JSON.parse(JSON.stringify(track));
-              const index = nextTrack.notes.findIndex((n) => n.id === id);
-              nextTrack.notes.splice(index, 1);
-              setTrack(nextTrack);
-              push('/notes');
-            }}
-          />
-        </Box>
+      </Box>
+      <Box
+        margin={{ top: 'xlarge' }}
+        pad={{ horizontal: 'medium' }}
+        align="start"
+        responsive={false}
+      >
+        <Button
+          label="Delete"
+          onClick={() => {
+            const nextTrack = JSON.parse(JSON.stringify(track));
+            const index = nextTrack.notes.findIndex((n) => n.id === id);
+            nextTrack.notes.splice(index, 1);
+            setTrack(nextTrack);
+            push('/notes');
+          }}
+        />
       </Box>
     </Page>
   );

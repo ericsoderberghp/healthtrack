@@ -11,7 +11,7 @@ const Home = () => {
 
   return (
     <Page>
-      <Box pad={{ horizontal: 'medium' }}>
+      <Box pad={{ horizontal: 'medium' }} responsive={false}>
         <Heading>{track.name}</Heading>
         <Paragraph>
           Begin by setting up categories you would like to keep track of. These
@@ -21,7 +21,7 @@ const Home = () => {
           Hopefully, you will uncover something helpful!
         </Paragraph>
       </Box>
-      <Box margin={{ top: 'xlarge' }} pad="medium" align="start" gap="medium">
+      <Box pad="medium" align="start" gap="medium" responsive={false}>
         <RoutedButton label="Setup categories" path="/categories" />
         <Button label="Change password" disabled />
         <Button label="Sign out" disabled />
