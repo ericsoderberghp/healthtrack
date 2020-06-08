@@ -2,13 +2,12 @@ import React, { useContext, useEffect, useMemo, useState } from 'react';
 import {
   Box,
   Button,
-  CheckBox,
   Form,
   FormField,
   Header,
   Heading,
   RadioButtonGroup,
-  Select,
+  Text,
   TextInput,
 } from 'grommet';
 import { Close, Star } from 'grommet-icons';
@@ -16,7 +15,7 @@ import Page from './Page';
 import RoutedButton from './RoutedButton';
 import DateInput from './DateInput';
 import { RouterContext } from './Router';
-import { getCategory, useTrack } from './track';
+import { getCategory, getData, useTrack } from './track';
 import { sortOn } from './utils';
 
 const DataEdit = ({ id: idArg }) => {
@@ -25,7 +24,7 @@ const DataEdit = ({ id: idArg }) => {
   const [track, setTrack] = useTrack();
   const [data, setData] = useState();
   useEffect(() => {
-    if (track && id) setData(track.data.find((d) => d.id === id));
+    if (track && id) setData(getData(track, id));
   }, [id, track]);
 
   const category = useMemo(
@@ -52,26 +51,17 @@ const DataEdit = ({ id: idArg }) => {
     <Page>
       <Box pad={{ horizontal: 'medium' }}>
         <Header>
-          <Heading>edit data</Heading>
+          <Heading>edit {category.name}</Heading>
           <RoutedButton icon={<Close />} hoverIndicator path="/data" />
         </Header>
         <Form value={data} onChange={setData} onSubmit={onSubmit}>
-          <FormField label="category" name="category" required>
-            <Select
-              name="category"
-              options={track.categories}
-              labelKey="name"
-              valueKey={{ key: 'id', reduce: true }}
-              disabled
-            />
-          </FormField>
-          {category && category.type === 'yes/no' && (
+          {/* {category && category.type === 'yes/no' && (
             <FormField name="value" required>
               <CheckBox name="value" toggle />
             </FormField>
-          )}
+          )} */}
           {category && category.type === 'rating' && (
-            <FormField label="rating" name="value" required>
+            <FormField name="value" required>
               <RadioButtonGroup
                 name="value"
                 options={[1, 2, 3, 4, 5]}
@@ -82,25 +72,28 @@ const DataEdit = ({ id: idArg }) => {
                   if (hover) color = 'active-text';
                   else if (option <= data.value) color = 'control';
                   else color = 'status-disabled';
-                  return <Star key={option} color={color} />;
+                  return <Star key={option} color={color} size="large" />;
                 }}
               </RadioButtonGroup>
             </FormField>
           )}
           {category && category.type === 'number' && (
-            <FormField label={category.units || 'value'} name="value" required>
-              <TextInput name="value" type="number" />
+            <FormField name="value" required>
+              <Box direction="row" align="center" justify="between">
+                <TextInput name="value" type="number" size="xlarge" plain />
+                <Text size="large">{category.units || 'value'}</Text>
+              </Box>
             </FormField>
           )}
           {category && category.type === 'name' && (
-            <FormField label="name" name="value" required>
-              <TextInput name="value" />
+            <FormField name="value" required>
+              <TextInput name="value" size="xlarge" placeholder="name" />
             </FormField>
           )}
-          <FormField label="date" name="date" required>
-            <DateInput name="date" plain />
+          <FormField name="date" required>
+            <DateInput name="date" plain format="mm/dd/yyyy" />
           </FormField>
-          <Box margin={{ top: 'medium' }} align="start">
+          <Box margin={{ top: 'large' }} align="start">
             <Button type="submit" label="Update" primary />
           </Box>
         </Form>

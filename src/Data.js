@@ -59,14 +59,15 @@ const Data = () => {
                 {category.units}
               </Text>,
             );
-          parts.push(
-            <Text
-              key="n"
-              weight={category.type === 'yes/no' ? 'bold' : undefined}
-            >
-              {item.name}
-            </Text>,
-          );
+          if (category.type !== 'name')
+            parts.push(
+              <Text
+                key="n"
+                weight={category.type === 'yes/no' ? 'bold' : undefined}
+              >
+                {item.name}
+              </Text>,
+            );
           return (
             <Box key={item.date} ref={ref} direction="row" gap="small">
               {parts}
@@ -79,7 +80,7 @@ const Data = () => {
             day: 'numeric',
           });
         }}
-        onClickItem={({ item: { id } }) => push(`/data/${id}`)}
+        onClickItem={({ item }) => push(`/data/${item.id}`)}
       />
     </Page>
   );

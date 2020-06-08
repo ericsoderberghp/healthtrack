@@ -48,7 +48,6 @@ const DateInput = ({
       date={range ? undefined : value}
       dates={range ? [value] : undefined}
       onSelect={(nextValue) => {
-        console.log('!!! DI onSelect', nextValue);
         setValue(Array.isArray(nextValue) ? nextValue[0] : nextValue);
         if (onChange) onChange({ value: nextValue });
         if (open) setOpen(false);

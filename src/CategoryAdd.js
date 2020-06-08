@@ -35,6 +35,7 @@ const CategoryAdd = () => {
       nextId = Math.max(nextId, c.id + 1);
     });
     category.id = nextId;
+    category.date = new Date().toISOString();
     if (category.options) category.options = category.options.split('\n');
     nextTrack.categories.push(category);
     sortOn(nextTrack.categories, 'name');

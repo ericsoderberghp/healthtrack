@@ -36,6 +36,7 @@ initialTrack.categories.push({
   name: 'nap',
   aspect: 'behavior',
   type: 'yes/no',
+  date: new Date().toISOString(),
 });
 initialTrack.categories.push({
   id: 7,
@@ -64,18 +65,31 @@ const nextRandom = () => {
 const now = new Date();
 const date = new Date(now);
 date.setDate(now.getDate() - 5);
-let nextId = 1;
+let id = 1;
+const nextId = () => {
+  id += 1;
+  return id;
+};
 while (date <= now) {
   initialTrack.data.unshift({
-    id: nextId,
+    id: nextId(),
     date: date.toISOString(),
     category: 1, // sleep
     name: 'sleep',
     value: 6 + (nextRandom() % 3),
   });
+  if (!(nextRandom() % 3)) {
+    initialTrack.data.unshift({
+      id: nextId(),
+      date: date.toISOString(),
+      category: 3, // food
+      name: 'breakfast',
+      value: 'breakfast',
+    });
+  }
   if (nextRandom() % 2) {
     initialTrack.data.unshift({
-      id: nextId,
+      id: nextId(),
       date: date.toISOString(),
       category: 2, // exercise
       name: 'exercise',
@@ -83,14 +97,13 @@ while (date <= now) {
     });
   }
   initialTrack.data.unshift({
-    id: nextId,
+    id: nextId(),
     date: date.toISOString(),
     category: 4, // water
     name: 'water',
     value: 1 + (nextRandom() % 4),
   });
   date.setDate(date.getDate() + 1);
-  nextId += 1;
 }
 
 export const useTrack = () => {
@@ -112,3 +125,5 @@ export const useTrack = () => {
 
 export const getCategory = (track, id) =>
   track.categories.find((c) => c.id === id);
+
+export const getData = (track, id) => track.data.find((d) => d.id === id);

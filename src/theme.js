@@ -48,9 +48,12 @@ export default {
   },
   formField: {
     border: {
-      side: 'all',
+      side: 'start',
+      position: 'outer',
     },
-    position: 'inner',
+    margin: {
+      bottom: 'medium',
+    },
   },
   heading: {
     level: {
