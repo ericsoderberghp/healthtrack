@@ -29,7 +29,7 @@ const Notes = () => {
         data={track.notes}
         primaryKey={(item) => (
           <Box flex>
-            <Paragraph margin="none">${item.text}</Paragraph>
+            <Paragraph margin="none">{item.text}</Paragraph>
           </Box>
         )}
         secondaryKey={(item) => (
