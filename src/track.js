@@ -58,7 +58,7 @@ developmentTrack.categories.push({
 developmentTrack.categories.push({
   id: 9,
   name: 'ibuprofen',
-  aspect: 'remedy',
+  aspect: 'behavior',
   type: 'yes/no',
 });
 
@@ -124,8 +124,8 @@ export const useTrack = () => {
   useEffect(() => {
     const stored = localStorage.getItem('track');
     if (stored) setTrack(JSON.parse(stored));
-    else setTrack(false);
-    // else setTrack(developmentTrack);
+    // else setTrack(false);
+    else setTrack(developmentTrack);
   }, []);
   return [
     track,

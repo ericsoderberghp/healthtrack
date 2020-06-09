@@ -1,42 +1,33 @@
-import React, { useContext, useState } from 'react';
-import {
-  Box,
-  Button,
-  Form,
-  FormField,
-  Header,
-  Heading,
-  RadioButtonGroup,
-  // TextArea,
-  TextInput,
-} from 'grommet';
+import React, { useContext } from 'react';
+import { Box, Header, Heading } from 'grommet';
 import { Close } from 'grommet-icons';
 import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
 import { sortOn } from './utils';
+import CategoryForm from './CategoryForm';
+
+const initialCategory = {
+  name: '',
+  aspect: '',
+  type: '',
+  units: '',
+  options: '',
+};
 
 const CategoryAdd = () => {
   const { push } = useContext(RouterContext);
   const [track, setTrack] = useContext(TrackContext);
-  const [category, setCategory] = useState({
-    name: '',
-    aspect: '',
-    type: '',
-    units: '',
-    options: '',
-  });
 
-  const onSubmit = () => {
+  const onSubmit = (nextCategory) => {
     const nextTrack = JSON.parse(JSON.stringify(track));
     let nextId = 1;
     nextTrack.categories.forEach((c) => {
       nextId = Math.max(nextId, c.id + 1);
     });
-    category.id = nextId;
-    category.date = new Date().toISOString();
-    if (category.options) category.options = category.options.split('\n');
-    nextTrack.categories.push(category);
+    nextCategory.id = nextId;
+    nextCategory.date = new Date().toISOString();
+    nextTrack.categories.push(nextCategory);
     sortOn(nextTrack.categories, 'name');
     setTrack(nextTrack);
     push('/categories');
@@ -44,41 +35,16 @@ const CategoryAdd = () => {
 
   return (
     <Page>
-      <Box pad={{ horizontal: 'medium' }} responsive={false}>
+      <Box pad={{ horizontal: 'medium' }} flex="grow" responsive={false}>
         <Header>
           <Heading>add category</Heading>
           <RoutedButton icon={<Close />} hoverIndicator path="/categories" />
         </Header>
-        <Form value={category} onChange={setCategory} onSubmit={onSubmit}>
-          <FormField label="name" name="name" required>
-            <TextInput name="name" />
-          </FormField>
-          <FormField label="aspect" name="aspect" required>
-            <RadioButtonGroup
-              name="aspect"
-              options={['behavior', 'symptom', 'remedy']}
-            />
-          </FormField>
-          <FormField label="type" name="type" required>
-            <RadioButtonGroup
-              name="type"
-              options={['number', 'rating', 'yes/no', 'name']}
-            />
-          </FormField>
-          {category.type === 'number' && (
-            <FormField label="units" name="units">
-              <TextInput name="units" />
-            </FormField>
-          )}
-          {/* {(category.type === 'number' || category.type === 'name') && (
-            <FormField label="options" name="options">
-              <TextArea name="options" />
-            </FormField>
-          )} */}
-          <Box margin={{ top: 'large' }} align="start">
-            <Button type="submit" label="Add" primary />
-          </Box>
-        </Form>
+        <CategoryForm
+          defaultValue={initialCategory}
+          label="Add"
+          onSubmit={onSubmit}
+        />
       </Box>
     </Page>
   );

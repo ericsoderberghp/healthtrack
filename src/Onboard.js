@@ -27,13 +27,15 @@ const Onboard = () => {
       <Box
         background="background-front"
         pad="large"
+        align="start"
         round
-        align="center"
         width={{ max: 'medium' }}
       >
-        <Heading>Welcome!</Heading>
-        <Paragraph textAlign="center">
-          Track your behavior and symptoms to uncover correlations.
+        <Heading>Hi!</Heading>
+        <Paragraph>
+          Do you want to know what you are doing that's exacerbating some
+          problem you are having? Track your behaviors and symptoms to uncover
+          correlations based on real data.
         </Paragraph>
         <Form
           value={newTrack}
@@ -50,13 +52,12 @@ const Onboard = () => {
             <TextInput name="password" type="password" />
           </FormField>
           <Box margin={{ top: 'medium' }}>
-            <Button type="submit" label="Create My Track" primary />
+            <Button type="submit" label="Get Started" primary />
           </Box>
         </Form>
         <Box margin={{ top: 'large' }} direction="row" gap="xsmall">
           <Text>or</Text>
           <Anchor>Sign In</Anchor>
-          <Text>to an existing track</Text>
         </Box>
       </Box>
     </Box>

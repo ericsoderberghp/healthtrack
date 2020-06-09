@@ -17,7 +17,8 @@ const Home = () => {
           can be behaviors you have, symptoms you experience, or remedies you
           try. Once you've set up the categories, you can start recording data.
           When you've got some data, you can start looking for correlations.
-          Hopefully, you will uncover something helpful!
+          Having real data will enable you to know where to focus your
+          attention.
         </Paragraph>
       </Box>
       <Box pad="medium" align="start" gap="medium" responsive={false}>

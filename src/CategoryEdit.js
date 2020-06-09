@@ -1,21 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import {
-  Box,
-  Button,
-  Form,
-  FormField,
-  Header,
-  Heading,
-  RadioButtonGroup,
-  // TextArea,
-  TextInput,
-} from 'grommet';
+import { Box, Button, Header, Heading } from 'grommet';
 import { Close } from 'grommet-icons';
 import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
 import { getCategory } from './track';
 import { sortOn } from './utils';
+import CategoryForm from './CategoryForm';
 
 const CategoryEdit = ({ id: idArg }) => {
   const { push } = useContext(RouterContext);
@@ -26,10 +17,10 @@ const CategoryEdit = ({ id: idArg }) => {
     if (track && id) setCategory(getCategory(track, id));
   }, [id, track]);
 
-  const onSubmit = () => {
+  const onSubmit = (nextCategory) => {
     const nextTrack = JSON.parse(JSON.stringify(track));
     const index = nextTrack.categories.findIndex((c) => c.id === id);
-    nextTrack.categories[index] = category;
+    nextTrack.categories[index] = nextCategory;
     sortOn(nextTrack.categories, 'name');
     setTrack(nextTrack);
     push('/categories');
@@ -44,36 +35,11 @@ const CategoryEdit = ({ id: idArg }) => {
           <Heading>edit category</Heading>
           <RoutedButton icon={<Close />} hoverIndicator path="/categories" />
         </Header>
-        <Form value={category} onChange={setCategory} onSubmit={onSubmit}>
-          <FormField label="name" name="name">
-            <TextInput name="name" />
-          </FormField>
-          <FormField label="aspect" name="aspect">
-            <RadioButtonGroup
-              name="aspect"
-              options={['behavior', 'symptom', 'remedy']}
-            />
-          </FormField>
-          <FormField label="type" name="type">
-            <RadioButtonGroup
-              name="type"
-              options={['number', 'rating', 'yes/no', 'name']}
-            />
-          </FormField>
-          {category.type === 'number' && (
-            <FormField label="units" name="units">
-              <TextInput name="units" />
-            </FormField>
-          )}
-          {/* {(category.type === 'number' || category.type === 'name') && (
-            <FormField label="options" name="options">
-              <TextArea name="options" />
-            </FormField>
-          )} */}
-          <Box margin={{ top: 'large' }} align="start">
-            <Button type="submit" label="Update" primary />
-          </Box>
-        </Form>
+        <CategoryForm
+          defaultValue={category}
+          label="Update"
+          onSubmit={onSubmit}
+        />
       </Box>
       <Box
         margin={{ top: 'xlarge' }}
