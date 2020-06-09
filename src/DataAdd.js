@@ -14,14 +14,15 @@ import {
 import { Close, Search, Star } from 'grommet-icons';
 import Page from './Page';
 import RoutedButton from './RoutedButton';
+import TrackContext from './TrackContext';
 import DateInput from './DateInput';
 import { RouterContext } from './Router';
-import { getCategory, useTrack } from './track';
+import { getCategory } from './track';
 import { sortOn } from './utils';
 
 const DataAdd = () => {
   const { push } = useContext(RouterContext);
-  const [track, setTrack] = useTrack();
+  const [track, setTrack] = useContext(TrackContext);
   const [search, setSearch] = useState('');
   const [starters, setStarters] = useState();
 
@@ -127,7 +128,7 @@ const DataAdd = () => {
             <List
               data={starters}
               primaryKey={(item) => (
-                <Text weight="bold">
+                <Text key={item.value || item.name} weight="bold">
                   {item.category && typeof item.value === 'string'
                     ? item.value
                     : item.name}

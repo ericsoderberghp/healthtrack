@@ -3,12 +3,13 @@ import { Box, Header, Heading, List, Text } from 'grommet';
 import { Add, Star } from 'grommet-icons';
 import Page from './Page';
 import RoutedButton from './RoutedButton';
+import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
-import { getCategory, useTrack } from './track';
+import { getCategory } from './track';
 
 const Data = () => {
   const { push } = useContext(RouterContext);
-  const [track] = useTrack();
+  const [track] = useContext(TrackContext);
 
   const categoryMap = useMemo(() => {
     const result = {};

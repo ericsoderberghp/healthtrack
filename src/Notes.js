@@ -3,12 +3,12 @@ import { Box, Header, Heading, List, Paragraph, Text } from 'grommet';
 import { Add } from 'grommet-icons';
 import Page from './Page';
 import RoutedButton from './RoutedButton';
+import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
-import { useTrack } from './track';
 
 const Notes = () => {
   const { push } = useContext(RouterContext);
-  const [track] = useTrack();
+  const [track] = useContext(TrackContext);
 
   if (!track) return null;
 
@@ -28,12 +28,12 @@ const Notes = () => {
       <List
         data={track.notes}
         primaryKey={(item) => (
-          <Box flex>
+          <Box key={item.text} flex>
             <Paragraph margin="none">{item.text}</Paragraph>
           </Box>
         )}
         secondaryKey={(item) => (
-          <Box alignSelf="start">
+          <Box key={item.date} alignSelf="start">
             <Text weight="bold">
               {new Date(item.date).toLocaleString(undefined, {
                 month: 'short',

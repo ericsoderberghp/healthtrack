@@ -1,9 +1,10 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { Box, Button, DataChart, Header, Heading, Select } from 'grommet';
 import { Add, Trash } from 'grommet-icons';
 import Page from './Page';
 import DateInput from './DateInput';
-import { getCategory, useTrack } from './track';
+import TrackContext from './TrackContext';
+import { getCategory } from './track';
 
 const now = new Date();
 const sevenDaysAgo = new Date(now);
@@ -13,8 +14,28 @@ const dateFormat = new Intl.DateTimeFormat(undefined, {
   day: 'numeric',
 });
 
+const SelectCategory = ({ track, value, onChange }) => {
+  const [options, setOptions] = useState(track.categories);
+  return (
+    <Select
+      options={options}
+      labelKey="name"
+      valueKey="id" // not reduced
+      value={value}
+      onSearch={(search) => {
+        if (search) {
+          const exp = new RegExp(search, 'i');
+          setOptions(track.categories.filter((c) => exp.test(c.name)));
+        } else setOptions(track.categories);
+      }}
+      onChange={({ option }) => onChange(option)}
+      onClose={() => setOptions(track.categories)}
+    />
+  );
+};
+
 const Correlate = () => {
-  const [track] = useTrack();
+  const [track] = useContext(TrackContext);
   const [dates, setDates] = useState([
     sevenDaysAgo.toISOString(),
     now.toISOString(),
@@ -146,14 +167,12 @@ const Correlate = () => {
             >
               <Box direction="row" gap="small" align="center">
                 <Box pad="small" background={`graph-${index}`} round="full" />
-                <Select
-                  options={track.categories}
-                  labelKey="name"
-                  valueKey="id" // not reduced
+                <SelectCategory
+                  track={track}
                   value={category}
-                  onChange={({ option }) => {
+                  onChange={(nextCategory) => {
                     const nextCategories = [...categories];
-                    nextCategories[index] = option;
+                    nextCategories[index] = nextCategory;
                     setCategories(nextCategories);
                   }}
                 />

@@ -7,20 +7,21 @@ import {
   Header,
   Heading,
   RadioButtonGroup,
-  TextArea,
+  // TextArea,
   TextInput,
 } from 'grommet';
 import { Close } from 'grommet-icons';
 import Page from './Page';
 import RoutedButton from './RoutedButton';
+import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
-import { getCategory, useTrack } from './track';
+import { getCategory } from './track';
 import { sortOn } from './utils';
 
 const CategoryEdit = ({ id: idArg }) => {
   const { push } = useContext(RouterContext);
   const id = parseInt(idArg, 10);
-  const [track, setTrack] = useTrack();
+  const [track, setTrack] = useContext(TrackContext);
   const [category, setCategory] = useState();
   useEffect(() => {
     if (track && id) setCategory(getCategory(track, id));

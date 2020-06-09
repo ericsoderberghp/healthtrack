@@ -8,22 +8,27 @@ import React, {
 
 export const RouterContext = createContext({});
 
-export const Router = ({ children, initialPath }) => {
-  const [path, setPath] = useState(initialPath);
+export const Router = ({ children, path: pathArg }) => {
+  const [path, setPath] = useState(pathArg);
 
+  // use the supplied path whenever it changes
   useEffect(() => {
-    const onPopState = () => setPath(document.location.pathname);
+    if (pathArg !== window.location.pathname)
+      window.history.pushState(undefined, undefined, pathArg);
+    setPath(pathArg);
+  }, [pathArg]);
+
+  // track with the user interacting with the browser's back and
+  // forward controls
+  useEffect(() => {
+    const onPopState = () => setPath(window.location.pathname);
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
   const push = (nextPath) => {
     if (nextPath !== path) {
-      window.history.pushState(
-        undefined,
-        undefined,
-        nextPath + window.location.search,
-      );
+      window.history.pushState(undefined, undefined, nextPath);
       setPath(nextPath);
       window.scrollTo(0, 0);
     }

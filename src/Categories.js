@@ -4,11 +4,11 @@ import { Add } from 'grommet-icons';
 import Page from './Page';
 import RoutedButton from './RoutedButton';
 import { RouterContext } from './Router';
-import { useTrack } from './track';
+import TrackContext from './TrackContext';
 
 const Categories = () => {
   const { push } = useContext(RouterContext);
-  const [track] = useTrack();
+  const [track] = useContext(TrackContext);
 
   if (!track) return null;
 

@@ -10,12 +10,12 @@ import {
   Text,
   TextInput,
 } from 'grommet';
-import { RouterContext } from './Router';
+import TrackContext from './TrackContext';
 import { initialTrack } from './track';
 
 const Onboard = () => {
-  const { push } = useContext(RouterContext);
-  const [track, setTrack] = useState(initialTrack);
+  const [, setTrack] = useContext(TrackContext);
+  const [newTrack, setNewTrack] = useState(initialTrack);
 
   return (
     <Box
@@ -36,12 +36,9 @@ const Onboard = () => {
           Track your behavior and symptoms to uncover correlations.
         </Paragraph>
         <Form
-          value={track}
-          onChange={setTrack}
-          onSubmit={() => {
-            localStorage.setItem('track', JSON.stringify(track));
-            push('/');
-          }}
+          value={newTrack}
+          onChange={setNewTrack}
+          onSubmit={() => setTrack(newTrack)}
         >
           <FormField label="Your name" name="name" required>
             <TextInput name="name" />

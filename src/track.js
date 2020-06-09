@@ -105,6 +105,13 @@ while (date <= yesterday) {
   developmentTrack.data.unshift({
     id: nextId(),
     date: date.toISOString(),
+    category: 3, // food
+    name: 'lunch',
+    value: 'lunch',
+  });
+  developmentTrack.data.unshift({
+    id: nextId(),
+    date: date.toISOString(),
     category: 4, // water
     name: 'water',
     value: 1 + (nextRandom() % 4),
@@ -123,7 +130,8 @@ export const useTrack = () => {
   return [
     track,
     (nextTrack) => {
-      localStorage.setItem('track', JSON.stringify(nextTrack));
+      if (nextTrack) localStorage.setItem('track', JSON.stringify(nextTrack));
+      else localStorage.removeItem('track');
       setTrack(nextTrack);
     },
   ];

@@ -7,19 +7,19 @@ import {
   Header,
   Heading,
   RadioButtonGroup,
-  TextArea,
+  // TextArea,
   TextInput,
 } from 'grommet';
 import { Close } from 'grommet-icons';
 import Page from './Page';
 import RoutedButton from './RoutedButton';
+import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
-import { useTrack } from './track';
 import { sortOn } from './utils';
 
 const CategoryAdd = () => {
   const { push } = useContext(RouterContext);
-  const [track, setTrack] = useTrack();
+  const [track, setTrack] = useContext(TrackContext);
   const [category, setCategory] = useState({
     name: '',
     aspect: '',

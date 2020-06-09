@@ -11,13 +11,13 @@ import {
 import { Close } from 'grommet-icons';
 import Page from './Page';
 import RoutedButton from './RoutedButton';
+import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
-import { useTrack } from './track';
 
 const NoteEdit = ({ id: idArg }) => {
   const { push } = useContext(RouterContext);
   const id = parseInt(idArg, 10);
-  const [track, setTrack] = useTrack();
+  const [track, setTrack] = useContext(TrackContext);
   const [note, setNote] = useState();
   useEffect(() => {
     if (track && id) setNote(track.notes.find((n) => n.id === id));

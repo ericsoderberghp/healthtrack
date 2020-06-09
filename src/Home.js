@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box, Button, Heading, Paragraph } from 'grommet';
 import Page from './Page';
 import RoutedButton from './RoutedButton';
-import { useTrack } from './track';
+import TrackContext from './TrackContext';
 
 const Home = () => {
-  const [track, setTrack] = useTrack();
+  const [track, setTrack] = useContext(TrackContext);
 
   if (!track) return null;
 
@@ -25,13 +25,7 @@ const Home = () => {
         <RoutedButton label="Setup categories" path="/categories" />
         <Button label="Change password" disabled />
         <Button label="Sign out" disabled />
-        <Button
-          label="Delete my track"
-          onClick={() => {
-            localStorage.removeItem('track');
-            setTrack(false);
-          }}
-        />
+        <Button label="Delete my track" onClick={() => setTrack(false)} />
       </Box>
     </Page>
   );

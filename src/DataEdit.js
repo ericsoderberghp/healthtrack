@@ -13,15 +13,16 @@ import {
 import { Close, Star } from 'grommet-icons';
 import Page from './Page';
 import RoutedButton from './RoutedButton';
+import TrackContext from './TrackContext';
 import DateInput from './DateInput';
 import { RouterContext } from './Router';
-import { getCategory, getData, useTrack } from './track';
+import { getCategory, getData } from './track';
 import { sortOn } from './utils';
 
 const DataEdit = ({ id: idArg }) => {
   const { push } = useContext(RouterContext);
   const id = parseInt(idArg, 10);
-  const [track, setTrack] = useTrack();
+  const [track, setTrack] = useContext(TrackContext);
   const [data, setData] = useState();
   useEffect(() => {
     if (track && id) setData(getData(track, id));
