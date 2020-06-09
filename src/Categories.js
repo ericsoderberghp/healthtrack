@@ -29,12 +29,14 @@ const Categories = () => {
             primary
             hoverIndicator
             path="/categories/add"
+            title="add category"
           />
         </Header>
       </Box>
       {track.categories.length > 10 && (
         <Box>
           <TextInput
+            aria-label="search input"
             icon={<Search />}
             placeholder="search ..."
             value={search}
@@ -43,6 +45,7 @@ const Categories = () => {
         </Box>
       )}
       <List
+        aria-label="categories"
         data={categories}
         primaryKey="name"
         secondaryKey="aspect"

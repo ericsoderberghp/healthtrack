@@ -22,10 +22,18 @@ const Home = () => {
         </Paragraph>
       </Box>
       <Box pad="medium" align="start" gap="medium" responsive={false}>
-        <RoutedButton label="Setup categories" path="/categories" />
+        <RoutedButton
+          label="Setup categories"
+          path="/categories"
+          title="categories"
+        />
         <Button label="Change password" disabled />
         <Button label="Sign out" disabled />
-        <Button label="Delete my track" onClick={() => setTrack(false)} />
+        <Button
+          label="Delete everything"
+          onClick={() => setTrack(false)}
+          title="delete everything"
+        />
       </Box>
     </Page>
   );

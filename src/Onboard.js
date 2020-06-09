@@ -52,7 +52,12 @@ const Onboard = () => {
             <TextInput name="password" type="password" />
           </FormField>
           <Box margin={{ top: 'medium' }}>
-            <Button type="submit" label="Get Started" primary />
+            <Button
+              title="get started"
+              type="submit"
+              label="Get Started"
+              primary
+            />
           </Box>
         </Form>
         <Box margin={{ top: 'large' }} direction="row" gap="xsmall">

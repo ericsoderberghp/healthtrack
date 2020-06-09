@@ -118,6 +118,7 @@ const DataAdd = () => {
         {!data ? (
           <Box>
             <TextInput
+              aria-label="search"
               icon={<Search />}
               placeholder="search ..."
               value={search}
@@ -204,7 +205,7 @@ const DataAdd = () => {
               </FormField>
             )}
             <Box margin={{ top: 'medium' }} align="start">
-              <Button type="submit" label="Add" primary />
+              <Button type="submit" label="Add" primary title="Add" />
             </Box>
           </Form>
         )}

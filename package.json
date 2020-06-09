@@ -20,6 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "e2e": "testcafe firefox test.js --debug-on-fail",
     "prettier": "pretty-quick --staged"
   },
   "pre-commit": [

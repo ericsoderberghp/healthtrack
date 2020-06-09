@@ -66,7 +66,7 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
         </FormField>
       )}
       <Box margin={{ top: 'large' }} align="start">
-        <Button type="submit" label={label} primary />
+        <Button type="submit" label={label} primary title={label} />
       </Box>
     </Form>
   );

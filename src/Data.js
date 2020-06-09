@@ -31,10 +31,12 @@ const Data = () => {
             primary
             hoverIndicator
             path="/data/add"
+            title="add data"
           />
         </Header>
       </Box>
       <List
+        aria-label="data"
         data={track.data}
         primaryKey={(item, _, ref) => {
           const category = categoryMap[item.category];
