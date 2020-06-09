@@ -6,6 +6,7 @@ import TrackContext from './TrackContext';
 import { getCategory } from './track';
 
 const now = new Date();
+now.setHours(0, 0, 0, 0);
 const sevenDaysAgo = new Date(now);
 sevenDaysAgo.setDate(now.getDate() - 7);
 const dateFormat = new Intl.DateTimeFormat(undefined, {
@@ -52,8 +53,7 @@ const Correlate = () => {
   const data = useMemo(() => {
     const data = [];
     if (track && categories.length > 0) {
-      const date1 = new Date(dates[0]);
-      const date2 = new Date(dates[1]);
+      const [date1, date2] = dates.map((d) => new Date(d));
 
       // prune the data down to just what the filter matches
       const start = date1.toISOString().split('T')[0];

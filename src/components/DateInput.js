@@ -28,6 +28,7 @@ const DateInput = ({
   useEffect(() => {
     if (value) setTextValue(valueToText(value));
   }, [value]);
+
   const mask = useMemo(() => {
     if (!format) return [];
     const match = format.match(formatRegexp);
@@ -38,8 +39,11 @@ const DateInput = ({
     });
     return result;
   }, [format]);
+
   const [open, setOpen] = useState();
+
   const ref = useRef();
+
   const range = Array.isArray(value);
 
   const calendar = (
@@ -48,8 +52,9 @@ const DateInput = ({
       date={range ? undefined : value}
       dates={range ? [value] : undefined}
       onSelect={(nextValue) => {
-        setValue(Array.isArray(nextValue) ? nextValue[0] : nextValue);
-        if (onChange) onChange({ value: nextValue });
+        const normalizedValue = range ? nextValue[0] : nextValue;
+        setValue(normalizedValue);
+        if (onChange) onChange({ value: normalizedValue });
         if (open) setOpen(false);
       }}
     />
