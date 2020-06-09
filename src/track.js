@@ -124,8 +124,8 @@ export const useTrack = () => {
   useEffect(() => {
     const stored = localStorage.getItem('track');
     if (stored) setTrack(JSON.parse(stored));
-    // else setTrack(false);
-    else setTrack(developmentTrack);
+    else setTrack(false);
+    // else setTrack(developmentTrack);
   }, []);
   return [
     track,
