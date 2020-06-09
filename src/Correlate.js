@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { Box, Button, DataChart, Header, Heading, Select } from 'grommet';
 import { Add, Trash } from 'grommet-icons';
-import Page from './Page';
-import DateInput from './DateInput';
+import { DateInput, Page } from './components';
 import TrackContext from './TrackContext';
 import { getCategory } from './track';
 

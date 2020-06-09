@@ -1,8 +1,7 @@
 import React, { useContext, useMemo } from 'react';
 import { Box, Header, Heading, List, Text } from 'grommet';
 import { Add, Star } from 'grommet-icons';
-import Page from './Page';
-import RoutedButton from './RoutedButton';
+import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
 import { getCategory } from './track';

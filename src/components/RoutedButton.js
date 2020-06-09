@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Button } from 'grommet';
-import { RouterContext } from './Router';
+import { RouterContext } from '../Router';
 
 const RoutedButton = ({ onClick, path, ...rest }) => {
   const { path: contextPath, push } = useContext(RouterContext);

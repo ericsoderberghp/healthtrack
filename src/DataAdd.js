@@ -12,10 +12,8 @@ import {
   TextInput,
 } from 'grommet';
 import { Close, Search, Star } from 'grommet-icons';
-import Page from './Page';
-import RoutedButton from './RoutedButton';
+import { DateInput, Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
-import DateInput from './DateInput';
 import { RouterContext } from './Router';
 import { getCategory } from './track';
 import { sortOn } from './utils';

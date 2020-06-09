@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Box, Button, Heading, Paragraph } from 'grommet';
-import Page from './Page';
-import RoutedButton from './RoutedButton';
+import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 
 const Home = () => {

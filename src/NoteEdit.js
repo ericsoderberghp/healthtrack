@@ -9,8 +9,7 @@ import {
   TextArea,
 } from 'grommet';
 import { Close } from 'grommet-icons';
-import Page from './Page';
-import RoutedButton from './RoutedButton';
+import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
 

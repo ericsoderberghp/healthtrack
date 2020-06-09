@@ -1,6 +1,6 @@
 import { Grommet } from 'grommet';
 import React, { useEffect, useState } from 'react';
-import Loading from './Loading';
+import { Loading } from './components';
 import Onboard from './Onboard';
 import Home from './Home';
 import Categories from './Categories';

@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { Box, Header, Heading, List, Paragraph, Text } from 'grommet';
 import { Add } from 'grommet-icons';
-import Page from './Page';
-import RoutedButton from './RoutedButton';
+import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
 
