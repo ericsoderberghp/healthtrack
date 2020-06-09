@@ -1,5 +1,13 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
-import { Box, Button, DataChart, Header, Heading, Select } from 'grommet';
+import {
+  Box,
+  Button,
+  DataChart,
+  Header,
+  Heading,
+  ResponsiveContext,
+  Select,
+} from 'grommet';
 import { Add, Trash } from 'grommet-icons';
 import { DateInput, Page } from './components';
 import TrackContext from './TrackContext';
@@ -35,6 +43,7 @@ const SelectCategory = ({ track, value, onChange }) => {
 };
 
 const Correlate = () => {
+  const size = useContext(ResponsiveContext);
   const [track] = useContext(TrackContext);
   const [dates, setDates] = useState([
     sevenDaysAgo.toISOString(),
@@ -150,6 +159,7 @@ const Correlate = () => {
             <DateInput
               name="dates"
               inline
+              size={size === 'small' ? size : undefined}
               value={dates}
               onChange={({ value }) => setDates(value)}
             />
@@ -207,7 +217,7 @@ const Correlate = () => {
             <DataChart
               data={data}
               chart={charts}
-              xAxis={{ key: 'date', guide: true }}
+              xAxis={{ key: 'date', guide: true, labels: 5 }}
               pad="small"
               gap="medium"
               thickness="small"

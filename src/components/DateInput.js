@@ -17,6 +17,7 @@ const DateInput = ({
   inline,
   name,
   onChange,
+  size,
   value: valueArg,
   ...rest
 }) => {
@@ -57,6 +58,7 @@ const DateInput = ({
         if (onChange) onChange({ value: normalizedValue });
         if (open) setOpen(false);
       }}
+      size={size}
     />
   );
 
@@ -88,6 +90,7 @@ const DateInput = ({
           // TODO: parse into ISO date
         }}
         onFocus={() => setOpen(true)}
+        size={size}
       />
       {open && (
         <Drop
