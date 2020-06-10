@@ -10,7 +10,9 @@ const MainNav = ({ pin }) => {
       justify="center"
       background={{ color: 'brand' }}
       round={{ size: 'small', corner: pin ? 'top' : 'bottom' }}
-      pad={pin ? { bottom: 'medium' } : undefined}
+      pad={
+        pin ? { bottom: 'medium', vertical: 'small' } : { vertical: 'small' }
+      }
       responsive={false}
       style={
         pin ? { position: 'fixed', bottom: 0, left: 0, right: 0 } : undefined

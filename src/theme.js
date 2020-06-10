@@ -33,8 +33,8 @@ export default {
     },
     hover: {
       background: {
-        color: 'active',
-        opacity: 'weak',
+        color: 'blue',
+        opacity: 'medium',
       },
     },
   },
@@ -45,6 +45,30 @@ export default {
     active: {
       background: 'active-background',
     },
+    // default: {
+    //   padding: { horizontal: '15px', vertical: '9px' },
+    //   border: {
+    //     radius: '3px',
+    //   },
+    //   font: {
+    //     weight: 800,
+    //   },
+    // },
+    // primary: {
+    //   padding: { horizontal: '15px', vertical: '9px' },
+    //   background: { color: 'brand' },
+    //   font: {
+    //     weight: 800,
+    //   },
+    // },
+    // hover: {
+    //   default: {
+    //     background: { color: 'blue', opacity: 'strong' },
+    //   },
+    //   primary: {
+    //     background: { color: 'blue!', opacity: 'medium' },
+    //   },
+    // },
   },
   formField: {
     border: {

@@ -128,16 +128,15 @@ const Correlate = () => {
     return data;
   }, [categories, dates, track]);
 
-  const charts = useMemo(
-    () =>
-      categories.map((category, index) => ({
-        key: category.name,
-        type: 'line',
-        round: true,
-        color: `graph-${index}`,
-      })),
-    [categories],
-  );
+  const charts = useMemo(() => {
+    const charts = [];
+    categories.forEach((category, index) => {
+      const base = { key: category.name, round: true, color: `graph-${index}` };
+      charts.push({ ...base, type: 'line' });
+      charts.push({ ...base, type: 'point', thickness: 'small' });
+    });
+    return charts;
+  }, [categories]);
 
   if (!track) return null;
 
@@ -220,7 +219,7 @@ const Correlate = () => {
               xAxis={{ key: 'date', guide: true, labels: 5 }}
               pad="small"
               gap="medium"
-              thickness="small"
+              thickness="xsmall"
               size={{ width: 'fill', height: 'small' }}
             />
           </Box>
