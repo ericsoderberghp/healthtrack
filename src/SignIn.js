@@ -1,28 +1,35 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   Box,
   Button,
   Form,
   FormField,
   Heading,
-  Paragraph,
   Text,
   TextInput,
 } from 'grommet';
 import TrackContext from './TrackContext';
 import { RoutedButton } from './components';
-import { createTrack, initialTrack } from './track';
+import { signIn } from './track';
 
-const Onboard = () => {
+const SignIn = () => {
   const [, setTrack] = useContext(TrackContext);
-  const [newTrack, setNewTrack] = useState(initialTrack);
+  const [identity, setIdentity] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
   const [busy, setBusy] = useState();
+  const [message, setMessage] = useState();
+
+  useEffect(() => setMessage(undefined), [identity]);
 
   const onSubmit = () => {
     setBusy(true);
-    createTrack(newTrack).then((nextTrack) => {
+    signIn(identity).then((nextTrack) => {
       setBusy(false);
-      setTrack(nextTrack);
+      if (nextTrack) setTrack(nextTrack);
+      else setMessage('UhOh, perhaps you mis-typed?');
     });
   };
 
@@ -40,12 +47,8 @@ const Onboard = () => {
         round
         width={{ max: 'medium' }}
       >
-        <Heading>Hi!</Heading>
-        <Paragraph>
-          Are you ready to make decisions about your health based on more than
-          just guesswork?
-        </Paragraph>
-        <Form value={newTrack} onChange={setNewTrack} onSubmit={onSubmit}>
+        <Heading>Sign In</Heading>
+        <Form value={identity} onChange={setIdentity} onSubmit={onSubmit}>
           <FormField label="Your name" name="name" required>
             <TextInput name="name" />
           </FormField>
@@ -55,6 +58,11 @@ const Onboard = () => {
           <FormField label="Choose a password" name="password" required>
             <TextInput name="password" type="password" />
           </FormField>
+          {message && (
+            <Text margin="small" color="text-xweak">
+              {message}
+            </Text>
+          )}
           <Box
             margin={{ top: 'medium' }}
             direction="row"
@@ -62,9 +70,9 @@ const Onboard = () => {
             gap="small"
           >
             <Button
-              title="get started"
+              title="sign in"
               type="submit"
-              label="Get Started"
+              label="Sign In"
               primary
               disabled={busy}
             />
@@ -72,11 +80,11 @@ const Onboard = () => {
           </Box>
         </Form>
         <Box margin={{ top: 'large' }} direction="row" gap="xsmall">
-          <RoutedButton label="Sign In" path="/sign-in" />
+          <RoutedButton label="Sign Up" path="/onboard" />
         </Box>
       </Box>
     </Box>
   );
 };
 
-export default Onboard;
+export default SignIn;

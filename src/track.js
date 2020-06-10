@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export const apiUrl =
-  'https://us-central1-grommet-designer.cloudfunctions.net/healthtracks';
+  'https://us-central1-healthtrack-279819.cloudfunctions.net/tracks';
 
 export const initialTrack = {
   name: '',
@@ -119,19 +119,104 @@ while (date <= yesterday) {
   date.setDate(date.getDate() + 1);
 }
 
+export const createTrack = (track) =>
+  fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    body: JSON.stringify(track),
+  })
+    .then((response) => response.json())
+    .then((nextTrack) => {
+      localStorage.setItem('track', JSON.stringify(nextTrack));
+      return nextTrack;
+    });
+
+export const signIn = (identity) =>
+  fetch(`${apiUrl}/get`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    body: JSON.stringify(identity),
+  }).then((response) => {
+    if (response.ok)
+      return response.json().then((nextTrack) => {
+        nextTrack.unchanged = true;
+        return nextTrack;
+      });
+    return undefined;
+  });
+
+export const signOut = () => localStorage.removeItem('track');
+
+export const deleteTrack = (track) =>
+  fetch(`${apiUrl}/${track.id}`, {
+    method: 'DELETE',
+    headers: {
+      Authorization: `Bearer ${track.token}`,
+    },
+  }).then(() => localStorage.removeItem('track'));
+
 export const useTrack = () => {
   const [track, setTrack] = useState();
+
+  // initialize track
   useEffect(() => {
     const stored = localStorage.getItem('track');
-    if (stored) setTrack(JSON.parse(stored));
-    else setTrack(false);
-    // else setTrack(developmentTrack);
+    if (stored) {
+      const lastTrack = JSON.parse(stored);
+      // load latest
+      fetch(`${apiUrl}/${lastTrack.id}`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${lastTrack.token}`,
+        },
+      }).then((response) => {
+        if (!response.ok) {
+          if (response.status === 404) {
+            localStorage.removeItem('track');
+            setTrack(false);
+          }
+        } else
+          return response.json().then((nextTrack) => {
+            nextTrack.unchanged = true;
+            setTrack(nextTrack);
+          });
+      });
+    } else setTrack(false);
   }, []);
+
+  useEffect(() => {
+    if (track && !track.unchanged) {
+      // lazily publish when the user hasn't edited it for a while
+      const timer = setTimeout(() => {
+        fetch(`${apiUrl}/${track.id}`, {
+          method: 'PUT',
+          headers: {
+            Authorization: `Bearer ${track.token}`,
+            'Content-Type': 'application/json; charset=UTF-8',
+          },
+          body: JSON.stringify(track),
+        })
+          .then((response) => response.json())
+          .then((nextTrack) => {
+            nextTrack.unchanged = true;
+            setTrack(nextTrack);
+          });
+      }, 15000); // wait for 15 seconds of inactivity
+      return () => clearTimeout(timer);
+    }
+    return undefined;
+  }, [track]);
+
   return [
     track,
     (nextTrack) => {
       if (nextTrack) localStorage.setItem('track', JSON.stringify(nextTrack));
       else localStorage.removeItem('track');
+      if (nextTrack && track) delete nextTrack.unchanged; // must be changing it
       setTrack(nextTrack);
     },
   ];

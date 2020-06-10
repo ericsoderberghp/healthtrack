@@ -39,13 +39,13 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
         />
       </FormField>
       <FormField
-        label="how you want to record it"
+        label="how do you want to record it"
         name="type"
         required
         help="Pick a level of detail that works for you.
-          For example, is the fact that you took a nap enough? Do you want
+          For example, do you want
           to track how many minutes you napped, how 'good' it felt,
-          or just that you did?"
+          or just that you took a nap?"
       >
         <RadioButtonGroup
           name="type"
@@ -55,7 +55,7 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
               label: 'number - like hours of sleep',
             },
             { value: 'rating', label: '5-star rating' },
-            { value: 'yes/no', label: 'simple yes' },
+            { value: 'yes/no', label: 'simple yes or no' },
             { value: 'name', label: 'free form - like "broccoli"' },
           ]}
         />

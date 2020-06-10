@@ -2,6 +2,7 @@ import { Grommet } from 'grommet';
 import React, { useEffect, useState } from 'react';
 import { Loading } from './components';
 import Onboard from './Onboard';
+import SignIn from './SignIn';
 import Home from './Home';
 import Categories from './Categories';
 import CategoryAdd from './CategoryAdd';
@@ -54,6 +55,7 @@ const App = () => {
         <TrackContext.Provider value={[track, setTrack]}>
           <Routes redirect="/">
             <Route path="/onboard" Component={Onboard} />
+            <Route path="/sign-in" Component={SignIn} />
             <Route path="/" Component={Home} />
             <Route path="/categories" Component={Categories} />
             <Route path="/categories/add" Component={CategoryAdd} />

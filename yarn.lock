@@ -4910,6 +4910,10 @@ grommet-styles@^0.2.0:
   resolved "https://registry.yarnpkg.com/grommet-styles/-/grommet-styles-0.2.0.tgz#b2eac2b7e2747cb523434d21728ce5234f8ce4f4"
   integrity sha512-0OMSYuGeyifYKpg4Gv2HzL8rUdd0ddnJ5LbCBKgDuloC71XIwr9g/Fxa6rs737MbPV7OZ4pEm4wvrjH4epzf1A==
 
+"grommet-theme-hpe@https://github.com/grommet/grommet-theme-hpe/tarball/stable":
+  version "0.0.0"
+  resolved "https://github.com/grommet/grommet-theme-hpe/tarball/stable#92053354f3ea04b5239e42e022487a508bde1351"
+
 "grommet@https://github.com/grommet/grommet/tarball/stable":
   version "2.13.0"
   resolved "https://github.com/grommet/grommet/tarball/stable#caa89ff9a82a79df6d48bc2d7f648e701bdb3041"
