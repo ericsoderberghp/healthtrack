@@ -39,36 +39,57 @@ export default {
     },
   },
   button: {
-    border: {
-      radius: '24px',
+    default: {
+      padding: { horizontal: '15px', vertical: '9px' },
+      border: {
+        radius: '6px',
+      },
+      font: {
+        weight: 800,
+      },
+    },
+    primary: {
+      padding: { horizontal: '15px', vertical: '9px' },
+      background: { color: 'brand' },
+      border: {
+        radius: '6px',
+      },
+      font: {
+        weight: 800,
+      },
+    },
+    option: {
+      padding: { horizontal: '15px', vertical: '9px' },
+      border: undefined,
+      font: { weight: 400 },
+    },
+    selected: {
+      option: {
+        background: 'selected-background',
+        color: 'selected-text',
+      },
     },
     active: {
-      background: 'active-background',
+      background: {
+        color: 'active-background',
+      },
+      color: 'text',
+      option: {
+        background: {
+          color: 'active-background',
+        },
+      },
     },
-    // default: {
-    //   padding: { horizontal: '15px', vertical: '9px' },
-    //   border: {
-    //     radius: '3px',
-    //   },
-    //   font: {
-    //     weight: 800,
-    //   },
-    // },
-    // primary: {
-    //   padding: { horizontal: '15px', vertical: '9px' },
-    //   background: { color: 'brand' },
-    //   font: {
-    //     weight: 800,
-    //   },
-    // },
-    // hover: {
-    //   default: {
-    //     background: { color: 'blue', opacity: 'strong' },
-    //   },
-    //   primary: {
-    //     background: { color: 'blue!', opacity: 'medium' },
-    //   },
-    // },
+    hover: {
+      default: {
+        background: { color: 'blue!', opacity: 'strong' },
+      },
+      primary: {
+        background: { color: 'blue!', opacity: 'strong' },
+      },
+    },
+    border: undefined,
+    size: undefined,
   },
   formField: {
     border: {
@@ -92,5 +113,8 @@ export default {
     item: {
       pad: { horizontal: 'large', vertical: 'medium' },
     },
+  },
+  select: {
+    options: undefined,
   },
 };

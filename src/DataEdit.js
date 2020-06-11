@@ -51,7 +51,7 @@ const DataEdit = ({ id: idArg }) => {
       <Box pad={{ horizontal: 'medium' }} flex="grow" responsive={false}>
         <Header>
           <Heading>edit {category.name}</Heading>
-          <RoutedButton icon={<Close />} hoverIndicator path="/data" />
+          <RoutedButton icon={<Close />} path="/data" />
         </Header>
         <Form value={data} onChange={setData} onSubmit={onSubmit}>
           {/* {category && category.type === 'yes/no' && (

@@ -33,7 +33,7 @@ const CategoryEdit = ({ id: idArg }) => {
       <Box pad={{ horizontal: 'medium' }} flex="grow" responsive={false}>
         <Header>
           <Heading>edit category</Heading>
-          <RoutedButton icon={<Close />} hoverIndicator path="/categories" />
+          <RoutedButton icon={<Close />} path="/categories" />
         </Header>
         <CategoryForm
           defaultValue={category}

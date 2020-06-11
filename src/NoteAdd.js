@@ -38,7 +38,7 @@ const NoteAdd = () => {
       <Box pad={{ horizontal: 'medium' }}>
         <Header>
           <Heading>add note</Heading>
-          <RoutedButton icon={<Close />} hoverIndicator path="/data" />
+          <RoutedButton icon={<Close />} path="/data" />
         </Header>
         <Form value={note} onChange={setNote} onSubmit={onSubmit}>
           <FormField name="text" required>

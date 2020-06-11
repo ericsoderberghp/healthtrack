@@ -29,7 +29,7 @@ const NoteEdit = ({ id: idArg }) => {
       <Box pad={{ horizontal: 'medium' }} flex="grow" responsive={false}>
         <Header>
           <Heading>edit note</Heading>
-          <RoutedButton icon={<Close />} hoverIndicator path="/notes" />
+          <RoutedButton icon={<Close />} path="/notes" />
         </Header>
         <Form
           value={note}

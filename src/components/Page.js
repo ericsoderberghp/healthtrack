@@ -18,20 +18,10 @@ const MainNav = ({ pin }) => {
         pin ? { position: 'fixed', bottom: 0, left: 0, right: 0 } : undefined
       }
     >
-      <RoutedButton title="home" icon={<User />} hoverIndicator path="/" />
-      <RoutedButton title="data" icon={<List />} hoverIndicator path="/data" />
-      <RoutedButton
-        title="correlate"
-        icon={<Test />}
-        hoverIndicator
-        path="/correlate"
-      />
-      <RoutedButton
-        title="notes"
-        icon={<Note />}
-        hoverIndicator
-        path="/notes"
-      />
+      <RoutedButton title="home" icon={<User />} path="/" />
+      <RoutedButton title="data" icon={<List />} path="/data" />
+      <RoutedButton title="correlate" icon={<Test />} path="/correlate" />
+      <RoutedButton title="notes" icon={<Note />} path="/notes" />
     </Nav>
   );
 };

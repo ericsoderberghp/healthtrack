@@ -16,12 +16,7 @@ const Notes = () => {
       <Box pad={{ horizontal: 'medium' }} responsive={false}>
         <Header>
           <Heading>notes</Heading>
-          <RoutedButton
-            icon={<Add />}
-            primary
-            hoverIndicator
-            path="/notes/add"
-          />
+          <RoutedButton icon={<Add />} primary path="/notes/add" />
         </Header>
       </Box>
       <List

@@ -149,7 +149,6 @@ const Correlate = () => {
             label={`${dateFormat.format(
               new Date(dates[0]),
             )} - ${dateFormat.format(new Date(dates[1]))}`}
-            hoverIndicator
             onClick={() => setShowCalendar(!showCalendar)}
           />
         </Header>
@@ -185,10 +184,9 @@ const Correlate = () => {
                   }}
                 />
               </Box>
-              {categories.length > 0 && (
+              {categories.length > 1 && (
                 <Button
                   icon={<Trash />}
-                  hoverIndicator
                   onClick={() => {
                     const nextCategories = [...categories];
                     nextCategories.splice(index, 1);
@@ -201,7 +199,6 @@ const Correlate = () => {
           <Box direction="row" justify="end">
             <Button
               icon={<Add />}
-              hoverIndicator
               onClick={() => {
                 const nextCategories = [...categories];
                 nextCategories.push('');

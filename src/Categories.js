@@ -27,7 +27,6 @@ const Categories = () => {
           <RoutedButton
             icon={<Add />}
             primary
-            hoverIndicator
             path="/categories/add"
             title="add category"
           />

@@ -104,16 +104,9 @@ const DataAdd = () => {
       <Box pad={{ horizontal: 'medium' }} flex="grow" responsive={false}>
         <Header>
           <Box direction="row" align="center">
-            {/* {data && (
-              <Button
-                icon={<Previous />}
-                hoverIndicator
-                onClick={() => setData(undefined)}
-              />
-            )} */}
             <Heading>add {category ? category.name : 'data'}</Heading>
           </Box>
-          <RoutedButton icon={<Close />} hoverIndicator path="/data" />
+          <RoutedButton icon={<Close />} path="/data" />
         </Header>
         {!data ? (
           <Box>

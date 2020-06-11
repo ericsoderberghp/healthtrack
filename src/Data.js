@@ -29,7 +29,6 @@ const Data = () => {
           <RoutedButton
             icon={<Add />}
             primary
-            hoverIndicator
             path="/data/add"
             title="add data"
           />
