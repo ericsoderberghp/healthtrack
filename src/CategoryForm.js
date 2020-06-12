@@ -16,15 +16,17 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
       onChange={setCategory}
       onSubmit={() => onSubmit(category)}
     >
-      <FormField label="name" name="name" required>
-        <TextInput name="name" />
+      <FormField label="name" name="name" htmlFor="name" required>
+        <TextInput id="name" name="name" />
       </FormField>
       <FormField
         label="What kind of measurement is this?"
         name="aspect"
+        htmlFor="aspect"
         required
       >
         <RadioButtonGroup
+          id="aspect"
           name="aspect"
           options={[
             {
@@ -41,6 +43,7 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
       <FormField
         label="How do you want to record it?"
         name="type"
+        htmlFor="type"
         required
         help="Pick a level of detail that works for you.
           For example, do you want
@@ -48,6 +51,7 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
           or just that you took a nap?"
       >
         <RadioButtonGroup
+          id="type"
           name="type"
           options={[
             {
@@ -61,16 +65,17 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
         />
       </FormField>
       {category.type === 'number' && (
-        <FormField label="units" name="units">
-          <TextInput name="units" />
+        <FormField label="units" name="units" htmlFor="units">
+          <TextInput id="units" name="units" />
         </FormField>
       )}
       <FormField
         label="How many times per day do you expect to record it?"
         name="frequency"
+        htmlFor="frequency"
         help="Leave blank for less than once per day."
       >
-        <TextInput name="frequency" type="number" />
+        <TextInput id="frequency" name="frequency" type="number" />
       </FormField>
       <Box margin={{ top: 'large' }} align="start">
         <Button type="submit" label={label} primary title={label} />

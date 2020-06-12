@@ -40,7 +40,7 @@ const Home = () => {
       </Box>
       <Box flex="grow" pad="medium" align="start" responsive={false}>
         <RoutedButton
-          label="Setup categories"
+          label="Categories"
           path="/categories"
           title="categories"
           primary={track.categories.length === 4}

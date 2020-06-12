@@ -111,8 +111,8 @@ const DataForm = ({ category, defaultValue, label, onSubmit, track }) => {
         </FormField>
       )}
       {data && (
-        <FormField name="date" required>
-          <DateInput name="date" plain format="mm/dd/yyyy" />
+        <FormField name="date" required htmlFor="date">
+          <DateInput id="date" name="date" plain format="mm/dd/yyyy" />
         </FormField>
       )}
       <Box margin={{ top: 'medium' }} align="start">
