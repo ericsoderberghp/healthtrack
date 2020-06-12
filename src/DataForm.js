@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   Box,
   Button,
-  CheckBox,
   Form,
   FormField,
   RadioButtonGroup,
@@ -34,10 +33,37 @@ const DataForm = ({ category, defaultValue, label, onSubmit, track }) => {
   }, [data]);
 
   return (
-    <Form value={data} onChange={setData} onSubmit={() => onSubmit(data)}>
+    <Form
+      value={data}
+      onChange={setData}
+      onSubmit={() => {
+        if (!data.date) data.date = new Date().toISOString();
+        if (!data.name) data.name = category.name;
+        if (category.type === 'number') data.value = parseFloat(data.value, 10);
+        onSubmit(data);
+      }}
+    >
       {category && category.type === 'yes/no' && (
-        <FormField name="value" required>
-          <CheckBox name="value" toggle />
+        <FormField name="value">
+          <RadioButtonGroup
+            ref={inputRef}
+            name="value"
+            options={[true, false]}
+            direction="row"
+          >
+            {(option, { checked, hover }) => {
+              let color;
+              if (hover) color = 'active-background';
+              else if (checked) color = 'control';
+              return (
+                <Box key={option} pad="small" background={color} round="xsmall">
+                  <Text size="large" weight="bold">
+                    {option ? 'yes' : 'no'}
+                  </Text>
+                </Box>
+              );
+            }}
+          </RadioButtonGroup>
         </FormField>
       )}
       {category && category.type === 'rating' && (
@@ -48,7 +74,7 @@ const DataForm = ({ category, defaultValue, label, onSubmit, track }) => {
             options={[1, 2, 3, 4, 5]}
             direction="row"
           >
-            {(option, { checked, hover }) => {
+            {(option, { hover }) => {
               let color;
               if (hover) color = 'active-text';
               else if (option <= data.value) color = 'control';

@@ -46,13 +46,19 @@ const Data = () => {
                 {item.value}
               </Text>,
             );
-          if (category.type === 'rating')
+          else if (category.type === 'rating')
             parts.push(
               <Box key="v" direction="row">
                 {Array.from(Array(item.value)).map((_, index) => (
                   <Star key={index} color="selected" />
                 ))}
               </Box>,
+            );
+          else if (category.type === 'yes/no')
+            parts.push(
+              <Text key="v" weight="bold">
+                {item.value ? 'yes' : 'no'}
+              </Text>,
             );
           if (category.units)
             parts.push(
@@ -61,14 +67,7 @@ const Data = () => {
               </Text>,
             );
           if (category.type !== 'name')
-            parts.push(
-              <Text
-                key="n"
-                weight={category.type === 'yes/no' ? 'bold' : undefined}
-              >
-                {item.name}
-              </Text>,
-            );
+            parts.push(<Text key="n">{item.name}</Text>);
           return (
             <Box key={item.date} ref={ref} direction="row" gap="small">
               {parts}

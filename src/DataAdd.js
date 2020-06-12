@@ -60,11 +60,6 @@ const DataAdd = () => {
       nextId = Math.max(nextId, d.id + 1);
     });
     nextData.id = nextId;
-    if (!nextData.date) nextData.date = new Date().toISOString();
-    if (!nextData.name) nextData.name = category.name;
-    if (category.type === 'number')
-      nextData.value = parseFloat(nextData.value, 10);
-    if (category.type === 'yes/no') nextData.value = true;
     nextTrack.data.unshift(nextData);
     sortOn(nextTrack.data, 'date', 'desc');
     setTrack(nextTrack);
