@@ -12,7 +12,7 @@ const initialCategory = {
   aspect: '',
   type: '',
   units: '',
-  options: '',
+  frequency: '',
 };
 
 const CategoryAdd = () => {
@@ -27,6 +27,8 @@ const CategoryAdd = () => {
     });
     nextCategory.id = nextId;
     nextCategory.date = new Date().toISOString();
+    if (nextCategory.frequency)
+      nextCategory.frequency = parseFloat(nextCategory.frequency, 10);
     nextTrack.categories.push(nextCategory);
     sortOn(nextTrack.categories, 'name');
     setTrack(nextTrack);

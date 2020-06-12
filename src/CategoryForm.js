@@ -20,7 +20,7 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
         <TextInput name="name" />
       </FormField>
       <FormField
-        label="what kind of measurement is this"
+        label="What kind of measurement is this?"
         name="aspect"
         required
       >
@@ -39,7 +39,7 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
         />
       </FormField>
       <FormField
-        label="how do you want to record it"
+        label="How do you want to record it?"
         name="type"
         required
         help="Pick a level of detail that works for you.
@@ -65,6 +65,13 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
           <TextInput name="units" />
         </FormField>
       )}
+      <FormField
+        label="How many times per day do you expect to record it?"
+        name="frequency"
+        help="Leave blank for less than once per day."
+      >
+        <TextInput name="frequency" type="number" />
+      </FormField>
       <Box margin={{ top: 'large' }} align="start">
         <Button type="submit" label={label} primary title={label} />
       </Box>
