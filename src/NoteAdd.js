@@ -1,34 +1,25 @@
-import React, { useContext, useState } from 'react';
-import {
-  Box,
-  Button,
-  Form,
-  FormField,
-  Header,
-  Heading,
-  TextArea,
-} from 'grommet';
+import React, { useContext } from 'react';
+import { Box, Header, Heading } from 'grommet';
 import { Close } from 'grommet-icons';
 import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
+import NoteForm from './NoteForm';
 
 const NoteAdd = () => {
   const { push } = useContext(RouterContext);
   const [track, setTrack] = useContext(TrackContext);
-  const [note, setNote] = useState({ text: '' });
 
   if (!track) return null;
 
-  const onSubmit = () => {
+  const onSubmit = (nextNote) => {
     const nextTrack = JSON.parse(JSON.stringify(track));
     let nextId = 1;
     nextTrack.notes.forEach((n) => {
       nextId = Math.max(nextId, n.id + 1);
     });
-    note.id = nextId;
-    note.date = new Date().toISOString();
-    nextTrack.notes.unshift(note);
+    nextNote.id = nextId;
+    nextTrack.notes.unshift(nextNote);
     setTrack(nextTrack);
     push('/notes');
   };
@@ -38,16 +29,13 @@ const NoteAdd = () => {
       <Box pad={{ horizontal: 'medium' }}>
         <Header>
           <Heading>add note</Heading>
-          <RoutedButton icon={<Close />} path="/data" />
+          <RoutedButton icon={<Close />} path="/notes" />
         </Header>
-        <Form value={note} onChange={setNote} onSubmit={onSubmit}>
-          <FormField name="text" required>
-            <TextArea name="text" rows={8} />
-          </FormField>
-          <Box margin={{ top: 'medium' }} align="start">
-            <Button type="submit" label="Add" primary />
-          </Box>
-        </Form>
+        <NoteForm
+          defaultValue={{ text: '', date: new Date().toISOString() }}
+          label="Add"
+          onSubmit={onSubmit}
+        />
       </Box>
     </Page>
   );

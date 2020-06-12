@@ -1,17 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import {
-  Box,
-  Button,
-  Form,
-  FormField,
-  Header,
-  Heading,
-  TextArea,
-} from 'grommet';
+import { Box, Button, Header, Heading } from 'grommet';
 import { Close } from 'grommet-icons';
 import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
+import NoteForm from './NoteForm';
 
 const NoteEdit = ({ id: idArg }) => {
   const { push } = useContext(RouterContext);
@@ -22,6 +15,14 @@ const NoteEdit = ({ id: idArg }) => {
     if (track && id) setNote(track.notes.find((n) => n.id === id));
   }, [id, track]);
 
+  const onSubmit = (nextNote) => {
+    const nextTrack = JSON.parse(JSON.stringify(track));
+    const index = nextTrack.notes.findIndex((c) => c.id === id);
+    nextTrack.notes[index] = nextNote;
+    setTrack(nextTrack);
+    push('/notes');
+  };
+
   if (!note) return null;
 
   return (
@@ -31,24 +32,7 @@ const NoteEdit = ({ id: idArg }) => {
           <Heading>edit note</Heading>
           <RoutedButton icon={<Close />} path="/notes" />
         </Header>
-        <Form
-          value={note}
-          onChange={setNote}
-          onSubmit={() => {
-            const nextTrack = JSON.parse(JSON.stringify(track));
-            const index = nextTrack.notes.findIndex((c) => c.id === id);
-            nextTrack.notes[index] = note;
-            setTrack(nextTrack);
-            push('/notes');
-          }}
-        >
-          <FormField name="text" required>
-            <TextArea name="text" rows={8} />
-          </FormField>
-          <Box margin={{ top: 'large' }} align="start">
-            <Button type="submit" label="Update" primary />
-          </Box>
-        </Form>
+        <NoteForm defaultValue={note} label="Update" onSubmit={onSubmit} />
       </Box>
       <Box
         margin={{ top: 'xlarge' }}

@@ -35,6 +35,8 @@ const CategoryAdd = () => {
     push('/categories');
   };
 
+  if (!track) return null;
+
   return (
     <Page>
       <Box pad={{ horizontal: 'medium' }} flex="grow" responsive={false}>
