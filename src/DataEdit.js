@@ -1,21 +1,12 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
-import {
-  Box,
-  Button,
-  Form,
-  FormField,
-  Header,
-  Heading,
-  RadioButtonGroup,
-  Text,
-  TextInput,
-} from 'grommet';
-import { Close, Star } from 'grommet-icons';
-import { DateInput, Page, RoutedButton } from './components';
+import { Box, Button, Header, Heading } from 'grommet';
+import { Close } from 'grommet-icons';
+import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
 import { getCategory, getData } from './track';
 import { sortOn } from './utils';
+import DataForm from './DataForm';
 
 const DataEdit = ({ id: idArg }) => {
   const { push } = useContext(RouterContext);
@@ -34,11 +25,12 @@ const DataEdit = ({ id: idArg }) => {
     [data, track],
   );
 
-  const onSubmit = () => {
+  const onSubmit = (nextData) => {
     const nextTrack = JSON.parse(JSON.stringify(track));
     const index = nextTrack.data.findIndex((d) => d.id === id);
-    if (category.type === 'number') data.value = parseInt(data.value, 10);
-    nextTrack.data[index] = data;
+    if (category.type === 'number')
+      nextData.value = parseInt(nextData.value, 10);
+    nextTrack.data[index] = nextData;
     sortOn(nextTrack.data, 'date', 'desc');
     setTrack(nextTrack);
     push('/data');
@@ -53,49 +45,13 @@ const DataEdit = ({ id: idArg }) => {
           <Heading>edit {category.name}</Heading>
           <RoutedButton icon={<Close />} path="/data" />
         </Header>
-        <Form value={data} onChange={setData} onSubmit={onSubmit}>
-          {/* {category && category.type === 'yes/no' && (
-            <FormField name="value" required>
-              <CheckBox name="value" toggle />
-            </FormField>
-          )} */}
-          {category && category.type === 'rating' && (
-            <FormField name="value" required>
-              <RadioButtonGroup
-                name="value"
-                options={[1, 2, 3, 4, 5]}
-                direction="row"
-              >
-                {(option, { checked, hover }) => {
-                  let color;
-                  if (hover) color = 'active-text';
-                  else if (option <= data.value) color = 'control';
-                  else color = 'status-disabled';
-                  return <Star key={option} color={color} size="large" />;
-                }}
-              </RadioButtonGroup>
-            </FormField>
-          )}
-          {category && category.type === 'number' && (
-            <FormField name="value" required>
-              <Box direction="row" align="center" justify="between">
-                <TextInput name="value" type="number" size="xlarge" plain />
-                <Text size="large">{category.units || 'value'}</Text>
-              </Box>
-            </FormField>
-          )}
-          {category && category.type === 'name' && (
-            <FormField name="value" required>
-              <TextInput name="value" size="xlarge" placeholder="name" />
-            </FormField>
-          )}
-          <FormField name="date" required>
-            <DateInput name="date" plain format="mm/dd/yyyy" />
-          </FormField>
-          <Box margin={{ top: 'large' }} align="start">
-            <Button type="submit" label="Update" primary />
-          </Box>
-        </Form>
+        <DataForm
+          category={category}
+          defaultValue={data}
+          label="Update"
+          onSubmit={onSubmit}
+          track={track}
+        />
       </Box>
       <Box
         margin={{ top: 'xlarge' }}

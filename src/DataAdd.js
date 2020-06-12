@@ -1,22 +1,12 @@
-import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
-import {
-  Box,
-  Button,
-  Form,
-  FormField,
-  Header,
-  Heading,
-  List,
-  RadioButtonGroup,
-  Text,
-  TextInput,
-} from 'grommet';
-import { Close, Search, Star } from 'grommet-icons';
-import { DateInput, Page, RoutedButton } from './components';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
+import { Box, Header, Heading, List, Text, TextInput } from 'grommet';
+import { Close, Search } from 'grommet-icons';
+import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
 import { getCategory } from './track';
 import { sortOn } from './utils';
+import DataForm from './DataForm';
 
 const DataAdd = () => {
   const { push } = useContext(RouterContext);
@@ -61,39 +51,21 @@ const DataAdd = () => {
     [data, track],
   );
 
-  const suggestions = useMemo(() => {
-    if (category && category.type === 'name') {
-      return Array.from(
-        new Set(
-          track.data
-            .filter((d) => d.category === category.id)
-            .map((d) => d.name),
-        ),
-      );
-    }
-    return undefined;
-  }, [category, track]);
-
-  const inputRef = useRef();
-
-  useEffect(() => {
-    if (data && !data.value && inputRef.current) inputRef.current.focus();
-  }, [data]);
-
   if (!track) return null;
 
-  const onSubmit = () => {
+  const onSubmit = (nextData) => {
     const nextTrack = JSON.parse(JSON.stringify(track));
     let nextId = 1;
     nextTrack.data.forEach((d) => {
       nextId = Math.max(nextId, d.id + 1);
     });
-    data.id = nextId;
-    if (!data.date) data.date = new Date().toISOString();
-    if (!data.name) data.name = category.name;
-    if (category.type === 'number') data.value = parseInt(data.value, 10);
-    if (category.type === 'yes/no') data.value = true;
-    nextTrack.data.unshift(data);
+    nextData.id = nextId;
+    if (!nextData.date) nextData.date = new Date().toISOString();
+    if (!nextData.name) nextData.name = category.name;
+    if (category.type === 'number')
+      nextData.value = parseInt(nextData.value, 10);
+    if (category.type === 'yes/no') nextData.value = true;
+    nextTrack.data.unshift(nextData);
     sortOn(nextTrack.data, 'date', 'desc');
     setTrack(nextTrack);
     push('/data');
@@ -148,59 +120,13 @@ const DataAdd = () => {
             />
           </Box>
         ) : (
-          <Form value={data} onChange={setData} onSubmit={onSubmit}>
-            {category && category.type === 'rating' && (
-              <FormField name="value" required>
-                <RadioButtonGroup
-                  ref={inputRef}
-                  name="value"
-                  options={[1, 2, 3, 4, 5]}
-                  direction="row"
-                >
-                  {(option, { checked, hover }) => {
-                    let color;
-                    if (hover) color = 'active-text';
-                    else if (option <= data.value) color = 'control';
-                    else color = 'status-disabled';
-                    return <Star key={option} color={color} size="large" />;
-                  }}
-                </RadioButtonGroup>
-              </FormField>
-            )}
-            {category && category.type === 'number' && (
-              <FormField ref={inputRef} name="value" required>
-                <Box direction="row" align="center" justify="between">
-                  <TextInput
-                    ref={inputRef}
-                    name="value"
-                    type="number"
-                    size="xlarge"
-                    plain
-                  />
-                  <Text size="large">{category.units || 'value'}</Text>
-                </Box>
-              </FormField>
-            )}
-            {category && category.type === 'name' && (
-              <FormField name="value" required>
-                <TextInput
-                  ref={inputRef}
-                  name="value"
-                  size="xlarge"
-                  placeholder="name"
-                  suggestions={suggestions}
-                />
-              </FormField>
-            )}
-            {data && (
-              <FormField name="date" required>
-                <DateInput name="date" plain format="mm/dd/yyyy" />
-              </FormField>
-            )}
-            <Box margin={{ top: 'medium' }} align="start">
-              <Button type="submit" label="Add" primary title="Add" />
-            </Box>
-          </Form>
+          <DataForm
+            category={category}
+            defaultValue={data}
+            label="Add"
+            onSubmit={onSubmit}
+            track={track}
+          />
         )}
       </Box>
     </Page>
