@@ -44,6 +44,7 @@ export default {
       border: {
         radius: '6px',
       },
+      color: 'text',
       font: {
         weight: 800,
       },

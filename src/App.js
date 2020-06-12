@@ -51,7 +51,11 @@ const App = () => {
 
   return (
     <Router path={nextPath}>
-      <Grommet theme={theme} themeMode={themeMode} style={{ height: '100%' }}>
+      <Grommet
+        theme={theme}
+        themeMode={themeMode}
+        style={{ minHeight: '100%' }}
+      >
         <TrackContext.Provider value={[track, setTrack]}>
           <Routes redirect="/">
             <Route path="/onboard" Component={Onboard} />
