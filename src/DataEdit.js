@@ -29,7 +29,7 @@ const DataEdit = ({ id: idArg }) => {
     const nextTrack = JSON.parse(JSON.stringify(track));
     const index = nextTrack.data.findIndex((d) => d.id === id);
     if (category.type === 'number')
-      nextData.value = parseInt(nextData.value, 10);
+      nextData.value = parseFloat(nextData.value, 10);
     nextTrack.data[index] = nextData;
     sortOn(nextTrack.data, 'date', 'desc');
     setTrack(nextTrack);

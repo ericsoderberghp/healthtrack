@@ -65,6 +65,7 @@ const DataForm = ({ category, defaultValue, label, onSubmit, track }) => {
               ref={inputRef}
               name="value"
               type="number"
+              step=".1"
               size="xlarge"
               plain
             />
