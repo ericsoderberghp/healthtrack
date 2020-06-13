@@ -18,6 +18,7 @@ const DataYesNo = forwardRef((props, ref) => (
           pad={{ vertical: 'xsmall', horizontal: 'small' }}
           background={color}
           round="xsmall"
+          responsive={false}
         >
           <Text size="large" weight="bold">
             {option ? 'yes' : 'no'}
