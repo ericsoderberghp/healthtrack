@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { Box, Button, Header, Heading, Select, TextArea } from 'grommet';
 import { Close, Next, Previous } from 'grommet-icons';
 import { DateInput, Page } from './components';
@@ -18,6 +18,17 @@ const Calendar = () => {
   const [track, setTrack] = useContext(TrackContext);
   const [date, setDate] = useState(alignDate(new Date()));
   const [showCategorySelect, setShowCategorySelect] = useState();
+
+  // jump to tomorrow
+  useEffect(() => {
+    const tomorrow = alignDate(new Date(), -10);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const timer = setTimeout(
+      () => setDate(alignDate(new Date())),
+      tomorrow - new Date(),
+    );
+    return () => clearTimeout(timer);
+  }, [date, track]);
 
   // categories that want something each day
   const categories = useMemo(
@@ -211,7 +222,7 @@ const Calendar = () => {
       ) : (
         <Box align="start" pad="small" responsive={false}>
           <Button
-            label="add note"
+            label="add a note"
             onClick={() =>
               setTrack(addNote(track, { date: date.toISOString() }))
             }

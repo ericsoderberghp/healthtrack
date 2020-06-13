@@ -12,15 +12,6 @@ const Settings = () => {
       <Box pad={{ horizontal: 'medium' }} responsive={false}>
         <Heading>{track.name}</Heading>
       </Box>
-      <Box flex="grow" pad="medium" align="start" responsive={false}>
-        <RoutedButton
-          label="Categories"
-          path="/categories"
-          title="categories"
-        />
-        <RoutedButton label="Data" path="/data" title="data" />
-        <RoutedButton label="Notes" path="/notes" title="notes" />
-      </Box>
       <Box
         margin={{ top: 'large' }}
         pad="medium"
@@ -28,6 +19,8 @@ const Settings = () => {
         gap="medium"
         responsive={false}
       >
+        <RoutedButton label="Data" path="/data" title="data" />
+        <RoutedButton label="Notes" path="/notes" title="notes" />
         {/* <Button label="Change password" disabled /> */}
         <Button
           label="Sign out"

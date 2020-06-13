@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Box, Grid, Nav, ResponsiveContext } from 'grommet';
-import { Calendar, Test, User } from 'grommet-icons';
+import { Calendar, Tag, Test, User } from 'grommet-icons';
 import RoutedButton from './RoutedButton';
 
 const MainNav = ({ pin }) => {
@@ -20,7 +20,8 @@ const MainNav = ({ pin }) => {
     >
       <RoutedButton title="calendar" icon={<Calendar />} path="/calendar" />
       <RoutedButton title="correlate" icon={<Test />} path="/correlate" />
-      <RoutedButton title="settings" icon={<User />} path="/settings" />
+      <RoutedButton title="categories" icon={<Tag />} path="/categories" />
+      <RoutedButton title="settings" icon={<User />} path="/" />
     </Nav>
   );
 };

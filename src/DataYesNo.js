@@ -6,6 +6,7 @@ const DataYesNo = forwardRef((props, ref) => (
     ref={ref}
     direction="row"
     options={[true, false]}
+    border="between"
     {...props}
   >
     {(option, { checked, hover }) => {
@@ -20,7 +21,11 @@ const DataYesNo = forwardRef((props, ref) => (
           round="xsmall"
           responsive={false}
         >
-          <Text size="large" weight="bold">
+          <Text
+            size="large"
+            weight="bold"
+            color={checked ? 'text' : 'text-xweak'}
+          >
             {option ? 'yes' : 'no'}
           </Text>
         </Box>
