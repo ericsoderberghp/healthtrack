@@ -13,7 +13,12 @@ const DataYesNo = forwardRef((props, ref) => (
       if (hover) color = 'active-background';
       else if (checked) color = 'control';
       return (
-        <Box key={option} pad="small" background={color} round="xsmall">
+        <Box
+          key={option}
+          pad={{ vertical: 'xsmall', horizontal: 'small' }}
+          background={color}
+          round="xsmall"
+        >
           <Text size="large" weight="bold">
             {option ? 'yes' : 'no'}
           </Text>
