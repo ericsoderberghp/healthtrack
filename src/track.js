@@ -291,3 +291,11 @@ export const deleteNote = (track, note) => {
   nextTrack.notes.splice(index, 1);
   return nextTrack;
 };
+
+export const frequencyLabel = {
+  0: 'once in a while',
+  1: 'daily',
+  2: 'twice a day',
+  3: 'three times a day',
+  4: 'four times a day',
+};

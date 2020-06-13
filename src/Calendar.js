@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
-import { Box, Button, Header, Heading, Select, TextArea } from 'grommet';
+import { Box, Button, Header, Heading, Select, Text, TextArea } from 'grommet';
 import { Close, Next, Previous } from 'grommet-icons';
 import { DateInput, Page } from './components';
 import TrackContext from './TrackContext';
@@ -141,7 +141,10 @@ const Calendar = () => {
           />
         </Box>
       </Header>
-      <Box pad="medium" responsive={false}>
+      <Box flex="grow" pad="medium" responsive={false}>
+        {!categorySets.length && (
+          <Text color="text-xweak">You have no daily categories yet.</Text>
+        )}
         {categorySets.map(({ category, data, labels }) =>
           data.map((d, index) => (
             <CalendarData
@@ -194,7 +197,7 @@ const Calendar = () => {
       {!showCategorySelect && (
         <Box align="start" pad="small" responsive={false}>
           <Button
-            label="add other data"
+            label="add additional data"
             onClick={() => setShowCategorySelect(true)}
           />
         </Box>

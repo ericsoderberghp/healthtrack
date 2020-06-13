@@ -4,6 +4,7 @@ import { Add, Search } from 'grommet-icons';
 import { Page, RoutedButton } from './components';
 import { RouterContext } from './Router';
 import TrackContext from './TrackContext';
+import { frequencyLabel } from './track';
 
 const Categories = () => {
   const { push } = useContext(RouterContext);
@@ -47,7 +48,10 @@ const Categories = () => {
         aria-label="categories"
         data={categories}
         primaryKey="name"
-        secondaryKey="aspect"
+        secondaryKey={(item) => {
+          if (item.frequency) return frequencyLabel[item.frequency];
+          return '';
+        }}
         onClickItem={({ item: { id } }) => push(`/categories/${id}`)}
       />
     </Page>

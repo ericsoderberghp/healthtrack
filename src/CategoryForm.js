@@ -7,6 +7,7 @@ import {
   RadioButtonGroup,
   TextInput,
 } from 'grommet';
+import { frequencyLabel } from './track';
 
 const CategoryForm = ({ defaultValue, label, onSubmit }) => {
   const [category, setCategory] = useState(defaultValue);
@@ -77,13 +78,10 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
         <RadioButtonGroup
           id="frequency"
           name="frequency"
-          options={[
-            { value: 0, label: 'once in a while' },
-            { value: 1, label: 'each day' },
-            { value: 2, label: 'twice a day' },
-            { value: 3, label: 'three times a day' },
-            { value: 4, label: 'four times a day' },
-          ]}
+          options={[0, 1, 2, 3, 4].map((value) => ({
+            value,
+            label: frequencyLabel[value],
+          }))}
         />
       </FormField>
       <Box margin={{ top: 'large' }} align="start">
