@@ -12,6 +12,7 @@ import { Add, Trash } from 'grommet-icons';
 import { DateInput, Page } from './components';
 import TrackContext from './TrackContext';
 import { getCategory } from './track';
+import { betweenDates, sameDate } from './utils';
 
 const now = new Date();
 now.setHours(0, 0, 0, 0);
@@ -65,14 +66,11 @@ const Correlate = () => {
       const [date1, date2] = dates.map((d) => new Date(d));
 
       // prune the data down to just what the filter matches
-      const start = date1.toISOString().split('T')[0];
-      const end = date2.toISOString().split('T')[0];
       const categoryData = categories.map((category) =>
         track.data.filter(
           (datum) =>
             datum.category === category.id &&
-            datum.date >= start &&
-            datum.date <= end,
+            betweenDates(datum.date, date1, date2),
         ),
       );
 
@@ -82,22 +80,21 @@ const Correlate = () => {
       const min = 0;
       // create an object for each day
       while (date <= date2) {
-        const current = date.toISOString().split('T')[0];
-        const datum = { date: current };
+        const datum = { date: date.toISOString() };
         // create a keyed value on the current day for each category
         categories.forEach((category, index) => {
           let keyName = category.name;
           let dayValue = 0;
           categoryData[index]
             // filter out to the data just for the current day
-            .filter((d) => d.date.split('T')[0] === current)
+            .filter((d) => sameDate(d.date, date))
             .forEach((dayData) => {
               // normalize the values so they can be overlaid within min-max
               if (category.type === 'yes/no') {
                 // yes/no existence -> max
                 dayValue = max;
-              } else if (category.type === 'rating') {
-                // rating 1-5 -> min-max
+              } else if (category.type === 'scale') {
+                // scale 1-5 -> min-max
                 const normalizedValue = dayData.value * (max / 5);
                 // if multiple on the same day, take the largest
                 dayValue = Math.max(datum[keyName] || 0, normalizedValue);

@@ -32,8 +32,8 @@ const Categories = () => {
           />
         </Header>
       </Box>
-      {track.categories.length > 10 && (
-        <Box>
+      {track.categories.length > 20 && (
+        <Box margin={{ bottom: 'medium' }} responsive={false}>
           <TextInput
             aria-label="search input"
             icon={<Search />}

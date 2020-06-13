@@ -5,7 +5,7 @@ import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
 import { getCategory } from './track';
-import { sortOn } from './utils';
+import { nextId, sameDate, sortOn } from './utils';
 import DataForm from './DataForm';
 
 const DataAdd = () => {
@@ -32,9 +32,9 @@ const DataAdd = () => {
         );
         setStarters([...matchedData, ...matchedCategories]);
       } else {
-        const latestData = track.data[0] && track.data[0].date.split('T')[0];
+        const latestData = track.data[0] && track.data[0].date;
         const recentData = latestData
-          ? track.data.filter((d) => d.date.split('T')[0] === latestData)
+          ? track.data.filter((d) => sameDate(d.date, latestData))
           : [];
         setStarters([...recentData, ...track.categories]);
       }
@@ -55,11 +55,7 @@ const DataAdd = () => {
 
   const onSubmit = (nextData) => {
     const nextTrack = JSON.parse(JSON.stringify(track));
-    let nextId = 1;
-    nextTrack.data.forEach((d) => {
-      nextId = Math.max(nextId, d.id + 1);
-    });
-    nextData.id = nextId;
+    nextData.id = nextId(nextTrack.data);
     nextTrack.data.unshift(nextData);
     sortOn(nextTrack.data, 'date', 'desc');
     setTrack(nextTrack);

@@ -1,27 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { Box, Button, Header, Heading } from 'grommet';
 import { Close } from 'grommet-icons';
 import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
+import { deleteNote, updateNote } from './track';
 import NoteForm from './NoteForm';
 
 const NoteEdit = ({ id: idArg }) => {
   const { push } = useContext(RouterContext);
   const id = parseInt(idArg, 10);
   const [track, setTrack] = useContext(TrackContext);
-  const [note, setNote] = useState();
-  useEffect(() => {
-    if (track && id) setNote(track.notes.find((n) => n.id === id));
-  }, [id, track]);
-
-  const onSubmit = (nextNote) => {
-    const nextTrack = JSON.parse(JSON.stringify(track));
-    const index = nextTrack.notes.findIndex((c) => c.id === id);
-    nextTrack.notes[index] = nextNote;
-    setTrack(nextTrack);
-    push('/notes');
-  };
+  const note = useMemo(() => track.notes.find((n) => n.id === id), [id, track]);
 
   if (!note) return null;
 
@@ -32,7 +22,14 @@ const NoteEdit = ({ id: idArg }) => {
           <Heading>edit note</Heading>
           <RoutedButton icon={<Close />} path="/notes" />
         </Header>
-        <NoteForm defaultValue={note} label="Update" onSubmit={onSubmit} />
+        <NoteForm
+          defaultValue={note}
+          label="Update"
+          onSubmit={(nextNote) => {
+            setTrack(updateNote(track, note, nextNote));
+            push('/notes');
+          }}
+        />
       </Box>
       <Box
         margin={{ top: 'xlarge' }}
@@ -43,10 +40,7 @@ const NoteEdit = ({ id: idArg }) => {
         <Button
           label="Delete"
           onClick={() => {
-            const nextTrack = JSON.parse(JSON.stringify(track));
-            const index = nextTrack.notes.findIndex((n) => n.id === id);
-            nextTrack.notes.splice(index, 1);
-            setTrack(nextTrack);
+            setTrack(deleteNote(track, note));
             push('/notes');
           }}
         />

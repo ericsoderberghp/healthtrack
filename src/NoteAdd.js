@@ -4,6 +4,7 @@ import { Close } from 'grommet-icons';
 import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
+import { addNote } from './track';
 import NoteForm from './NoteForm';
 
 const NoteAdd = () => {
@@ -13,14 +14,7 @@ const NoteAdd = () => {
   if (!track) return null;
 
   const onSubmit = (nextNote) => {
-    const nextTrack = JSON.parse(JSON.stringify(track));
-    let nextId = 1;
-    nextTrack.notes.forEach((n) => {
-      nextId = Math.max(nextId, n.id + 1);
-    });
-    nextNote.id = nextId;
-    nextTrack.notes.unshift(nextNote);
-    setTrack(nextTrack);
+    setTrack(addNote(track, nextNote));
     push('/notes');
   };
 

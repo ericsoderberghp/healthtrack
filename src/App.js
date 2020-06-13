@@ -4,6 +4,7 @@ import { Loading } from './components';
 import Onboard from './Onboard';
 import SignIn from './SignIn';
 import Home from './Home';
+import Calendar from './Calendar';
 import Categories from './Categories';
 import CategoryAdd from './CategoryAdd';
 import CategoryEdit from './CategoryEdit';
@@ -14,6 +15,7 @@ import Correlate from './Correlate';
 import NoteAdd from './NoteAdd';
 import NoteEdit from './NoteEdit';
 import Notes from './Notes';
+import Settings from './Settings';
 import Router, { Route, Routes } from './Router';
 import TrackContext from './TrackContext';
 import theme from './theme';
@@ -61,6 +63,7 @@ const App = () => {
             <Route path="/onboard" Component={Onboard} />
             <Route path="/sign-in" Component={SignIn} />
             <Route path="/" Component={Home} />
+            <Route path="/calendar" Component={Calendar} />
             <Route path="/categories" Component={Categories} />
             <Route path="/categories/add" Component={CategoryAdd} />
             <Route path="/categories/:id" Component={CategoryEdit} />
@@ -71,6 +74,7 @@ const App = () => {
             <Route path="/notes" Component={Notes} />
             <Route path="/notes/add" Component={NoteAdd} />
             <Route path="/notes/:id" Component={NoteEdit} />
+            <Route path="/settings" Component={Settings} />
           </Routes>
         </TrackContext.Provider>
       </Grommet>

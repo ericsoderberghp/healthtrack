@@ -4,7 +4,7 @@ import { Close } from 'grommet-icons';
 import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
-import { sortOn } from './utils';
+import { nextId, sortOn } from './utils';
 import CategoryForm from './CategoryForm';
 
 const initialCategory = {
@@ -21,11 +21,7 @@ const CategoryAdd = () => {
 
   const onSubmit = (nextCategory) => {
     const nextTrack = JSON.parse(JSON.stringify(track));
-    let nextId = 1;
-    nextTrack.categories.forEach((c) => {
-      nextId = Math.max(nextId, c.id + 1);
-    });
-    nextCategory.id = nextId;
+    nextCategory.id = nextId(nextTrack.categories);
     nextCategory.date = new Date().toISOString();
     if (nextCategory.frequency)
       nextCategory.frequency = parseFloat(nextCategory.frequency, 10);

@@ -1,6 +1,6 @@
-import React, { useContext, useMemo } from 'react';
-import { Box, Header, Heading, List, Text } from 'grommet';
-import { Add, Star } from 'grommet-icons';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
+import { Box, Header, Heading, List, Text, TextInput } from 'grommet';
+import { Add, Search, Star } from 'grommet-icons';
 import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
@@ -9,6 +9,15 @@ import { getCategory } from './track';
 const Data = () => {
   const { push } = useContext(RouterContext);
   const [track] = useContext(TrackContext);
+  const [search, setSearch] = useState('');
+  const [data, setData] = useState(track ? track.data : []);
+
+  useEffect(() => {
+    if (search) {
+      const exp = new RegExp(search, 'i');
+      setData(track.data.filter((d) => exp.test(d.name)));
+    } else setData(track.data);
+  }, [search, track]);
 
   const categoryMap = useMemo(() => {
     const result = {};
@@ -18,8 +27,6 @@ const Data = () => {
       });
     return result;
   }, [track]);
-
-  if (!track) return null;
 
   return (
     <Page>
@@ -34,9 +41,20 @@ const Data = () => {
           />
         </Header>
       </Box>
+      {track.data.length > 20 && (
+        <Box margin={{ bottom: 'medium' }} responsive={false}>
+          <TextInput
+            aria-label="search input"
+            icon={<Search />}
+            placeholder="search ..."
+            value={search}
+            onChange={(event) => setSearch(event.target.value)}
+          />
+        </Box>
+      )}
       <List
         aria-label="data"
-        data={track.data}
+        data={data}
         primaryKey={(item, _, ref) => {
           const category = categoryMap[item.category];
           const parts = [];
@@ -46,7 +64,7 @@ const Data = () => {
                 {item.value}
               </Text>,
             );
-          else if (category.type === 'rating')
+          else if (category.type === 'scale')
             parts.push(
               <Box key="v" direction="row">
                 {Array.from(Array(item.value)).map((_, index) => (
@@ -66,8 +84,7 @@ const Data = () => {
                 {category.units}
               </Text>,
             );
-          if (category.type !== 'name')
-            parts.push(<Text key="n">{item.name}</Text>);
+          parts.push(<Text key="n">{category.name}</Text>);
           return (
             <Box key={item.date} ref={ref} direction="row" gap="small">
               {parts}

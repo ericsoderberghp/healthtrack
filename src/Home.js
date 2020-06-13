@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Box, Button, Heading, Paragraph } from 'grommet';
-import { Page, RoutedButton } from './components';
+import { Box, Heading, Paragraph } from 'grommet';
+import { Page } from './components';
 import TrackContext from './TrackContext';
-import { deleteTrack, signOut } from './track';
 
 const Home = () => {
-  const [track, setTrack] = useContext(TrackContext);
+  const [track] = useContext(TrackContext);
   const [message, setMessage] = useState();
 
   useEffect(() => {
@@ -39,33 +38,7 @@ const Home = () => {
         <Paragraph>{message}</Paragraph>
       </Box>
       <Box flex="grow" pad="medium" align="start" responsive={false}>
-        <RoutedButton
-          label="Categories"
-          path="/categories"
-          title="categories"
-          primary={track.categories.length === 4}
-        />
-      </Box>
-      <Box
-        margin={{ top: 'large' }}
-        pad="medium"
-        align="start"
-        gap="medium"
-        responsive={false}
-      >
-        {/* <Button label="Change password" disabled /> */}
-        <Button
-          label="Sign out"
-          onClick={() => {
-            signOut();
-            setTrack(false);
-          }}
-        />
-        <Button
-          label="Delete everything"
-          onClick={() => deleteTrack(track).then(() => setTrack(false))}
-          title="delete everything"
-        />
+        TBD
       </Box>
     </Page>
   );

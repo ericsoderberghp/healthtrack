@@ -58,7 +58,7 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
               value: 'number',
               label: 'number - like hours of sleep',
             },
-            { value: 'rating', label: '5-star rating' },
+            { value: 'scale', label: '5-point scale' },
             { value: 'yes/no', label: 'simple yes or no' },
             { value: 'name', label: 'free form - like "broccoli"' },
           ]}
@@ -70,12 +70,21 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
         </FormField>
       )}
       <FormField
-        label="How many times per day do you expect to record it?"
+        label="How often do you intend to record it?"
         name="frequency"
         htmlFor="frequency"
-        help="Leave blank for less than once per day."
       >
-        <TextInput id="frequency" name="frequency" type="number" />
+        <RadioButtonGroup
+          id="frequency"
+          name="frequency"
+          options={[
+            { value: 0, label: 'once in a while' },
+            { value: 1, label: 'each day' },
+            { value: 2, label: 'twice a day' },
+            { value: 3, label: 'three times a day' },
+            { value: 4, label: 'four times a day' },
+          ]}
+        />
       </FormField>
       <Box margin={{ top: 'large' }} align="start">
         <Button type="submit" label={label} primary title={label} />

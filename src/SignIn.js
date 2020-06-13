@@ -53,7 +53,7 @@ const SignIn = () => {
             <TextInput name="name" />
           </FormField>
           <FormField label="Your email" name="email" required>
-            <TextInput name="email" />
+            <TextInput name="email" type="email" />
           </FormField>
           <FormField label="Choose a password" name="password" required>
             <TextInput name="password" type="password" />
