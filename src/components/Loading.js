@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box } from 'grommet';
+import { Test } from 'grommet-icons';
 
 const Loading = () => {
   return (
@@ -10,7 +11,9 @@ const Loading = () => {
         round
         align="center"
         animation="pulse"
-      />
+      >
+        <Test size="large" color="text-weak" />
+      </Box>
     </Box>
   );
 };
