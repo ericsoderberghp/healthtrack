@@ -5,7 +5,7 @@ const DataNumber = forwardRef(({ units, ...rest }, ref) => (
   <Box direction="row" align="center" justify="between">
     <TextInput
       ref={ref}
-      type="number"
+      inputmode="decimal"
       step=".1"
       size="xlarge"
       placeholder="0"
