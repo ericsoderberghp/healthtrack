@@ -49,13 +49,13 @@ const SignIn = () => {
       >
         <Heading>Sign In</Heading>
         <Form value={identity} onChange={setIdentity} onSubmit={onSubmit}>
-          <FormField label="Your name" name="name" required>
+          <FormField label="Name" name="name" required>
             <TextInput name="name" />
           </FormField>
-          <FormField label="Your email" name="email" required>
+          <FormField label="Email" name="email" required>
             <TextInput name="email" type="email" />
           </FormField>
-          <FormField label="Choose a password" name="password" required>
+          <FormField label="Password" name="password" required>
             <TextInput name="password" type="password" />
           </FormField>
           {message && (

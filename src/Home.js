@@ -45,10 +45,9 @@ const Home = () => {
           headaches. Then, think about some things that you think might affect
           it, such as not getting enough sleep, not getting enough exercise, or
           consuming alcohol. Create categories for these things. When creating
-          the creating the categories, think about how much detail you want to
-          capture and how often you expect to use them. The simpler you can make
-          it, the easier it will be to keep track. You can always adjust over
-          time.
+          the categories, think about how much detail you want to capture and
+          how often you expect to track it. The simpler you can make it, the
+          easier it will be to keep track. You can always adjust over time.
         </Paragraph>
         <RoutedButton
           label="setup categories"
@@ -56,15 +55,15 @@ const Home = () => {
           path="/categories"
         />
         <Paragraph>
-          Once you've got your categories in place, start keeping track of your
+          Once you've got your categories in place, start tracking your
           behaviors and experiences over time. You'll be guided to enter data
           for the categories you indicated should be captured daily. You can
           always add more data too.
         </Paragraph>
         <RoutedButton label="enter data" icon={<Calendar />} path="/calendar" />
         <Paragraph>
-          When you've got a few weeks of data recorded, you might see if you can
-          uncover any correlations between your behaviors and symptoms.
+          When you've got a few weeks of data recorded, look for correlations
+          between your behaviors and symptoms.
         </Paragraph>
         <RoutedButton label="correlate" icon={<Test />} path="/correlate" />
         <Paragraph>
