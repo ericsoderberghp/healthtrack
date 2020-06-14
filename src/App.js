@@ -56,7 +56,7 @@ const App = () => {
       <Grommet
         theme={theme}
         themeMode={themeMode}
-        style={{ height: '100%', minHeight: '100%' }}
+        style={{ minHeight: '100%' }}
       >
         <TrackContext.Provider value={[track, setTrack]}>
           <Routes redirect="/">

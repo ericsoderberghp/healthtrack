@@ -122,8 +122,9 @@ export const initialTrack = {
 //   date.setDate(date.getDate() + 1);
 // }
 
-export const createTrack = (track) =>
-  fetch(apiUrl, {
+export const createTrack = (track) => {
+  track.email = track.email.toLowerCase();
+  return fetch(apiUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
@@ -135,9 +136,11 @@ export const createTrack = (track) =>
       localStorage.setItem('track', JSON.stringify(nextTrack));
       return nextTrack;
     });
+};
 
-export const signIn = (identity) =>
-  fetch(`${apiUrl}/get`, {
+export const signIn = (identity) => {
+  identity.email = identity.email.toLowerCase();
+  return fetch(`${apiUrl}/get`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
@@ -151,6 +154,7 @@ export const signIn = (identity) =>
       });
     return undefined;
   });
+};
 
 export const signOut = () => localStorage.removeItem('track');
 
