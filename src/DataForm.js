@@ -6,6 +6,13 @@ import DataScale from './DataScale';
 import DataNumber from './DataNumber';
 import DataName from './DataName';
 
+const TypeInput = {
+  'yes/no': DataYesNo,
+  scale: DataScale,
+  number: DataNumber,
+  name: DataName,
+};
+
 const DataForm = ({ category, defaultValue, label, onSubmit, track }) => {
   const [data, setData] = useState(defaultValue);
 
@@ -27,44 +34,31 @@ const DataForm = ({ category, defaultValue, label, onSubmit, track }) => {
     if (data && !data.value && inputRef.current) inputRef.current.focus();
   }, [data]);
 
+  let Input = TypeInput[category.type];
+  let inputProps;
+  if (category.type === 'number') inputProps = { units: category.units };
+  if (category.type === 'name') inputProps = { suggestions };
+
   return (
     <Form
       value={data}
       onChange={setData}
       onSubmit={() => {
+        // normalize non-string values
+        data.value = Input.normalize(data.value);
         if (!data.date) data.date = new Date().toISOString();
         if (!data.name)
           data.name =
             typeof data.value === 'string' ? data.value : category.name;
-        if (category.type === 'number') data.value = parseFloat(data.value, 10);
         onSubmit(data);
       }}
     >
-      {category && category.type === 'yes/no' && (
-        <FormField name="value">
-          <DataYesNo ref={inputRef} name="value" />
-        </FormField>
-      )}
-      {category && category.type === 'scale' && (
-        <FormField name="value" required>
-          <DataScale ref={inputRef} name="value" />
-        </FormField>
-      )}
-      {category && category.type === 'number' && (
-        <FormField name="value" required>
-          <DataNumber ref={inputRef} name="value" units={category.units} />
-        </FormField>
-      )}
-      {category && category.type === 'name' && (
-        <FormField name="value" required>
-          <DataName ref={inputRef} name="value" suggestions={suggestions} />
-        </FormField>
-      )}
-      {data && (
-        <FormField name="date" required htmlFor="date">
-          <DateInput id="date" name="date" plain format="mm/dd/yyyy" />
-        </FormField>
-      )}
+      <FormField name="value" required={category.type !== 'yes/no'}>
+        <Input ref={inputRef} name="value" {...inputProps} />
+      </FormField>
+      <FormField name="date" required htmlFor="date">
+        <DateInput id="date" name="date" plain format="mm/dd/yyyy" />
+      </FormField>
       <Box margin={{ top: 'medium' }} align="start">
         <Button type="submit" label={label} primary title={label} />
       </Box>

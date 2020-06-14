@@ -163,7 +163,7 @@ const Calendar = () => {
           <Box
             pad={{ vertical: 'small' }}
             gap="medium"
-            border="horizontal"
+            border="top"
             direction="row"
             justify="end"
             align="center"
@@ -192,6 +192,7 @@ const Calendar = () => {
             />
           </Box>
         )}
+        <Box border="top" />
       </Box>
 
       {!showCategorySelect && (

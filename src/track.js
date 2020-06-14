@@ -4,6 +4,9 @@ import { nextId, sortOn } from './utils';
 export const apiUrl =
   'https://us-central1-healthtrack-279819.cloudfunctions.net/tracks';
 
+const publish = true;
+if (!publish) console.log('!!! NOT PUBLISHING');
+
 export const initialTrack = {
   name: '',
   email: '',
@@ -122,6 +125,37 @@ export const initialTrack = {
 //   date.setDate(date.getDate() + 1);
 // }
 
+export const getCategory = (track, id) =>
+  track.categories.find((c) => c.id === id);
+
+export const getData = (track, id) => track.data.find((d) => d.id === id);
+
+const upgrade = (nextTrack) => {
+  // convert category type 'rating' to 'scale'
+  nextTrack.categories.forEach((category) => {
+    if (category.type === 'rating') category.type = 'scale';
+  });
+  // remove any data without a category
+  nextTrack.data = nextTrack.data.filter((d) => d.category);
+
+  // ensure data values are the appropriate types
+  nextTrack.data.forEach((data) => {
+    const category = getCategory(nextTrack, data.category);
+    if (category.type === 'number' && typeof data.value === 'string') {
+      data.value = parseFloat(data.value, 10);
+      data.name = category.name;
+    }
+    if (category.type === 'scale' && typeof data.value === 'string') {
+      data.value = parseInt(data.value, 10);
+      data.name = category.name;
+    }
+    if (category.type === 'yes/no' && typeof data.value === 'string') {
+      data.value = JSON.parse(data.value);
+      data.name = category.name;
+    }
+  });
+};
+
 export const createTrack = (track) => {
   track.email = track.email.toLowerCase();
   return fetch(apiUrl, {
@@ -174,38 +208,37 @@ export const useTrack = () => {
     const stored = localStorage.getItem('track');
     if (stored) {
       const lastTrack = JSON.parse(stored);
-      // load latest
-      fetch(`${apiUrl}/${lastTrack.id}`, {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${lastTrack.token}`,
-        },
-      }).then((response) => {
-        if (!response.ok) {
-          if (response.status === 404) {
-            localStorage.removeItem('track');
-            setTrack(false);
-          }
-        } else
-          return response.json().then((nextTrack) => {
-            nextTrack.unchanged = true;
-
-            // - upgrade schema -
-            // convert category type 'rating' to 'scale'
-            nextTrack.categories.forEach((category) => {
-              if (category.type === 'rating') category.type = 'scale';
+      if (publish) {
+        // load latest
+        fetch(`${apiUrl}/${lastTrack.id}`, {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${lastTrack.token}`,
+          },
+        }).then((response) => {
+          if (!response.ok) {
+            if (response.status === 404) {
+              localStorage.removeItem('track');
+              setTrack(false);
+            }
+          } else
+            return response.json().then((nextTrack) => {
+              nextTrack.unchanged = true;
+              upgrade(nextTrack);
+              setTrack(nextTrack);
             });
-            // remove any data without a category
-            nextTrack.data = nextTrack.data.filter((d) => d.category);
-
-            setTrack(nextTrack);
-          });
-      });
+        });
+      } else {
+        // !publish
+        lastTrack.unchanged = true;
+        upgrade(lastTrack);
+        setTrack(lastTrack);
+      }
     } else setTrack(false);
   }, []);
 
   useEffect(() => {
-    if (track && !track.unchanged) {
+    if (publish && track && !track.unchanged) {
       // lazily publish when the user hasn't edited it for a while
       const timer = setTimeout(() => {
         fetch(`${apiUrl}/${track.id}`, {
@@ -237,11 +270,6 @@ export const useTrack = () => {
     },
   ];
 };
-
-export const getCategory = (track, id) =>
-  track.categories.find((c) => c.id === id);
-
-export const getData = (track, id) => track.data.find((d) => d.id === id);
 
 export const addData = (track, nextData) => {
   const nextTrack = JSON.parse(JSON.stringify(track));

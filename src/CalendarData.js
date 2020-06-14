@@ -6,6 +6,13 @@ import DataScale from './DataScale';
 import DataNumber from './DataNumber';
 import DataName from './DataName';
 
+const TypeInput = {
+  'yes/no': DataYesNo,
+  scale: DataScale,
+  number: DataNumber,
+  name: DataName,
+};
+
 const CalendarData = ({
   category,
   data,
@@ -17,59 +24,25 @@ const CalendarData = ({
   ...rest
 }) => {
   const responsive = useContext(ResponsiveContext);
+
   const onChange = (value) => {
-    const nextTrack = data.id
-      ? updateData(track, data, {
-          name: typeof value === 'string' ? value : category.name,
-          value,
-        })
-      : addData(track, {
-          ...data,
-          name: typeof value === 'string' ? value : category.name,
-          value,
-        });
+    let nextTrack;
+    if (data.id && value === undefined) nextTrack = deleteData(track, data);
+    else {
+      const nextData = {
+        name: typeof value === 'string' ? value : category.name,
+        value,
+      };
+      if (data.id) nextTrack = updateData(track, data, nextData);
+      else nextTrack = addData(track, { ...data, ...nextData });
+    }
     setTrack(nextTrack);
   };
 
-  let content;
-  if (category.type === 'number') {
-    content = (
-      <DataNumber
-        id={id}
-        name={id}
-        units={category.units}
-        value={data.value || ''}
-        onChange={(event) => onChange(event.target.value)}
-      />
-    );
-  } else if (category.type === 'yes/no') {
-    content = (
-      <DataYesNo
-        id={id}
-        name={id}
-        value={data.value || ''}
-        onChange={(event) => onChange(JSON.parse(event.target.value))}
-      />
-    );
-  } else if (category.type === 'scale') {
-    content = (
-      <DataScale
-        id={id}
-        name={id}
-        value={data.value || ''}
-        onChange={(event) => onChange(event.target.value)}
-      />
-    );
-  } else if (category.type === 'name') {
-    content = (
-      <DataName
-        id={id}
-        name={id}
-        value={data.value || ''}
-        onChange={(event) => onChange(event.target.value)}
-      />
-    );
-  }
+  let Input = TypeInput[category.type];
+  let inputProps;
+  if (category.type === 'number') inputProps = { units: category.units };
+
   return (
     <Box
       key={category.id}
@@ -82,20 +55,26 @@ const CalendarData = ({
       responsive={false}
       {...rest}
     >
-      {content}
-      {deletable && (
-        <Box
-          flex={false}
-          alignSelf={responsive === 'small' ? 'end' : undefined}
-        >
+      <Input
+        id={id}
+        name={id}
+        {...inputProps}
+        value={data.value}
+        onChange={(event) => onChange(Input.normalize(event.target.value))}
+      />
+      <Box
+        flex={false}
+        direction={responsive === 'small' ? 'column' : 'row'}
+        align={responsive === 'small' ? 'end' : 'center'}
+        alignSelf={responsive === 'small' ? 'end' : undefined}
+      >
+        {deletable && (
           <Button
             label="delete"
             onClick={() => setTrack(deleteData(track, data))}
           />
-        </Box>
-      )}
-      <Box flex={false} alignSelf={responsive === 'small' ? 'end' : undefined}>
-        <Text truncate>
+        )}
+        <Text truncate margin={{ start: 'medium' }}>
           {label} {category.name}
         </Text>
       </Box>
