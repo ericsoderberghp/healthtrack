@@ -47,6 +47,17 @@ const CalendarData = ({
   let inputProps;
   if (category.type === 'number') inputProps = { units: category.units };
 
+  let control;
+  if (deletable)
+    control = (
+      <Button
+        label="delete"
+        onClick={() => setTrack(deleteData(track, data))}
+      />
+    );
+  else if (!deletable && data.value !== undefined)
+    control = <Button label="clear" onClick={() => onChange(undefined)} />;
+
   return (
     <Box
       key={category.id}
@@ -59,29 +70,18 @@ const CalendarData = ({
       responsive={false}
       {...rest}
     >
-      <Input
-        id={id}
-        name={id}
-        {...inputProps}
-        value={data.value === undefined ? '' : data.value}
-        onChange={(event) => onChange(Input.normalize(event.target.value))}
-      />
-      <Box
-        flex={false}
-        direction={responsive === 'small' ? 'column' : 'row'}
-        align={responsive === 'small' ? 'end' : 'center'}
-        alignSelf={responsive === 'small' ? 'end' : undefined}
-      >
-        {deletable && (
-          <Button
-            label="delete"
-            onClick={() => setTrack(deleteData(track, data))}
-          />
-        )}
-        {!deletable && data.value !== undefined && (
-          <Button label="clear" onClick={() => onChange(undefined)} />
-        )}
-        <Text truncate margin={{ start: 'medium' }}>
+      <Box flex direction="row" justify="between" align="center">
+        <Input
+          id={id}
+          name={id}
+          {...inputProps}
+          value={data.value === undefined ? '' : data.value}
+          onChange={(event) => onChange(Input.normalize(event.target.value))}
+        />
+        {control}
+      </Box>
+      <Box flex={false} alignSelf={responsive === 'small' ? 'end' : undefined}>
+        <Text truncate margin={{ horizontal: 'small' }}>
           {label} {category.name}
         </Text>
       </Box>
