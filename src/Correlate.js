@@ -147,6 +147,23 @@ const Correlate = () => {
             onChange={({ value }) => setDates(value)}
           />
         </Header>
+        {categories.length > 0 && (
+          <Box margin={{ vertical: 'large' }}>
+            <DataChart
+              data={data}
+              chart={charts}
+              xAxis={{
+                key: 'date',
+                guide: true,
+                labels: Math.min(7, data.length),
+              }}
+              pad="small"
+              gap="medium"
+              thickness="xsmall"
+              size={{ width: 'fill', height: 'small' }}
+            />
+          </Box>
+        )}
         <Box gap="small">
           {categories.map((category, index) => (
             <Box
@@ -201,24 +218,6 @@ const Correlate = () => {
             </Box>
           )}
         </Box>
-
-        {categories.length > 0 && (
-          <Box margin={{ vertical: 'large' }}>
-            <DataChart
-              data={data}
-              chart={charts}
-              xAxis={{
-                key: 'date',
-                guide: true,
-                labels: Math.min(7, data.length),
-              }}
-              pad="small"
-              gap="medium"
-              thickness="xsmall"
-              size={{ width: 'fill', height: 'small' }}
-            />
-          </Box>
-        )}
       </Box>
     </Page>
   );
