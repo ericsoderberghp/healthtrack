@@ -8,10 +8,9 @@ import {
   ResponsiveContext,
   Select,
 } from 'grommet';
-import { Add, Trash } from 'grommet-icons';
+import { Add, Close } from 'grommet-icons';
 import { DateInput, Page } from './components';
 import TrackContext from './TrackContext';
-import { getCategory } from './track';
 import { betweenDates, sameDate } from './utils';
 
 const now = new Date();
@@ -51,18 +50,21 @@ const Correlate = () => {
     now.toISOString(),
   ]);
   const [categories, setCategories] = useState([]);
+  const [addCategory, setAddCategory] = useState();
   const [showCalendar, setShowCalendar] = useState();
 
-  // initialize the first category to the latest symptom
+  // initialize the categories to daily symptoms
   useEffect(() => {
-    if (track && !categories.length && track.data.length) {
-      setCategories([getCategory(track, track.data[0].category)]);
+    if (!categories.length && false) {
+      setCategories(
+        track.categories.filter((c) => c.aspect === 'symptom' && c.frequency),
+      );
     }
   }, [categories, track]);
 
   const data = useMemo(() => {
     const data = [];
-    if (track && categories.length > 0) {
+    if (categories.length > 0) {
       const [date1, date2] = dates.map((d) => new Date(d));
 
       // prune the data down to just what the filter matches
@@ -135,8 +137,6 @@ const Correlate = () => {
     return charts;
   }, [categories]);
 
-  if (!track) return null;
-
   return (
     <Page>
       <Box pad={{ horizontal: 'medium' }} responsive={false}>
@@ -181,28 +181,38 @@ const Correlate = () => {
                   }}
                 />
               </Box>
-              {categories.length > 1 && (
-                <Button
-                  icon={<Trash />}
-                  onClick={() => {
-                    const nextCategories = [...categories];
-                    nextCategories.splice(index, 1);
-                    setCategories(nextCategories);
-                  }}
-                />
-              )}
+              <Button
+                icon={<Close />}
+                onClick={() => {
+                  const nextCategories = [...categories];
+                  nextCategories.splice(index, 1);
+                  setCategories(nextCategories);
+                }}
+              />
             </Box>
           ))}
-          <Box direction="row" justify="end">
-            <Button
-              icon={<Add />}
-              onClick={() => {
-                const nextCategories = [...categories];
-                nextCategories.push('');
-                setCategories(nextCategories);
-              }}
-            />
-          </Box>
+          {addCategory ? (
+            <Box direction="row" gap="medium" justify="between" align="center">
+              <Box direction="row" gap="small" align="center">
+                <Box pad="small" round="full" />
+                <SelectCategory
+                  track={track}
+                  value={''}
+                  onChange={(nextCategory) => {
+                    const nextCategories = [...categories];
+                    nextCategories.push(nextCategory);
+                    setCategories(nextCategories);
+                    setAddCategory(false);
+                  }}
+                />
+              </Box>
+              <Button icon={<Close />} onClick={() => setAddCategory(false)} />
+            </Box>
+          ) : (
+            <Box direction="row" justify="end">
+              <Button icon={<Add />} onClick={() => setAddCategory(true)} />
+            </Box>
+          )}
         </Box>
 
         {data && categories.length > 0 && (
