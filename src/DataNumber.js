@@ -20,6 +20,6 @@ const DataNumber = forwardRef(({ units, value, ...rest }, ref) => (
 ));
 
 DataNumber.normalize = (value) =>
-  value === '' ? undefined : JSON.parseFloat(value, 10);
+  value === '' ? undefined : parseFloat(value, 10);
 
 export default DataNumber;

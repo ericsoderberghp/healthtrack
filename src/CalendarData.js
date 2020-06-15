@@ -16,7 +16,7 @@ const TypeInput = {
 const CalendarData = ({
   category,
   data,
-  deletable,
+  deletable, // not part of frequency
   id,
   label,
   track,
@@ -27,14 +27,18 @@ const CalendarData = ({
 
   const onChange = (value) => {
     let nextTrack;
-    if (data.id && value === undefined) nextTrack = deleteData(track, data);
+    // if unsetting saved frequency data, delete it
+    if (value === undefined && !deletable && data.id)
+      nextTrack = deleteData(track, data);
+    // otherwise, set the data
     else {
       const nextData = {
         name: typeof value === 'string' ? value : category.name,
         value,
       };
       if (data.id) nextTrack = updateData(track, data, nextData);
-      else nextTrack = addData(track, { ...data, ...nextData });
+      else if (value !== undefined)
+        nextTrack = addData(track, { ...data, ...nextData });
     }
     setTrack(nextTrack);
   };
@@ -59,7 +63,7 @@ const CalendarData = ({
         id={id}
         name={id}
         {...inputProps}
-        value={data.value}
+        value={data.value === undefined ? '' : data.value}
         onChange={(event) => onChange(Input.normalize(event.target.value))}
       />
       <Box
@@ -73,6 +77,9 @@ const CalendarData = ({
             label="delete"
             onClick={() => setTrack(deleteData(track, data))}
           />
+        )}
+        {!deletable && data.value !== undefined && (
+          <Button label="clear" onClick={() => onChange(undefined)} />
         )}
         <Text truncate margin={{ start: 'medium' }}>
           {label} {category.name}
