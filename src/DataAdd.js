@@ -5,7 +5,7 @@ import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
 import { getCategory } from './track';
-import { nextId, sameDate, sortOn } from './utils';
+import { alignDate, nextId, sameDate, sortOn } from './utils';
 import DataForm from './DataForm';
 
 const DataAdd = () => {
@@ -103,7 +103,7 @@ const DataAdd = () => {
                   : { category: item.id, name: '' };
                 setData({
                   ...base,
-                  date: new Date().toISOString(),
+                  date: alignDate(new Date()).toISOString(),
                   id: undefined,
                   value: '',
                 });

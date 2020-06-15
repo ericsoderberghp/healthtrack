@@ -11,16 +11,18 @@ import {
 import { Add, Close } from 'grommet-icons';
 import { DateInput, Page } from './components';
 import TrackContext from './TrackContext';
-import { betweenDates, sameDate } from './utils';
+import { alignDate, betweenDates, sameDate } from './utils';
 
-const now = new Date();
-now.setHours(0, 0, 0, 0);
+const now = alignDate(new Date());
 const sevenDaysAgo = new Date(now);
-sevenDaysAgo.setDate(now.getDate() - 7);
+sevenDaysAgo.setDate(now.getDate() - 6);
 const dateFormat = new Intl.DateTimeFormat(undefined, {
   month: 'short',
   day: 'numeric',
 });
+
+const max = 10;
+const min = 0;
 
 const SelectCategory = ({ track, value, onChange }) => {
   const [options, setOptions] = useState(track.categories);
@@ -51,17 +53,15 @@ const Correlate = () => {
   ]);
   const [categories, setCategories] = useState([]);
   const [addCategory, setAddCategory] = useState();
-  const [showCalendar, setShowCalendar] = useState();
 
-  // initialize the categories to daily symptoms
+  // initialize categories to daily symptoms
   useEffect(() => {
-    if (!categories.length && false) {
-      setCategories(
-        track.categories.filter((c) => c.aspect === 'symptom' && c.frequency),
-      );
-    }
-  }, [categories, track]);
+    setCategories(
+      track.categories.filter((c) => c.aspect === 'symptom' && c.frequency),
+    );
+  }, [track.categories]);
 
+  // build data for DataChart
   const data = useMemo(() => {
     const data = [];
     if (categories.length > 0) {
@@ -78,34 +78,34 @@ const Correlate = () => {
 
       // generate the DataChart data
       const date = new Date(date1);
-      const max = 10;
-      const min = 0;
       // create an object for each day
       while (date <= date2) {
         const datum = { date: date.toISOString() };
         // create a keyed value on the current day for each category
         categories.forEach((category, index) => {
           let keyName = category.name;
-          let dayValue = 0;
+          let dayValue = undefined;
           categoryData[index]
             // filter out to the data just for the current day
             .filter((d) => sameDate(d.date, date))
             .forEach((dayData) => {
               // normalize the values so they can be overlaid within min-max
               if (category.type === 'yes/no') {
-                // yes/no existence -> max
-                dayValue = max;
+                // yes/no true -> max, false -> min
+                const normalizedValue = dayData.value ? max : min;
+                dayValue = Math.max(datum[keyName] || min, normalizedValue);
               } else if (category.type === 'scale') {
                 // scale 1-5 -> min-max
                 const normalizedValue = dayData.value * (max / 5);
                 // if multiple on the same day, take the largest
-                dayValue = Math.max(datum[keyName] || 0, normalizedValue);
+                dayValue = Math.max(datum[keyName] || min, normalizedValue);
               } else if (category.type === 'number') {
                 // number -> within min/max
                 // if multiple on the same day, add them
+                // TODO: need to normalize for something like weight
                 dayValue = Math.min(
                   max,
-                  Math.max(min, (dayValue || 0) + dayData.value),
+                  Math.max(min, (dayValue || min) + dayData.value),
                 );
               } else if (category.type === 'name') {
                 // value -> within min/max
@@ -113,11 +113,11 @@ const Correlate = () => {
                 // allow for multiple on the same day, add them up
                 dayValue = Math.min(
                   max,
-                  Math.max(min, (dayValue || 0) + dayData.value),
+                  Math.max(min, (dayValue || min) + dayData.value),
                 );
               }
             });
-          datum[keyName] = dayValue;
+          if (dayValue !== undefined) datum[keyName] = dayValue;
         });
 
         data.push(datum);
@@ -127,39 +127,40 @@ const Correlate = () => {
     return data;
   }, [categories, dates, track]);
 
+  // build charts for DataChart
   const charts = useMemo(() => {
     const charts = [];
     categories.forEach((category, index) => {
-      const base = { key: category.name, round: true, color: `graph-${index}` };
+      const base = {
+        key: category.name,
+        round: true,
+        color: `graph-${index}`,
+        bounds: [
+          [0, data.length],
+          [min, max],
+        ],
+      };
       charts.push({ ...base, type: 'line' });
       charts.push({ ...base, type: 'point', thickness: 'small' });
     });
     return charts;
-  }, [categories]);
+  }, [categories, data.length]);
 
   return (
     <Page>
       <Box pad={{ horizontal: 'medium' }} responsive={false}>
         <Header>
           <Heading>correlate</Heading>
-          <Button
+          <DateInput
+            name="dates"
             label={`${dateFormat.format(
               new Date(dates[0]),
             )} - ${dateFormat.format(new Date(dates[1]))}`}
-            onClick={() => setShowCalendar(!showCalendar)}
+            size={size === 'small' ? size : undefined}
+            value={dates}
+            onChange={({ value }) => setDates(value)}
           />
         </Header>
-        {showCalendar && (
-          <Box align="end" margin={{ bottom: 'medium' }}>
-            <DateInput
-              name="dates"
-              inline
-              size={size === 'small' ? size : undefined}
-              value={dates}
-              onChange={({ value }) => setDates(value)}
-            />
-          </Box>
-        )}
         <Box gap="small">
           {categories.map((category, index) => (
             <Box
@@ -215,12 +216,16 @@ const Correlate = () => {
           )}
         </Box>
 
-        {data && categories.length > 0 && (
+        {categories.length > 0 && (
           <Box margin={{ vertical: 'large' }}>
             <DataChart
               data={data}
               chart={charts}
-              xAxis={{ key: 'date', guide: true, labels: 5 }}
+              xAxis={{
+                key: 'date',
+                guide: true,
+                labels: Math.min(7, data.length),
+              }}
               pad="small"
               gap="medium"
               thickness="xsmall"

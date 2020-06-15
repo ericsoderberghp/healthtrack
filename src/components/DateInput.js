@@ -53,7 +53,11 @@ const DateInput = ({
       date={range ? undefined : value}
       dates={range ? [value] : undefined}
       onSelect={(nextValue) => {
-        const normalizedValue = range ? nextValue[0] : nextValue;
+        let normalizedValue;
+        if (range && Array.isArray(nextValue)) normalizedValue = nextValue[0];
+        // clicking an edge date removes it
+        else if (range) normalizedValue = [nextValue, nextValue];
+        else normalizedValue = nextValue;
         setValue(normalizedValue);
         if (onChange) onChange({ value: normalizedValue });
         if (open) setOpen(false);
@@ -68,9 +72,10 @@ const DateInput = ({
     // When no format is specified, we don't give the user a way to type
     return (
       <DropButton
-        icon={<CalendarIcon />}
+        icon={!rest.label ? <CalendarIcon /> : undefined}
         dropProps={{ align: { top: 'bottom' } }}
         dropContent={calendar}
+        {...rest}
       />
     );
   }
