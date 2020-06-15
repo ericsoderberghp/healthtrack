@@ -21,9 +21,6 @@ const dateFormat = new Intl.DateTimeFormat(undefined, {
   day: 'numeric',
 });
 
-const max = 10;
-const min = 0;
-
 const SelectCategory = ({ track, value, onChange }) => {
   const [options, setOptions] = useState(track.categories);
   return (
@@ -91,30 +88,19 @@ const Correlate = () => {
             .forEach((dayData) => {
               // normalize the values so they can be overlaid within min-max
               if (category.type === 'yes/no') {
-                // yes/no true -> max, false -> min
-                const normalizedValue = dayData.value ? max : min;
-                dayValue = Math.max(datum[keyName] || min, normalizedValue);
+                // if multiple, yes wins
+                dayValue = Math.max(datum[keyName] || 0, dayData.value ? 1 : 0);
               } else if (category.type === 'scale') {
-                // scale 1-5 -> min-max
-                const normalizedValue = dayData.value * (max / 5);
                 // if multiple on the same day, take the largest
-                dayValue = Math.max(datum[keyName] || min, normalizedValue);
+                dayValue = Math.max(datum[keyName] || 0, dayData.value);
               } else if (category.type === 'number') {
-                // number -> within min/max
                 // if multiple on the same day, add them
-                // TODO: need to normalize for something like weight
-                dayValue = Math.min(
-                  max,
-                  Math.max(min, (dayValue || min) + dayData.value),
-                );
+                // TODO: add max to category
+                dayValue = (dayValue || 0) + dayData.value;
               } else if (category.type === 'name') {
-                // value -> within min/max
                 keyName = dayData.name;
                 // allow for multiple on the same day, add them up
-                dayValue = Math.min(
-                  max,
-                  Math.max(min, (dayValue || min) + dayData.value),
-                );
+                dayValue = (dayValue || 0) + dayData.value;
               }
             });
           if (dayValue !== undefined) datum[keyName] = dayValue;
@@ -136,15 +122,15 @@ const Correlate = () => {
         round: true,
         color: `graph-${index}`,
         bounds: [
-          [0, data.length],
-          [min, max],
+          [0, data.length - 1],
+          [0, Math.max(...data.map((d) => d[category.name] || 0))],
         ],
       };
       charts.push({ ...base, type: 'line' });
       charts.push({ ...base, type: 'point', thickness: 'small' });
     });
     return charts;
-  }, [categories, data.length]);
+  }, [categories, data]);
 
   return (
     <Page>
