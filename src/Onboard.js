@@ -31,7 +31,7 @@ const Onboard = () => {
       align="center"
       justify="center"
       background="background-back"
-      height={{ min: '100%' }}
+      height={{ min: '100vh' }}
     >
       <Box
         background="background-front"
