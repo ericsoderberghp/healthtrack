@@ -225,6 +225,7 @@ export const useTrack = () => {
             return response.json().then((nextTrack) => {
               nextTrack.unchanged = true;
               upgrade(nextTrack);
+              localStorage.setItem('track', JSON.stringify(nextTrack));
               setTrack(nextTrack);
             });
         });
