@@ -1,5 +1,5 @@
-import { Grommet } from 'grommet';
 import React, { useEffect, useState } from 'react';
+import { Box, Grommet, Text } from 'grommet';
 import { Loading } from './components';
 import Onboard from './Onboard';
 import SignIn from './SignIn';
@@ -34,8 +34,9 @@ const App = () => {
     }
   }, []);
 
-  const [track, setTrack] = useTrack();
+  const [track, setTrack, refresh] = useTrack();
 
+  // navigation
   const [nextPath, setNextPath] = useState();
   useEffect(() => {
     if (!nextPath && track !== undefined) {
@@ -49,6 +50,26 @@ const App = () => {
     }
   }, [nextPath, track]);
 
+  // refresh on scroll up
+  const [refreshing, setRefreshing] = React.useState();
+  useEffect(() => {
+    let scrollTimer;
+
+    const onScroll = () => {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        if (window.scrollY < 0) {
+          // user is holding the scroll position down, refresh
+          setRefreshing(true);
+          refresh().then(() => setRefreshing(false));
+        }
+      }, 500);
+    };
+
+    document.addEventListener('scroll', onScroll);
+    return () => document.removeEventListener('scroll', onScroll);
+  });
+
   if (!nextPath) return <Loading />;
 
   return (
@@ -58,6 +79,11 @@ const App = () => {
         themeMode={themeMode}
         style={{ minHeight: '100%' }}
       >
+        {refreshing && (
+          <Box align="center" background="brand" animation="pulse" pad="small">
+            <Text>refreshing</Text>
+          </Box>
+        )}
         <TrackContext.Provider value={[track, setTrack]}>
           <Routes redirect="/">
             <Route path="/onboard" Component={Onboard} />

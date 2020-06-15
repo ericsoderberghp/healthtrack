@@ -268,6 +268,22 @@ export const useTrack = () => {
       if (nextTrack && track) delete nextTrack.unchanged; // must be changing it
       setTrack(nextTrack);
     },
+    () => {
+      if (!publish || !track.unchanged) return { then: (f) => f() }; // simulate promise
+      return fetch(`${apiUrl}/${track.id}`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${track.token}`,
+        },
+      }).then((response) => {
+        if (response.ok)
+          return response.json().then((nextTrack) => {
+            nextTrack.unchanged = true;
+            upgrade(nextTrack);
+            setTrack(nextTrack);
+          });
+      });
+    },
   ];
 };
 
