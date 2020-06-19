@@ -33,8 +33,8 @@ export default {
     },
     hover: {
       background: {
-        color: 'blue',
-        opacity: 'medium',
+        color: 'blue!',
+        opacity: 'weak',
       },
     },
   },
@@ -83,10 +83,10 @@ export default {
     },
     hover: {
       default: {
-        background: { color: 'blue!', opacity: 'strong' },
+        background: { color: 'blue!', opacity: 'weak' },
       },
       primary: {
-        background: { color: 'blue!', opacity: 'strong' },
+        background: { color: 'blue!', opacity: 'weak' },
       },
     },
     border: undefined,
