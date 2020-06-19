@@ -166,7 +166,7 @@ const Calendar = () => {
     const onTouchMove = (event) => {
       event.preventDefault();
       const delta = deltaTouch(event, touchStart);
-      setOffset(delta.x);
+      if (Math.abs(delta.x) > 50) setOffset(delta.x);
     };
 
     const onTouchEnd = (event) => {
