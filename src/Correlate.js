@@ -86,7 +86,7 @@ const Correlate = () => {
             // filter out to the data just for the current day
             .filter((d) => sameDate(d.date, date))
             .forEach((dayData) => {
-              // normalize the values so they can be overlaid within min-max
+              // normalize the values
               if (category.type === 'yes/no') {
                 // if multiple, yes wins
                 dayValue = Math.max(datum[keyName] || 0, dayData.value ? 1 : 0);
@@ -95,7 +95,7 @@ const Correlate = () => {
                 dayValue = Math.max(datum[keyName] || 0, dayData.value);
               } else if (category.type === 'number') {
                 // if multiple on the same day, add them
-                // TODO: add max to category
+                // TODO: average them instead
                 dayValue = (dayValue || 0) + dayData.value;
               } else if (category.type === 'name') {
                 keyName = dayData.name;
@@ -117,13 +117,30 @@ const Correlate = () => {
   const charts = useMemo(() => {
     const charts = [];
     categories.forEach((category, index) => {
+      // For number categories, pick min/max to be just outside the
+      // data set. This works better for things like weight.
+      let yMin;
+      let yMax;
+      if (category.type === 'number') {
+        const values = data
+          .filter((d) => d[category.name] !== undefined)
+          .map((d) => d[category.name]);
+        yMin = Math.min(...values);
+        yMax = Math.max(...values);
+        const delta = Math.max(yMax - yMin, 2);
+        yMin = Math.max(0, yMin - delta / 2);
+        yMax = yMax + delta / 2;
+      } else {
+        yMin = 0;
+        yMax = Math.max(...data.map((d) => d[category.name] || 0));
+      }
       const base = {
         key: category.name,
         round: true,
         color: `graph-${index}`,
         bounds: [
           [0, data.length - 1],
-          [0, Math.max(...data.map((d) => d[category.name] || 0))],
+          [yMin, yMax],
         ],
       };
       charts.push({ ...base, type: 'line' });
@@ -131,6 +148,15 @@ const Correlate = () => {
     });
     return charts;
   }, [categories, data]);
+
+  // build labels for DataChart based on number of data points
+  const labels = useMemo(() => {
+    if (data.length <= 7) return data.length;
+    if (data.length % 5 === 0) return 5;
+    if (data.length % 4 === 0) return 4;
+    if (data.length % 3 === 0) return 3;
+    return 2;
+  }, [data]);
 
   return (
     <Page>
@@ -152,11 +178,7 @@ const Correlate = () => {
             <DataChart
               data={data}
               chart={charts}
-              xAxis={{
-                key: 'date',
-                guide: true,
-                labels: Math.min(7, data.length),
-              }}
+              xAxis={{ key: 'date', guide: true, labels }}
               pad="small"
               gap="medium"
               thickness="xsmall"
