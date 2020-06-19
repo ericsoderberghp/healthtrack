@@ -1,4 +1,10 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import { Box, Button, Header, Heading, Select, Text, TextArea } from 'grommet';
 import { Close, Next, Previous } from 'grommet-icons';
 import { DateInput, Page } from './components';
@@ -16,10 +22,33 @@ const hourLabel = {
   20: 'night',
 };
 
+const createTouch = (event) => {
+  if (event.changedTouches.length !== 1) return undefined;
+  const touch = event.changedTouches.item(0);
+  if (touch)
+    return {
+      at: new Date().getTime(),
+      x: touch.pageX,
+      y: touch.pageY,
+    };
+};
+
+const deltaTouch = (event, touchStart) => {
+  const touch = createTouch(event);
+  if (touch && touchStart)
+    return {
+      at: touch.at - touchStart.at,
+      x: touch.x - touchStart.x,
+      y: touch.y - touchStart.y,
+    };
+  else return { at: 0, x: 0, y: 0 };
+};
+
 const Calendar = () => {
   const [track, setTrack] = useContext(TrackContext);
   const [date, setDate] = useState(alignDate(new Date()));
   const [showCategorySelect, setShowCategorySelect] = useState();
+  const [offset, setOffset] = useState(0);
 
   // jump to tomorrow
   useEffect(() => {
@@ -111,130 +140,174 @@ const Calendar = () => {
     return result;
   }, [categories, data, date, occasionalCategories]);
 
+  const onPrevious = useCallback(() => {
+    const nextDate = new Date(date);
+    nextDate.setDate(date.getDate() - 1);
+    setDate(nextDate);
+  }, [date]);
+
+  const onNext = useCallback(() => {
+    const nextDate = new Date(date);
+    nextDate.setDate(date.getDate() + 1);
+    setDate(nextDate);
+  }, [date]);
+
+  // gesture interaction
+  useEffect(() => {
+    const { addEventListener, removeEventListener } = document;
+    let touchStart;
+
+    const onTouchStart = (event) => {
+      event.preventDefault();
+      touchStart = createTouch(event);
+      setOffset(0);
+    };
+
+    const onTouchMove = (event) => {
+      event.preventDefault();
+      const delta = deltaTouch(event, touchStart);
+      setOffset(delta.x);
+    };
+
+    const onTouchEnd = (event) => {
+      const delta = deltaTouch(event, touchStart);
+      if (Math.abs(delta.y) < 100 && Math.abs(delta.x) > 100)
+        if (delta.x < 0) onNext();
+        else onPrevious();
+      touchStart = undefined;
+      setOffset(0);
+    };
+
+    const onTouchCancel = (event) => {
+      touchStart = undefined;
+      setOffset(0);
+    };
+
+    addEventListener('touchstart', onTouchStart);
+    addEventListener('touchmove', onTouchMove);
+    addEventListener('touchend', onTouchEnd);
+    addEventListener('touchcancel', onTouchCancel);
+
+    return () => {
+      removeEventListener('touchstart', onTouchStart);
+      removeEventListener('touchmove', onTouchMove);
+      removeEventListener('touchend', onTouchEnd);
+      removeEventListener('touchcancel', onTouchCancel);
+    };
+  }, [onNext, onPrevious]);
+
   return (
     <Page>
-      <Header pad={{ horizontal: 'medium' }} responsive={false}>
-        <Heading>
-          {date.toLocaleDateString(undefined, {
-            month: 'short',
-            day: 'numeric',
-          })}
-        </Heading>
-        <Box direction="row" gap="small">
-          <DateInput
-            value={date.toISOString()}
-            onChange={({ value }) => setDate(new Date(value))}
-          />
-          <Button
-            icon={<Previous />}
-            onClick={() => {
-              const nextDate = new Date(date);
-              nextDate.setDate(date.getDate() - 1);
-              setDate(nextDate);
-            }}
-          />
-          <Button
-            icon={<Next />}
-            onClick={() => {
-              const nextDate = new Date(date);
-              nextDate.setDate(date.getDate() + 1);
-              setDate(nextDate);
-            }}
-          />
+      <Box style={{ transform: `translateX(${offset}px)` }}>
+        <Header pad={{ horizontal: 'medium' }} responsive={false}>
+          <Heading>
+            {date.toLocaleDateString(undefined, {
+              month: 'short',
+              day: 'numeric',
+            })}
+          </Heading>
+          <Box direction="row" gap="small">
+            <DateInput
+              value={date.toISOString()}
+              onChange={({ value }) => setDate(new Date(value))}
+            />
+            <Button icon={<Previous />} onClick={onPrevious} />
+            <Button icon={<Next />} onClick={onNext} />
+          </Box>
+        </Header>
+        <Box flex="grow" pad="medium" responsive={false}>
+          {!categorySets.length && (
+            <Text color="text-xweak">You have no daily categories yet.</Text>
+          )}
+          {categorySets.map(({ category, data, labels }) =>
+            data.map((d, index) => (
+              <CalendarData
+                key={`${category.id}-${index}`}
+                id={`${category.name}-${data.id}-${index}`}
+                category={category}
+                data={d}
+                label={labels[index]}
+                deletable={!hourLabel[new Date(d.date).getHours()]}
+                track={track}
+                setTrack={setTrack}
+              />
+            )),
+          )}
+          {showCategorySelect && (
+            <Box
+              pad={{ vertical: 'small' }}
+              gap="medium"
+              border="top"
+              direction="row"
+              justify="end"
+              align="center"
+              responsive={false}
+            >
+              <Select
+                options={addableCategories}
+                labelKey="name"
+                valueKey="id"
+                placeholder="select category ..."
+                onChange={({ option }) => {
+                  const newDate = new Date(date);
+                  newDate.setHours(13);
+                  setTrack(
+                    addData(track, {
+                      date: newDate.toISOString(),
+                      category: option.id,
+                    }),
+                  );
+                  setShowCategorySelect(false);
+                }}
+              />
+              <Button
+                icon={<Close />}
+                onClick={() => setShowCategorySelect(false)}
+              />
+            </Box>
+          )}
+          <Box border="top" />
         </Box>
-      </Header>
-      <Box flex="grow" pad="medium" responsive={false}>
-        {!categorySets.length && (
-          <Text color="text-xweak">You have no daily categories yet.</Text>
-        )}
-        {categorySets.map(({ category, data, labels }) =>
-          data.map((d, index) => (
-            <CalendarData
-              key={`${category.id}-${index}`}
-              id={`${category.name}-${data.id}-${index}`}
-              category={category}
-              data={d}
-              label={labels[index]}
-              deletable={!hourLabel[new Date(d.date).getHours()]}
-              track={track}
-              setTrack={setTrack}
-            />
-          )),
-        )}
-        {showCategorySelect && (
-          <Box
-            pad={{ vertical: 'small' }}
-            gap="medium"
-            border="top"
-            direction="row"
-            justify="end"
-            align="center"
-            responsive={false}
-          >
-            <Select
-              options={addableCategories}
-              labelKey="name"
-              valueKey="id"
-              placeholder="select category ..."
-              onChange={({ option }) => {
-                const newDate = new Date(date);
-                newDate.setHours(13);
-                setTrack(
-                  addData(track, {
-                    date: newDate.toISOString(),
-                    category: option.id,
-                  }),
-                );
-                setShowCategorySelect(false);
-              }}
-            />
+
+        {!showCategorySelect && (
+          <Box align="start" pad="small" responsive={false}>
             <Button
-              icon={<Close />}
-              onClick={() => setShowCategorySelect(false)}
+              label="add additional data"
+              onClick={() => setShowCategorySelect(true)}
             />
           </Box>
         )}
-        <Box border="top" />
-      </Box>
 
-      {!showCategorySelect && (
-        <Box align="start" pad="small" responsive={false}>
-          <Button
-            label="add additional data"
-            onClick={() => setShowCategorySelect(true)}
-          />
-        </Box>
-      )}
-
-      {note ? (
-        <Box pad="medium" gap="medium" responsive={false}>
-          <Header>
-            <Heading level={2} size="small" margin="none">
-              note
-            </Heading>
-            <Button
-              label="delete note"
-              onClick={() => setTrack(deleteNote(track, note))}
+        {note ? (
+          <Box pad="medium" gap="medium" responsive={false}>
+            <Header>
+              <Heading level={2} size="small" margin="none">
+                note
+              </Heading>
+              <Button
+                label="delete note"
+                onClick={() => setTrack(deleteNote(track, note))}
+              />
+            </Header>
+            <TextArea
+              rows={8}
+              value={note.text}
+              onChange={(event) =>
+                setTrack(updateNote(track, note, { text: event.target.value }))
+              }
             />
-          </Header>
-          <TextArea
-            rows={8}
-            value={note.text}
-            onChange={(event) =>
-              setTrack(updateNote(track, note, { text: event.target.value }))
-            }
-          />
-        </Box>
-      ) : (
-        <Box align="start" pad="small" responsive={false}>
-          <Button
-            label="add a note"
-            onClick={() =>
-              setTrack(addNote(track, { date: date.toISOString() }))
-            }
-          />
-        </Box>
-      )}
+          </Box>
+        ) : (
+          <Box align="start" pad="small" responsive={false}>
+            <Button
+              label="add a note"
+              onClick={() =>
+                setTrack(addNote(track, { date: date.toISOString() }))
+              }
+            />
+          </Box>
+        )}
+      </Box>
     </Page>
   );
 };

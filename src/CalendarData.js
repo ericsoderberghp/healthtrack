@@ -81,7 +81,7 @@ const CalendarData = ({
         {control}
       </Box>
       <Box flex={false} alignSelf={responsive === 'small' ? 'end' : undefined}>
-        <Text truncate margin={{ horizontal: 'small' }}>
+        <Text truncate margin={{ horizontal: 'small', vertical: 'small' }}>
           {label} {category.name}
         </Text>
       </Box>

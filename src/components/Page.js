@@ -39,6 +39,7 @@ const Page = ({ children }) => {
         gridArea="content"
         pad={{ bottom: 'xlarge' }}
         margin={{ bottom: 'xlarge' }}
+        overflow="hidden"
       >
         {size !== 'small' && <MainNav />}
         {children}
