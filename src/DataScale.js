@@ -19,7 +19,7 @@ const DataScale = forwardRef((props, ref) => {
         let color;
         if (hover) color = 'active-background';
         else if (checked || option <= valueOption) color = 'control';
-        else color = 'background-back';
+        else color = 'background-contrast';
 
         // hack to have access to the value, update grommet some day
         if (checked) checkedOption = option;

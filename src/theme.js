@@ -13,8 +13,8 @@ export default {
         dark: '#1e1f26',
       },
       'background-contrast': {
-        dark: '#FFFFFF08',
-        light: '#11111108',
+        dark: '#FFFFFF15',
+        light: '#11111115',
       },
       blue: {
         light: '#d0e1f9',
