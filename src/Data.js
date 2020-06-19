@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { Box, Header, Heading, List, Text, TextInput } from 'grommet';
-import { Add, Search, Star } from 'grommet-icons';
+import { Add, Search } from 'grommet-icons';
 import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
@@ -66,9 +66,14 @@ const Data = () => {
             );
           else if (category.type === 'scale')
             parts.push(
-              <Box key="v" direction="row">
+              <Box key="v" direction="row" gap="xxsmall">
                 {Array.from(Array(item.value)).map((_, index) => (
-                  <Star key={index} color="selected" />
+                  <Box
+                    key={index}
+                    pad="xsmall"
+                    round="xxsmall"
+                    background="selected"
+                  />
                 ))}
               </Box>,
             );

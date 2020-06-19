@@ -1,6 +1,5 @@
 import React, { forwardRef, useState } from 'react';
 import { Box, RadioButtonGroup } from 'grommet';
-import { Star } from 'grommet-icons';
 
 const DataScale = forwardRef((props, ref) => {
   // track value internally so we can highlight stars below value
@@ -13,13 +12,14 @@ const DataScale = forwardRef((props, ref) => {
       direction="row"
       options={[1, 2, 3, 4, 5]}
       pad={{ horizontal: 'small' }}
+      gap="xxsmall"
       {...props}
     >
       {(option, { checked, hover }) => {
         let color;
-        if (hover) color = 'active-text';
+        if (hover) color = 'active-background';
         else if (checked || option <= valueOption) color = 'control';
-        else color = 'status-disabled';
+        else color = 'background-back';
 
         // hack to have access to the value, update grommet some day
         if (checked) checkedOption = option;
@@ -27,9 +27,13 @@ const DataScale = forwardRef((props, ref) => {
           setTimeout(() => setValueOption(checkedOption), 1);
 
         return (
-          <Box key={option} pad={{ vertical: 'xsmall' }} responsive={false}>
-            <Star key={option} color={color} />
-          </Box>
+          <Box
+            key={option}
+            pad="small"
+            responsive={false}
+            round="xxsmall"
+            background={color}
+          />
         );
       }}
     </RadioButtonGroup>
