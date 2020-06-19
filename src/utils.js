@@ -81,5 +81,14 @@ export const frequencyDates = (date, frequency) => {
       alignDate(date, +4),
       alignDate(date, +8),
     ];
-  return []; // don't handle > 4 frequency yet
+  if (frequency === 6)
+    return [
+      alignDate(date, -4),
+      alignDate(date, -2),
+      alignDate(date),
+      alignDate(date, +2),
+      alignDate(date, +4),
+      alignDate(date, +8),
+    ];
+  return []; // don't handle > 6 frequency yet
 };

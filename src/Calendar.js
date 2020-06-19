@@ -9,7 +9,9 @@ import CalendarData from './CalendarData';
 
 const hourLabel = {
   8: 'morning',
+  10: 'mid-morning',
   12: 'mid-day',
+  14: 'afternoon',
   16: 'evening',
   20: 'night',
 };

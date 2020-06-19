@@ -347,4 +347,5 @@ export const frequencyLabel = {
   2: 'twice a day',
   3: 'three times a day',
   4: 'four times a day',
+  6: 'six times a day',
 };

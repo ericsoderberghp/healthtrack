@@ -78,7 +78,7 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
         <RadioButtonGroup
           id="frequency"
           name="frequency"
-          options={[0, 1, 2, 3, 4].map((value) => ({
+          options={[0, 1, 2, 3, 4, 6].map((value) => ({
             value,
             label: frequencyLabel[value],
           }))}
