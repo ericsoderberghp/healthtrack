@@ -7,7 +7,7 @@ import {
   RadioButtonGroup,
   TextInput,
 } from 'grommet';
-import { frequencyLabel } from './track';
+import { frequencyHourLabel, frequencyHours, frequencyLabel } from './track';
 
 const CategoryForm = ({ defaultValue, label, onSubmit }) => {
   const [category, setCategory] = useState(defaultValue);
@@ -84,6 +84,22 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
           }))}
         />
       </FormField>
+      {category.frequency === 1 && (
+        <FormField
+          label="When do you intend to record it?"
+          name="hour"
+          htmlFor="hour"
+        >
+          <RadioButtonGroup
+            id="hour"
+            name="hour"
+            options={frequencyHours.map((value) => ({
+              value,
+              label: frequencyHourLabel[value],
+            }))}
+          />
+        </FormField>
+      )}
       <Box margin={{ top: 'large' }} align="start">
         <Button type="submit" label={label} primary title={label} />
       </Box>

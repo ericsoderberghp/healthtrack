@@ -69,8 +69,8 @@ export const alignDate = (date, offset = 0) => {
 };
 
 // assumes date is aligned already
-export const frequencyDates = (date, frequency) => {
-  if (frequency === 1) return [alignDate(date)];
+export const frequencyDates = (date, frequency, hour = 12) => {
+  if (frequency === 1) return [alignDate(date, hour - 12)];
   if (frequency === 2) return [alignDate(date, -4), alignDate(date, +4)];
   if (frequency === 3)
     return [alignDate(date, -4), alignDate(date), alignDate(date, +4)];

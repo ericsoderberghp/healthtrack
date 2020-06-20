@@ -10,17 +10,15 @@ import { Close, Next, Previous } from 'grommet-icons';
 import { DateInput, Page } from './components';
 import TrackContext from './TrackContext';
 import { alignDate, frequencyDates, sameDate, sortOn } from './utils';
-import { addData, addNote, deleteNote, updateNote } from './track';
+import {
+  addData,
+  addNote,
+  deleteNote,
+  frequencyHourLabel,
+  getCategory,
+  updateNote,
+} from './track';
 import CalendarData from './CalendarData';
-
-const hourLabel = {
-  8: 'morning',
-  10: 'mid-morning',
-  12: 'mid-day',
-  14: 'afternoon',
-  16: 'evening',
-  20: 'night',
-};
 
 const createTouch = (event) => {
   if (event.changedTouches.length !== 1) return undefined;
@@ -63,45 +61,30 @@ const Calendar = () => {
 
   // categories that want something each day
   const categories = useMemo(
-    () =>
-      sortOn(
-        track.categories.filter((c) => c.frequency > 0),
-        ['aspect', 'name'],
-      ),
+    () => track.categories.filter((c) => c.frequency > 0),
     [track],
   );
 
-  // data for this day
+  // existing data for this day
   const data = useMemo(() => track.data.filter((d) => sameDate(d.date, date)), [
     date,
     track,
   ]);
 
-  // non-daily categories we have data for
-  const occasionalCategories = useMemo(
-    () =>
-      Array.from(
-        new Set(
-          data
-            .filter(
-              (d) => d.category && !categories.find((c) => c.id === d.category),
-            )
-            .map((d) => d.category),
-        ),
-      ).map((id) => track.categories.find((c) => c.id === id)),
-    [categories, track.categories, data],
-  );
-
-  // categories that are occasional or have their frequencies filled already
-  const addableCategories = useMemo(
-    () =>
-      track.categories.filter(
-        (c) =>
-          c.frequency === 0 ||
-          data.filter((d) => d.category === c.id).length >= c.frequency,
-      ),
-    [data, track.categories],
-  );
+  // data described by frequency that we don't have yet
+  const pendingData = useMemo(() => {
+    const result = [];
+    categories.forEach((category) => {
+      // find all data associated with this category already
+      const cData = data.filter((d) => d.category === category.id);
+      // insert any missing frequency times
+      frequencyDates(date, category.frequency, category.hour).forEach((fd) => {
+        if (!cData.find((d) => sameDate(d.date, fd, true)))
+          result.push({ category: category.id, date: fd.toISOString() });
+      });
+    });
+    return result;
+  }, [categories, data, date]);
 
   // note for this day
   const note = useMemo(
@@ -109,36 +92,10 @@ const Calendar = () => {
     [date, track],
   );
 
-  // organize as follows:
-  // for each daily category, put all data associated with it
-  // if there is not enough data already associated with it, add blanks for them
-  // for any data not in a daily category, add it last.
-  const categorySets = useMemo(() => {
-    const result = [];
-    [...categories, ...occasionalCategories].forEach((category) => {
-      // find all data associated with this category already
-      const set = {
-        category,
-        data: data.filter((d) => d.category === category.id),
-      };
-      // insert any missing frequency times
-      if (category.frequency) {
-        frequencyDates(date, category.frequency).forEach((fd) => {
-          if (!set.data.find((d) => sameDate(d.date, fd, true))) {
-            set.data.push({ category: category.id, date: fd.toISOString() });
-          }
-        });
-      }
-      sortOn(set.data, 'date', 'asc');
-      // identify frequency data based on the frequency
-      set.labels = set.data.map((d, i) => {
-        if (category.frequency < 2) return undefined;
-        return hourLabel[new Date(d.date).getHours()];
-      });
-      result.push(set);
-    });
-    return result;
-  }, [categories, data, date, occasionalCategories]);
+  const mergedData = useMemo(
+    () => sortOn([...data, ...pendingData], 'date', 'asc'),
+    [data, pendingData],
+  );
 
   const onPrevious = useCallback(() => {
     const nextDate = new Date(date);
@@ -216,23 +173,27 @@ const Calendar = () => {
           </Box>
         </Header>
         <Box flex="grow" pad="medium" responsive={false}>
-          {!categorySets.length && (
+          {!categories.length && (
             <Text color="text-xweak">You have no daily categories yet.</Text>
           )}
-          {categorySets.map(({ category, data, labels }) =>
-            data.map((d, index) => (
+          {mergedData.map((d, index) => {
+            const category = getCategory(track, d.category);
+            const hour = new Date(d.date).getHours();
+            return (
               <CalendarData
                 key={`${category.id}-${index}`}
-                id={`${category.name}-${data.id}-${index}`}
+                id={`${category.name}-${d.id}-${index}`}
                 category={category}
                 data={d}
-                label={labels[index]}
-                deletable={!hourLabel[new Date(d.date).getHours()]}
+                label={
+                  category.frequency < 2 ? undefined : frequencyHourLabel[hour]
+                }
+                deletable={!frequencyHourLabel[hour]}
                 track={track}
                 setTrack={setTrack}
               />
-            )),
-          )}
+            );
+          })}
           {showCategorySelect && (
             <Box
               pad={{ vertical: 'small' }}
@@ -244,7 +205,7 @@ const Calendar = () => {
               responsive={false}
             >
               <Select
-                options={addableCategories}
+                options={track.categories}
                 labelKey="name"
                 valueKey="id"
                 placeholder="select category ..."

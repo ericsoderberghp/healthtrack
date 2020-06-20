@@ -349,3 +349,14 @@ export const frequencyLabel = {
   4: 'four times a day',
   6: 'six times a day',
 };
+
+export const frequencyHours = [8, 10, 12, 14, 16, 20];
+
+export const frequencyHourLabel = {
+  8: 'morning',
+  10: 'mid-morning',
+  12: 'mid-day',
+  14: 'afternoon',
+  16: 'evening',
+  20: 'night',
+};

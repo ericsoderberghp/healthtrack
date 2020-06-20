@@ -4,7 +4,7 @@ import { Add, Search } from 'grommet-icons';
 import { Page, RoutedButton } from './components';
 import { RouterContext } from './Router';
 import TrackContext from './TrackContext';
-import { frequencyLabel } from './track';
+import { frequencyHourLabel, frequencyLabel } from './track';
 
 const Categories = () => {
   const { push } = useContext(RouterContext);
@@ -49,7 +49,12 @@ const Categories = () => {
         data={categories}
         primaryKey="name"
         secondaryKey={(item) => {
-          if (item.frequency) return frequencyLabel[item.frequency];
+          if (item.frequency)
+            if (item.hour)
+              return `${frequencyLabel[item.frequency]} - ${
+                frequencyHourLabel[item.hour]
+              }`;
+            else return frequencyLabel[item.frequency];
           return '';
         }}
         onClickItem={({ item: { id } }) => push(`/categories/${id}`)}
