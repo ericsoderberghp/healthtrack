@@ -5,7 +5,7 @@ import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
 import { getCategory } from './track';
-import { alignDate, nextId, sameDate, sortOn } from './utils';
+import { alignDate, nextId, sortOn } from './utils';
 import DataForm from './DataForm';
 
 const DataAdd = () => {
