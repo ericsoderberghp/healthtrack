@@ -19,24 +19,12 @@ const DataAdd = () => {
     if (track) {
       if (search) {
         const exp = new RegExp(search, 'i');
-        const matchedNames = {};
-        const matchedData = track.data.filter((d) => {
-          if (exp.test(d.value) && !matchedNames[d.value]) {
-            matchedNames[d.value] = true;
-            return true;
-          }
-          return false;
-        });
         const matchedCategories = track.categories.filter((c) =>
           exp.test(c.name),
         );
-        setStarters([...matchedData, ...matchedCategories]);
+        setStarters(matchedCategories);
       } else {
-        const latestData = track.data[0] && track.data[0].date;
-        const recentData = latestData
-          ? track.data.filter((d) => sameDate(d.date, latestData))
-          : [];
-        setStarters([...recentData, ...track.categories]);
+        setStarters(track.categories);
       }
     }
   }, [search, track]);
@@ -83,26 +71,13 @@ const DataAdd = () => {
             <List
               data={starters}
               primaryKey={(item) => (
-                <Text key={item.value || item.name} weight="bold">
-                  {item.category && typeof item.value === 'string'
-                    ? item.value
-                    : item.name}
+                <Text key={item.name} weight="bold">
+                  {item.name}
                 </Text>
               )}
-              secondaryKey={(item) => {
-                if (item.date && item.category)
-                  return new Date(item.date).toLocaleString(undefined, {
-                    month: 'short',
-                    day: 'numeric',
-                  });
-                return null;
-              }}
               onClickItem={({ item }) => {
-                const base = item.category
-                  ? item
-                  : { category: item.id, name: '' };
                 setData({
-                  ...base,
+                  category: item.id,
                   date: alignDate(new Date()).toISOString(),
                   id: undefined,
                   value: '',
