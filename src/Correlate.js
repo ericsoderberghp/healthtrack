@@ -173,6 +173,7 @@ const Correlate = () => {
             onChange={({ value }) => setDates(value)}
           />
         </Header>
+
         {categories.length > 0 && (
           <Box margin={{ vertical: 'large' }}>
             <DataChart
@@ -186,6 +187,7 @@ const Correlate = () => {
             />
           </Box>
         )}
+
         <Box gap="small">
           {categories.map((category, index) => (
             <Box
@@ -217,6 +219,7 @@ const Correlate = () => {
               />
             </Box>
           ))}
+
           {addCategory ? (
             <Box direction="row" gap="medium" justify="between" align="center">
               <Box direction="row" gap="small" align="center">

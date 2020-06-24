@@ -23,22 +23,13 @@ import CalendarData from './CalendarData';
 const createTouch = (event) => {
   if (event.changedTouches.length !== 1) return undefined;
   const touch = event.changedTouches.item(0);
-  if (touch)
-    return {
-      at: new Date().getTime(),
-      x: touch.pageX,
-      y: touch.pageY,
-    };
+  return { at: new Date().getTime(), x: touch.pageX, y: touch.pageY };
 };
 
-const deltaTouch = (event, touchStart) => {
-  const touch = createTouch(event);
-  if (touch && touchStart)
-    return {
-      at: touch.at - touchStart.at,
-      x: touch.x - touchStart.x,
-      y: touch.y - touchStart.y,
-    };
+const deltaTouch = (event, start) => {
+  const t = createTouch(event);
+  if (t && start)
+    return { at: t.at - start.at, x: t.x - start.x, y: t.y - start.y };
   else return { at: 0, x: 0, y: 0 };
 };
 
@@ -49,6 +40,7 @@ const Calendar = () => {
   const [offset, setOffset] = useState(0);
 
   // jump to tomorrow
+  // TODO: test that this works, not sure that it does
   useEffect(() => {
     const tomorrow = alignDate(new Date(), -10);
     tomorrow.setDate(tomorrow.getDate() + 1);
@@ -93,7 +85,7 @@ const Calendar = () => {
   );
 
   const mergedData = useMemo(
-    () => sortOn([...data, ...pendingData], 'date', 'asc'),
+    () => sortOn([...data, ...pendingData], ['date', 'category'], 'asc'),
     [data, pendingData],
   );
 

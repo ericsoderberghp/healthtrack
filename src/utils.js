@@ -17,10 +17,14 @@ export const sortOn = (array, key, direction = 'asc') => {
   const keys = Array.isArray(key) ? key : [key];
   array.sort((a, b) => {
     for (let i = 0; i < keys.length; i += 1) {
-      const lowerA = a[keys[i]].toLowerCase();
-      const lowerB = b[keys[i]].toLowerCase();
-      if (lowerA < lowerB) return before;
-      if (lowerA > lowerB) return after;
+      let valueA = a[keys[i]];
+      let valueB = b[keys[i]];
+      if (typeof valueA === 'string') {
+        valueA = valueA.toLowerCase();
+        valueB = valueB.toLowerCase();
+      }
+      if (valueA < valueB) return before;
+      if (valueA > valueB) return after;
     }
     return 0;
   });
