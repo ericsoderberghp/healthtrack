@@ -19,12 +19,12 @@ const Home = () => {
         <Paragraph>
           To begin with, think about some symptom you experience that you don't
           know the cause of. For example, migraine headaches. Then, think about
-          some things that you think might be affecting it, such as not getting
-          enough sleep, not getting enough exercise, or consuming alcohol, and
-          create categories for these things. When creating the categories,
-          think about how much detail you want to capture and how often you
-          expect to track it. The simpler you can make it, the easier it will be
-          to keep track. You can always adjust over time.
+          some of your behaviors that might be affecting it, such as not getting
+          enough sleep, not getting enough exercise, or consuming alcohol. Add
+          categories for your symptoms and behaviors. When adding them, think
+          about how much detail you want to capture and how often you expect to
+          track them. The simpler you can make it, the easier it will be to keep
+          track. You can always adjust over time.
         </Paragraph>
         <RoutedButton
           label="setup categories"

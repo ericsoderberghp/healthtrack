@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Box, Header, Heading, List, TextInput } from 'grommet';
-import { Add, Search } from 'grommet-icons';
+import { Add, Search, User } from 'grommet-icons';
 import { Page, RoutedButton } from './components';
 import { RouterContext } from './Router';
 import TrackContext from './TrackContext';
@@ -59,6 +59,9 @@ const Categories = () => {
         }}
         onClickItem={({ item: { id } }) => push(`/categories/${id}`)}
       />
+      <Box margin={{ top: 'large' }} align="start">
+        <RoutedButton label="guide" icon={<User />} path="/" />
+      </Box>
     </Page>
   );
 };

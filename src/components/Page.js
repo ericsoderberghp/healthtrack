@@ -21,7 +21,7 @@ const MainNav = ({ pin }) => {
       <RoutedButton title="calendar" icon={<Calendar />} path="/calendar" />
       <RoutedButton title="correlate" icon={<Test />} path="/correlate" />
       <RoutedButton title="categories" icon={<Tag />} path="/categories" />
-      <RoutedButton title="settings" icon={<User />} path="/" />
+      <RoutedButton title="guide" icon={<User />} path="/" />
     </Nav>
   );
 };
