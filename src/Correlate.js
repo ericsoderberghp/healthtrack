@@ -130,6 +130,12 @@ const Correlate = () => {
         const delta = Math.max(yMax - yMin, 2);
         yMin = Math.max(0, yMin - delta / 2);
         yMax = yMax + delta / 2;
+      } else if (category.type === 'scale') {
+        yMin = 0;
+        yMax = 5;
+      } else if (category.type === 'yes/no') {
+        yMin = 0;
+        yMax = 1;
       } else {
         yMin = 0;
         yMax = Math.max(...data.map((d) => d[category.name] || 0));
