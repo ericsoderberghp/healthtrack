@@ -51,17 +51,12 @@ export const sameDate = (date1, date2, includeHour) => {
 };
 
 export const betweenDates = (date1, date2, date3) => {
-  const d1 = typeof date1 === 'string' ? new Date(date1) : date1;
-  const d2 = typeof date2 === 'string' ? new Date(date2) : date2;
-  const d3 = typeof date3 === 'string' ? new Date(date3) : date3;
-  return (
-    d1.getFullYear() >= d2.getFullYear() &&
-    d1.getMonth() >= d2.getMonth() &&
-    d1.getDate() >= d2.getDate() &&
-    d1.getFullYear() <= d3.getFullYear() &&
-    d1.getMonth() <= d3.getMonth() &&
-    d1.getDate() <= d3.getDate()
-  );
+  const d1 = new Date(date1);
+  const d2 = new Date(date2);
+  d2.setHours(0);
+  const d3 = new Date(date3);
+  d3.setHours(24);
+  return d1 > d2 && d1 < d3;
 };
 
 export const alignDate = (date, offset = 0) => {
