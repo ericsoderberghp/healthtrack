@@ -12,13 +12,13 @@ const ScaleInput = forwardRef((props, ref) => {
       direction="row"
       options={[1, 2, 3, 4, 5]}
       pad={{ horizontal: 'small' }}
-      gap="xxsmall"
+      gap="xsmall"
       {...props}
     >
       {(option, { checked, hover }) => {
         let color;
-        if (hover) color = 'active-background';
-        else if (checked || option <= valueOption) color = 'control';
+        // if (hover) color = 'active-background';
+        if (checked || option <= valueOption) color = 'control';
         else color = 'background-contrast';
 
         // hack to have access to the value, update grommet some day
@@ -29,9 +29,9 @@ const ScaleInput = forwardRef((props, ref) => {
         return (
           <Box
             key={option}
-            pad="small"
+            pad={{ vertical: 'medium', horizontal: 'small' }}
             responsive={false}
-            round="xxsmall"
+            round="xsmall"
             background={color}
           />
         );

@@ -4,29 +4,14 @@ import { Add, Search, User } from 'grommet-icons';
 import { Page, RoutedButton } from './components';
 import { RouterContext } from './Router';
 import TrackContext from './TrackContext';
-import { timeLabel } from './utils';
-
-const sortCategories = (categories) =>
-  categories.sort((c1, c2) => {
-    if (c1.times && !c2.times) return -1;
-    if (c2.times && !c1.times) return 1;
-    if (c1.times && c2.times) {
-      if (c1.times[0] < c2.times[0]) return -1;
-      if (c2.times[0] < c1.times[0]) return 1;
-    }
-    const n1 = c1.name.toLowerCase();
-    const n2 = c2.name.toLowerCase();
-    if (n1 < n2) return -1;
-    if (n2 < n1) return 1;
-    return 0;
-  });
+import { sortCategories, timeLabel } from './utils';
 
 const Categories = () => {
   const { push } = useContext(RouterContext);
   const [track] = useContext(TrackContext);
   const [search, setSearch] = useState('');
   const [categories, setCategories] = useState(
-    sortCategories(track ? track.categories : []),
+    (track ? track.categories : []).sort(sortCategories),
   );
   useEffect(() => {
     if (track && search) {
@@ -34,7 +19,7 @@ const Categories = () => {
       setCategories(
         sortCategories(track.categories.filter((c) => exp.test(c.name))),
       );
-    } else if (track) setCategories(sortCategories(track.categories));
+    } else if (track) setCategories(track.categories.sort(sortCategories));
   }, [search, track]);
 
   if (!track) return null;

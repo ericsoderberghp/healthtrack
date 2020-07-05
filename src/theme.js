@@ -31,12 +31,13 @@ export default {
       face:
         "/* latin */\r\n@font-face {\r\n  font-family: 'Lato';\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');\r\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\r\n}\r\n/* latin */\r\n@font-face {\r\n  font-family: 'Lato';\r\n  font-style: normal;\r\n  font-weight: 900;\r\n  src: local('Lato Black'), local('Lato-Black'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh50XSwiPGQ3q5d0.woff2) format('woff2');\r\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\r\n}",
     },
-    hover: {
-      background: {
-        color: 'blue!',
-        opacity: 'weak',
-      },
-    },
+    // hover: {
+    //   background: {
+    //     color: 'blue!',
+    //     opacity: 'weak',
+    //   },
+    // },
+    hover: { background: undefined },
   },
   button: {
     default: {
@@ -81,14 +82,15 @@ export default {
         },
       },
     },
-    hover: {
-      default: {
-        background: { color: 'blue!', opacity: 'weak' },
-      },
-      primary: {
-        background: { color: 'blue!', opacity: 'weak' },
-      },
-    },
+    // hover: {
+    //   default: {
+    //     background: { color: 'blue!', opacity: 'weak' },
+    //   },
+    //   primary: {
+    //     background: { color: 'blue!', opacity: 'weak' },
+    //   },
+    // },
+    hover: undefined,
     border: undefined,
     size: undefined,
   },

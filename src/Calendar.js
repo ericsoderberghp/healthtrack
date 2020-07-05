@@ -15,7 +15,7 @@ import {
   getTime,
   sameDate,
   setTime,
-  sortOn,
+  sortCategories,
   timeLabel,
 } from './utils';
 import { addData, addNote, deleteNote, getCategory, updateNote } from './track';
@@ -53,9 +53,10 @@ const Calendar = () => {
   }, [date, track]);
 
   // categories that want something each day
-  const categories = useMemo(() => track.categories.filter((c) => c.times), [
-    track,
-  ]);
+  const categories = useMemo(
+    () => track.categories.filter((c) => c.times).sort(sortCategories),
+    [track],
+  );
 
   // existing data for this day
   const data = useMemo(() => track.data.filter((d) => sameDate(d.date, date)), [
@@ -85,8 +86,19 @@ const Calendar = () => {
   );
 
   const mergedData = useMemo(
-    () => sortOn([...data, ...pendingData], ['date', 'category'], 'asc'),
-    [data, pendingData],
+    () =>
+      [...data, ...pendingData].sort((d1, d2) => {
+        const ci1 = categories.findIndex((c) => c.id === d1.category);
+        const ci2 = categories.findIndex((c) => c.id === d2.category);
+        if (ci1 !== -1 && ci2 === -1) return -1;
+        if (ci2 !== -1 && ci1 === -1) return 1;
+        if (ci1 < ci2) return -1;
+        if (ci2 < ci1) return 1;
+        if (d1.date < d2.date) return -1;
+        if (d2.date < d1.date) return 1;
+        return 0;
+      }),
+    [categories, data, pendingData],
   );
 
   const onPrevious = useCallback(() => {
@@ -177,8 +189,11 @@ const Calendar = () => {
                 id={`${category.name}-${d.id}-${index}`}
                 category={category}
                 data={d}
+                subsequent={
+                  index > 0 && d.category === mergedData[index - 1].category
+                }
                 label={category.times ? timeLabel(d.date) : undefined}
-                deletable={!category.times.includes(time)}
+                deletable={!category.times || !category.times.includes(time)}
                 track={track}
                 setTrack={setTrack}
               />

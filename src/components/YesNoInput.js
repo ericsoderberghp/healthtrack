@@ -11,13 +11,16 @@ const YesNoInput = forwardRef((props, ref) => (
     ref={ref}
     direction="row"
     options={[true, false]}
+    gap="medium"
     border="between"
+    pad={{ horizontal: 'small' }}
     {...props}
   >
     {(option, { checked, hover }) => {
       let color;
-      if (hover) color = 'active-background';
-      else if (checked) color = 'control';
+      // if (hover) color = 'active-background';
+      if (checked) color = 'control';
+      else color = 'background-contrast';
       return (
         <Box
           key={label[option]}

@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Box, Button, ResponsiveContext, Text } from 'grommet';
+import React from 'react';
+import { Box, Button, Text } from 'grommet';
 import { NameInput, NumberInput, ScaleInput, YesNoInput } from './components';
 import { addData, deleteData, updateData } from './track';
 
@@ -18,10 +18,9 @@ const CalendarData = ({
   label,
   track,
   setTrack,
+  subsequent,
   ...rest
 }) => {
-  const responsive = useContext(ResponsiveContext);
-
   const onChange = (value) => {
     let nextTrack;
     // if unsetting saved category.times data, delete it
@@ -56,18 +55,18 @@ const CalendarData = ({
     control = <Button label="clear" onClick={() => onChange(undefined)} />;
 
   return (
-    <Box
-      key={category.id}
-      direction="row-responsive"
-      justify="between"
-      align="center"
-      gap="medium"
-      pad={{ vertical: 'small' }}
-      border="top"
-      responsive={false}
-      {...rest}
-    >
-      <Box flex direction="row" justify="between" align="center">
+    <Box pad={{ vertical: 'medium' }} border="top" {...rest}>
+      <Box
+        direction="row"
+        align="center"
+        justify={subsequent ? 'end' : 'between'}
+        gap="small"
+        pad={{ bottom: 'medium', horizontal: 'small' }}
+      >
+        {!subsequent && <Text>{category.name}</Text>}
+        {label && <Text color="text-xweak">{label}</Text>}
+      </Box>
+      <Box direction="row" justify="between" align="center" gap="large">
         <Input
           id={id}
           name={id}
@@ -76,18 +75,6 @@ const CalendarData = ({
           onChange={(event) => onChange(Input.normalize(event.target.value))}
         />
         {control}
-      </Box>
-      <Box
-        flex={false}
-        alignSelf={responsive === 'small' ? 'end' : undefined}
-        direction="row"
-        align="center"
-        gap="small"
-      >
-        <Text truncate margin={{ horizontal: 'small', vertical: 'small' }}>
-          {category.name}
-        </Text>
-        {label && <Text color="text-xweak">{label}</Text>}
       </Box>
     </Box>
   );

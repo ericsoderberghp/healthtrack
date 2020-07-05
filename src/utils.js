@@ -31,6 +31,20 @@ export const sortOn = (array, key, direction = 'asc') => {
   return array;
 };
 
+export const sortCategories = (c1, c2) => {
+  if (c1.times && !c2.times) return -1;
+  if (c2.times && !c1.times) return 1;
+  if (c1.times && c2.times) {
+    if (c1.times[0] < c2.times[0]) return -1;
+    if (c2.times[0] < c1.times[0]) return 1;
+  }
+  const n1 = c1.name.toLowerCase();
+  const n2 = c2.name.toLowerCase();
+  if (n1 < n2) return -1;
+  if (n2 < n1) return 1;
+  return 0;
+};
+
 export const nextId = (array) => {
   let nextId = 1;
   array.forEach((item) => {
