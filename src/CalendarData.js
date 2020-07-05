@@ -18,7 +18,6 @@ const CalendarData = ({
   label,
   track,
   setTrack,
-  subsequent,
   ...rest
 }) => {
   const onChange = (value) => {
@@ -59,11 +58,11 @@ const CalendarData = ({
       <Box
         direction="row"
         align="center"
-        justify={subsequent ? 'end' : 'between'}
+        justify="between"
         gap="small"
         pad={{ bottom: 'medium' }}
       >
-        {!subsequent && <Text>{category.name}</Text>}
+        <Text>{category.name}</Text>
         {label && <Text color="text-xweak">{label}</Text>}
       </Box>
       <Box direction="row" justify="between" align="center" gap="large">
