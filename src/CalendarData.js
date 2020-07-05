@@ -55,13 +55,13 @@ const CalendarData = ({
     control = <Button label="clear" onClick={() => onChange(undefined)} />;
 
   return (
-    <Box pad={{ vertical: 'medium' }} border="top" {...rest}>
+    <Box pad={{ vertical: 'large' }} border="top" {...rest}>
       <Box
         direction="row"
         align="center"
         justify={subsequent ? 'end' : 'between'}
         gap="small"
-        pad={{ bottom: 'medium', horizontal: 'small' }}
+        pad={{ bottom: 'medium' }}
       >
         {!subsequent && <Text>{category.name}</Text>}
         {label && <Text color="text-xweak">{label}</Text>}

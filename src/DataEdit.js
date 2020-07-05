@@ -38,7 +38,7 @@ const DataEdit = ({ id: idArg }) => {
 
   return (
     <Page>
-      <Box pad={{ horizontal: 'medium' }} flex="grow" responsive={false}>
+      <Box pad={{ horizontal: 'large' }}>
         <Header>
           <Heading>edit {category.name}</Heading>
           <RoutedButton icon={<Close />} path="/data" />
@@ -53,9 +53,8 @@ const DataEdit = ({ id: idArg }) => {
       </Box>
       <Box
         margin={{ top: 'xlarge' }}
-        pad={{ horizontal: 'medium' }}
+        pad={{ horizontal: 'large' }}
         align="start"
-        responsive={false}
       >
         <Button
           label="Delete"

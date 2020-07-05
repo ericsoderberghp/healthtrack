@@ -11,7 +11,6 @@ const ScaleInput = forwardRef((props, ref) => {
       ref={ref}
       direction="row"
       options={[1, 2, 3, 4, 5]}
-      pad={{ horizontal: 'small' }}
       gap="xsmall"
       {...props}
     >

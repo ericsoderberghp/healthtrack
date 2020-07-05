@@ -13,7 +13,6 @@ const YesNoInput = forwardRef((props, ref) => (
     options={[true, false]}
     gap="medium"
     border="between"
-    pad={{ horizontal: 'small' }}
     {...props}
   >
     {(option, { checked, hover }) => {

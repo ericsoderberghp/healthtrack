@@ -20,7 +20,7 @@ const NoteAdd = () => {
 
   return (
     <Page>
-      <Box pad={{ horizontal: 'medium' }}>
+      <Box pad={{ horizontal: 'large' }}>
         <Header>
           <Heading>add note</Heading>
           <RoutedButton icon={<Close />} path="/notes" />

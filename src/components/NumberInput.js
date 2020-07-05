@@ -8,7 +8,6 @@ const NumberInput = forwardRef(({ units, value, ...rest }, ref) => (
     align="center"
     background="background-contrast"
     round="xsmall"
-    margin={{ horizontal: 'small' }}
   >
     <TextInput
       ref={ref}

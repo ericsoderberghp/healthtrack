@@ -26,7 +26,7 @@ const Categories = () => {
 
   return (
     <Page>
-      <Box pad={{ horizontal: 'medium' }}>
+      <Box pad={{ horizontal: 'large' }}>
         <Header>
           <Heading>categories</Heading>
           <RoutedButton
@@ -38,7 +38,7 @@ const Categories = () => {
         </Header>
       </Box>
       {track.categories.length > 20 && (
-        <Box margin={{ bottom: 'medium' }} responsive={false}>
+        <Box margin={{ bottom: 'large', horizontal: 'large' }}>
           <TextInput
             aria-label="search input"
             icon={<Search />}
@@ -48,16 +48,25 @@ const Categories = () => {
           />
         </Box>
       )}
-      <List
-        aria-label="categories"
-        data={categories}
-        primaryKey="name"
-        secondaryKey={(c) =>
-          c.times ? c.times.map((t) => timeLabel(undefined, t)).join(', ') : ''
-        }
-        onClickItem={({ item: { id } }) => push(`/categories/${id}`)}
-      />
-      <Box margin={{ top: 'large' }} align="start">
+      <Box pad={{ horizontal: 'large' }}>
+        <List
+          aria-label="categories"
+          pad={{ vertical: 'medium', horizontal: 'none' }}
+          data={categories}
+          primaryKey="name"
+          secondaryKey={(c) =>
+            c.times
+              ? c.times.map((t) => timeLabel(undefined, t)).join(', ')
+              : ''
+          }
+          onClickItem={({ item: { id } }) => push(`/categories/${id}`)}
+        />
+      </Box>
+      <Box
+        margin={{ top: 'large' }}
+        pad={{ horizontal: 'large' }}
+        align="start"
+      >
         <RoutedButton label="guide" icon={<User />} path="/" />
       </Box>
     </Page>

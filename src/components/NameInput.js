@@ -2,12 +2,7 @@ import React, { forwardRef } from 'react';
 import { Box, TextInput } from 'grommet';
 
 const NameInput = forwardRef(({ value, ...rest }, ref) => (
-  <Box
-    flex
-    background="background-contrast"
-    round="xsmall"
-    margin={{ horizontal: 'small' }}
-  >
+  <Box flex background="background-contrast" round="xsmall">
     <TextInput ref={ref} size="large" plain value={value || ''} {...rest} />
   </Box>
 ));

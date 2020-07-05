@@ -32,7 +32,7 @@ const CategoryAdd = () => {
 
   return (
     <Page>
-      <Box pad={{ horizontal: 'medium' }} flex="grow" responsive={false}>
+      <Box pad={{ horizontal: 'large' }} flex="grow">
         <Header>
           <Heading>add category</Heading>
           <RoutedButton icon={<Close />} path="/categories" />

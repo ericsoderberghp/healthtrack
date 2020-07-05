@@ -92,7 +92,7 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
           }}
         />
         {category.times && (
-          <Box margin={{ top: 'medium' }} gap="small" align="start">
+          <Box margin={{ top: 'large' }} gap="medium" align="start">
             {category.times.map((time, index) => (
               <Box
                 key={index}

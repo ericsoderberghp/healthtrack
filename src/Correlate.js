@@ -166,7 +166,7 @@ const Correlate = () => {
 
   return (
     <Page>
-      <Box pad={{ horizontal: 'medium' }} responsive={false}>
+      <Box pad={{ horizontal: 'large' }}>
         <Header>
           <Heading>correlate</Heading>
           <DateInput

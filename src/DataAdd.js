@@ -52,7 +52,7 @@ const DataAdd = () => {
 
   return (
     <Page>
-      <Box pad={{ horizontal: 'medium' }} flex="grow" responsive={false}>
+      <Box pad={{ horizontal: 'large' }}>
         <Header>
           <Box direction="row" align="center">
             <Heading>add {category ? category.name : 'data'}</Heading>
@@ -60,7 +60,7 @@ const DataAdd = () => {
           <RoutedButton icon={<Close />} path="/data" />
         </Header>
         {!data ? (
-          <Box>
+          <Box gap="medium">
             <TextInput
               aria-label="search"
               icon={<Search />}

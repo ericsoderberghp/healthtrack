@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <Page>
-      <Box align="start" pad={{ horizontal: 'medium' }} responsive={false}>
+      <Box align="start" pad={{ horizontal: 'large' }}>
         <Heading>Hi {track.name}</Heading>
         <Paragraph>
           This is a tool that can help remove uncertainty from managing your
@@ -49,12 +49,11 @@ const Home = () => {
         </Paragraph>
       </Box>
       <Box
-        margin={{ top: 'large' }}
+        margin={{ top: 'xlarge' }}
         border="top"
-        pad="medium"
+        pad="large"
         align="start"
         gap="medium"
-        responsive={false}
       >
         <RoutedButton label="Data" path="/data" title="data" />
         <RoutedButton label="Notes" path="/notes" title="notes" />

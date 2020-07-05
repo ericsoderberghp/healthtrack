@@ -30,7 +30,7 @@ const CategoryEdit = ({ id: idArg }) => {
 
   return (
     <Page>
-      <Box pad={{ horizontal: 'medium' }} flex="grow" responsive={false}>
+      <Box pad={{ horizontal: 'large' }} flex="grow">
         <Header>
           <Heading>edit category</Heading>
           <RoutedButton icon={<Close />} path="/categories" />
@@ -43,9 +43,8 @@ const CategoryEdit = ({ id: idArg }) => {
       </Box>
       <Box
         margin={{ top: 'xlarge' }}
-        pad={{ horizontal: 'medium' }}
+        pad={{ horizontal: 'large' }}
         align="start"
-        responsive={false}
       >
         <Button
           label="Delete"

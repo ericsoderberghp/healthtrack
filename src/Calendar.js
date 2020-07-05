@@ -160,7 +160,7 @@ const Calendar = () => {
   return (
     <Page>
       <Box style={{ transform: `translateX(${offset}px)` }}>
-        <Header pad={{ horizontal: 'medium' }} responsive={false}>
+        <Header pad={{ horizontal: 'large' }}>
           <Heading>
             {date.toLocaleDateString(undefined, {
               month: 'short',
@@ -176,7 +176,7 @@ const Calendar = () => {
             <Button icon={<Next />} onClick={onNext} />
           </Box>
         </Header>
-        <Box flex="grow" pad="medium" responsive={false}>
+        <Box flex="grow" pad={{ horizontal: 'large' }}>
           {!categories.length && (
             <Text color="text-xweak">You have no daily categories yet.</Text>
           )}
@@ -201,13 +201,12 @@ const Calendar = () => {
           })}
           {showCategorySelect && (
             <Box
-              pad={{ vertical: 'small' }}
-              gap="medium"
+              pad={{ vertical: 'medium' }}
+              gap="large"
               border="top"
               direction="row"
               justify="end"
               align="center"
-              responsive={false}
             >
               <Select
                 options={track.categories}
@@ -236,7 +235,7 @@ const Calendar = () => {
         </Box>
 
         {!showCategorySelect && (
-          <Box align="start" pad="small" responsive={false}>
+          <Box align="start" pad="medium">
             <Button
               label="add additional data"
               onClick={() => setShowCategorySelect(true)}
@@ -245,7 +244,7 @@ const Calendar = () => {
         )}
 
         {note ? (
-          <Box pad="medium" gap="medium" responsive={false}>
+          <Box pad="large" gap="large">
             <Header>
               <Heading level={2} size="small" margin="none">
                 note
@@ -264,7 +263,7 @@ const Calendar = () => {
             />
           </Box>
         ) : (
-          <Box align="start" pad="small" responsive={false}>
+          <Box align="start" pad="medium">
             <Button
               label="add a note"
               onClick={() =>
