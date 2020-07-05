@@ -4,18 +4,37 @@ import { Add, Search, User } from 'grommet-icons';
 import { Page, RoutedButton } from './components';
 import { RouterContext } from './Router';
 import TrackContext from './TrackContext';
-import { frequencyHourLabel, frequencyLabel } from './track';
+import { timeLabel } from './utils';
+
+const sortCategories = (categories) =>
+  categories.sort((c1, c2) => {
+    if (c1.times && !c2.times) return -1;
+    if (c2.times && !c1.times) return 1;
+    if (c1.times && c2.times) {
+      if (c1.times[0] < c2.times[0]) return -1;
+      if (c2.times[0] < c1.times[0]) return 1;
+    }
+    const n1 = c1.name.toLowerCase();
+    const n2 = c2.name.toLowerCase();
+    if (n1 < n2) return -1;
+    if (n2 < n1) return 1;
+    return 0;
+  });
 
 const Categories = () => {
   const { push } = useContext(RouterContext);
   const [track] = useContext(TrackContext);
   const [search, setSearch] = useState('');
-  const [categories, setCategories] = useState(track ? track.categories : []);
+  const [categories, setCategories] = useState(
+    sortCategories(track ? track.categories : []),
+  );
   useEffect(() => {
     if (track && search) {
       const exp = new RegExp(search, 'i');
-      setCategories(track.categories.filter((c) => exp.test(c.name)));
-    } else if (track) setCategories(track.categories);
+      setCategories(
+        sortCategories(track.categories.filter((c) => exp.test(c.name))),
+      );
+    } else if (track) setCategories(sortCategories(track.categories));
   }, [search, track]);
 
   if (!track) return null;
@@ -48,15 +67,9 @@ const Categories = () => {
         aria-label="categories"
         data={categories}
         primaryKey="name"
-        secondaryKey={(item) => {
-          if (item.frequency)
-            if (item.hour)
-              return `${frequencyLabel[item.frequency]} - ${
-                frequencyHourLabel[item.hour]
-              }`;
-            else return frequencyLabel[item.frequency];
-          return '';
-        }}
+        secondaryKey={(c) =>
+          c.times ? c.times.map((t) => timeLabel(undefined, t)).join(', ') : ''
+        }
         onClickItem={({ item: { id } }) => push(`/categories/${id}`)}
       />
       <Box margin={{ top: 'large' }} align="start">

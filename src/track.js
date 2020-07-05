@@ -4,7 +4,7 @@ import { nextId, sortOn } from './utils';
 export const apiUrl =
   'https://us-central1-healthtrack-279819.cloudfunctions.net/tracks';
 
-const publish = true;
+const publish = true; // when developing, turn off to keep things local
 if (!publish) console.log('!!! NOT PUBLISHING');
 
 export const initialTrack = {
@@ -18,112 +18,26 @@ export const initialTrack = {
       aspect: 'behavior',
       type: 'number',
       units: 'hours',
-      frequency: 1,
+      times: ['08:00'],
     },
     {
       id: 2,
       name: 'exercise',
       aspect: 'behavior',
       type: 'yes/no',
-      frequency: '',
     },
-    { id: 3, name: 'food', aspect: 'behavior', type: 'name', frequency: '' },
-    { id: 4, name: 'water', aspect: 'behavior', type: 'scale', frequency: 1 },
+    { id: 3, name: 'food', aspect: 'behavior', type: 'name' },
+    {
+      id: 4,
+      name: 'water',
+      aspect: 'behavior',
+      type: 'scale',
+      times: ['20:00'],
+    },
   ],
   data: [],
   notes: [],
 };
-
-// const developmentTrack = JSON.parse(JSON.stringify(initialTrack));
-// developmentTrack.name = 'my name';
-// developmentTrack.email = 'my@email';
-// developmentTrack.password = 'password';
-
-// // load with more for development
-// developmentTrack.categories.push({
-//   id: 5,
-//   name: 'weight',
-//   aspect: 'behavior',
-//   type: 'number',
-//   units: 'pounds',
-// });
-// developmentTrack.categories.push({
-//   id: 6,
-//   name: 'nap',
-//   aspect: 'behavior',
-//   type: 'yes/no',
-//   date: new Date().toISOString(),
-// });
-// developmentTrack.categories.push({
-//   id: 7,
-//   name: 'fatigue',
-//   aspect: 'symptom',
-//   type: 'scale',
-// });
-// developmentTrack.categories.push({
-//   id: 8,
-//   name: 'headache',
-//   aspect: 'symptom',
-//   type: 'yes/no',
-// });
-// developmentTrack.categories.push({
-//   id: 9,
-//   name: 'ibuprofen',
-//   aspect: 'behavior',
-//   type: 'yes/no',
-// });
-
-// let random = 0;
-// const nextRandom = () => {
-//   random += 1;
-//   return random;
-// };
-// const yesterday = new Date();
-// yesterday.setDate(yesterday.getDate() - 1);
-// const date = new Date(yesterday);
-// date.setDate(yesterday.getDate() - 5);
-// while (date <= yesterday) {
-//   developmentTrack.data.unshift({
-//     id: nextId(developmentTrack.data),
-//     date: date.toISOString(),
-//     category: 1, // sleep
-//     name: 'sleep',
-//     value: 6 + (nextRandom() % 3),
-//   });
-//   if (!(nextRandom() % 3)) {
-//     developmentTrack.data.unshift({
-//       id: nextId(developmentTrack.data),
-//       date: date.toISOString(),
-//       category: 3, // food
-//       name: 'breakfast',
-//       value: 'breakfast',
-//     });
-//   }
-//   if (nextRandom() % 2) {
-//     developmentTrack.data.unshift({
-//       id: nextId(developmentTrack.data),
-//       date: date.toISOString(),
-//       category: 2, // exercise
-//       name: 'exercise',
-//       value: true,
-//     });
-//   }
-//   developmentTrack.data.unshift({
-//     id: nextId(developmentTrack.data),
-//     date: date.toISOString(),
-//     category: 3, // food
-//     name: 'lunch',
-//     value: 'lunch',
-//   });
-//   developmentTrack.data.unshift({
-//     id: nextId(developmentTrack.data),
-//     date: date.toISOString(),
-//     category: 4, // water
-//     name: 'water',
-//     value: 1 + (nextRandom() % 4),
-//   });
-//   date.setDate(date.getDate() + 1);
-// }
 
 export const getCategory = (track, id) =>
   track.categories.find((c) => c.id === id);
@@ -152,6 +66,23 @@ const upgrade = (nextTrack) => {
     if (category.type === 'yes/no' && typeof data.value === 'string') {
       data.value = JSON.parse(data.value);
       data.name = category.name;
+    }
+  });
+
+  // convert category frequency and hour to times
+  nextTrack.categories.forEach((category) => {
+    const { frequency, hour } = category;
+    if (frequency) {
+      const h = hour ? `${hour}`.padStart(2, '0') : '12';
+      if (frequency === 1) category.times = [`${h}:00`];
+      else if (frequency === 2) category.times = ['08:00', '16:00'];
+      else if (frequency === 3) category.times = ['08:00', '12:00', '16:00'];
+      else if (frequency === 4)
+        category.times = ['08:00', '12:00', '16:00', '20:00'];
+      else if (frequency === 6)
+        category.times = ['08:00', '10:00', '12:00', '14:00', '16:00', '20:00'];
+      delete category.frequency;
+      delete category.hour;
     }
   });
 };
@@ -339,24 +270,4 @@ export const deleteNote = (track, note) => {
   const index = nextTrack.notes.findIndex((n) => n.id === note.id);
   nextTrack.notes.splice(index, 1);
   return nextTrack;
-};
-
-export const frequencyLabel = {
-  0: 'once in a while',
-  1: 'daily',
-  2: 'twice a day',
-  3: 'three times a day',
-  4: 'four times a day',
-  6: 'six times a day',
-};
-
-export const frequencyHours = [8, 10, 12, 14, 16, 20];
-
-export const frequencyHourLabel = {
-  8: 'morning',
-  10: 'mid-morning',
-  12: 'mid-day',
-  14: 'afternoon',
-  16: 'evening',
-  20: 'night',
 };

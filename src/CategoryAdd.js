@@ -12,7 +12,6 @@ const initialCategory = {
   aspect: '',
   type: '',
   units: '',
-  frequency: '',
 };
 
 const CategoryAdd = () => {
@@ -23,8 +22,6 @@ const CategoryAdd = () => {
     const nextTrack = JSON.parse(JSON.stringify(track));
     nextCategory.id = nextId(nextTrack.categories);
     nextCategory.date = new Date().toISOString();
-    if (nextCategory.frequency)
-      nextCategory.frequency = parseFloat(nextCategory.frequency, 10);
     nextTrack.categories.push(nextCategory);
     sortOn(nextTrack.categories, 'name');
     setTrack(nextTrack);

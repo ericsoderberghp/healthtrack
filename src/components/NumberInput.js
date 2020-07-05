@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { Box, Text, TextInput } from 'grommet';
 
-const DataNumber = forwardRef(({ units, value, ...rest }, ref) => (
+const NumberInput = forwardRef(({ units, value, ...rest }, ref) => (
   <Box direction="row" align="center">
     <Box flex={false} basis="small">
       <TextInput
@@ -19,7 +19,7 @@ const DataNumber = forwardRef(({ units, value, ...rest }, ref) => (
   </Box>
 ));
 
-DataNumber.normalize = (value) =>
+NumberInput.normalize = (value) =>
   value === '' ? undefined : parseFloat(value, 10);
 
-export default DataNumber;
+export default NumberInput;

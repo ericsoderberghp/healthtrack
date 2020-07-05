@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { TextInput } from 'grommet';
 
-const DataName = forwardRef(({ value, ...rest }, ref) => (
+const NameInput = forwardRef(({ value, ...rest }, ref) => (
   <TextInput
     ref={ref}
     size="large"
@@ -12,6 +12,6 @@ const DataName = forwardRef(({ value, ...rest }, ref) => (
   />
 ));
 
-DataName.normalize = (value) => (value === '' ? undefined : value);
+NameInput.normalize = (value) => (value === '' ? undefined : value);
 
-export default DataName;
+export default NameInput;

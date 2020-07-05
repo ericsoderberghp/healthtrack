@@ -1,16 +1,18 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Box, Button, Form, FormField } from 'grommet';
-import { DateInput } from './components';
-import DataYesNo from './DataYesNo';
-import DataScale from './DataScale';
-import DataNumber from './DataNumber';
-import DataName from './DataName';
+import {
+  DateInput,
+  NameInput,
+  NumberInput,
+  ScaleInput,
+  YesNoInput,
+} from './components';
 
 const TypeInput = {
-  'yes/no': DataYesNo,
-  scale: DataScale,
-  number: DataNumber,
-  name: DataName,
+  'yes/no': YesNoInput,
+  scale: ScaleInput,
+  number: NumberInput,
+  name: NameInput,
 };
 
 const DataForm = ({ category, defaultValue, label, onSubmit, track }) => {

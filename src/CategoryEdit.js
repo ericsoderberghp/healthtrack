@@ -20,8 +20,6 @@ const CategoryEdit = ({ id: idArg }) => {
   const onSubmit = (nextCategory) => {
     const nextTrack = JSON.parse(JSON.stringify(track));
     const index = nextTrack.categories.findIndex((c) => c.id === id);
-    if (nextCategory.frequency)
-      nextCategory.frequency = parseFloat(nextCategory.frequency, 10);
     nextTrack.categories[index] = nextCategory;
     sortOn(nextTrack.categories, 'name');
     setTrack(nextTrack);

@@ -54,7 +54,7 @@ const Correlate = () => {
   // initialize categories to daily symptoms
   useEffect(() => {
     setCategories(
-      track.categories.filter((c) => c.aspect === 'symptom' && c.frequency),
+      track.categories.filter((c) => c.aspect === 'symptom' && c.times),
     );
   }, [track.categories]);
 

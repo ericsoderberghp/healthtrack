@@ -9,15 +9,15 @@ import { Box, Button, Header, Heading, Select, Text, TextArea } from 'grommet';
 import { Close, Next, Previous } from 'grommet-icons';
 import { DateInput, Page } from './components';
 import TrackContext from './TrackContext';
-import { alignDate, frequencyDates, sameDate, sortOn } from './utils';
 import {
-  addData,
-  addNote,
-  deleteNote,
-  frequencyHourLabel,
-  getCategory,
-  updateNote,
-} from './track';
+  alignDate,
+  dateTimes,
+  getTime,
+  sameDate,
+  setTime,
+  sortOn,
+} from './utils';
+import { addData, addNote, deleteNote, getCategory, updateNote } from './track';
 import CalendarData from './CalendarData';
 
 const createTouch = (event) => {
@@ -42,7 +42,7 @@ const Calendar = () => {
   // jump to tomorrow
   // TODO: test that this works, not sure that it does
   useEffect(() => {
-    const tomorrow = alignDate(new Date(), -10);
+    const tomorrow = setTime(new Date(), '02:00');
     tomorrow.setDate(tomorrow.getDate() + 1);
     const timer = setTimeout(
       () => setDate(alignDate(new Date())),
@@ -52,10 +52,9 @@ const Calendar = () => {
   }, [date, track]);
 
   // categories that want something each day
-  const categories = useMemo(
-    () => track.categories.filter((c) => c.frequency > 0),
-    [track],
-  );
+  const categories = useMemo(() => track.categories.filter((c) => c.times), [
+    track,
+  ]);
 
   // existing data for this day
   const data = useMemo(() => track.data.filter((d) => sameDate(d.date, date)), [
@@ -63,14 +62,14 @@ const Calendar = () => {
     track,
   ]);
 
-  // data described by frequency that we don't have yet
+  // data described by times that we don't have yet
   const pendingData = useMemo(() => {
     const result = [];
     categories.forEach((category) => {
       // find all data associated with this category already
       const cData = data.filter((d) => d.category === category.id);
-      // insert any missing frequency times
-      frequencyDates(date, category.frequency, category.hour).forEach((fd) => {
+      // insert any missing times
+      dateTimes(date, category.times).forEach((fd) => {
         if (!cData.find((d) => sameDate(d.date, fd, true)))
           result.push({ category: category.id, date: fd.toISOString() });
       });
@@ -170,7 +169,7 @@ const Calendar = () => {
           )}
           {mergedData.map((d, index) => {
             const category = getCategory(track, d.category);
-            const hour = new Date(d.date).getHours();
+            const time = getTime(d.date);
             return (
               <CalendarData
                 key={`${category.id}-${index}`}
@@ -178,9 +177,13 @@ const Calendar = () => {
                 category={category}
                 data={d}
                 label={
-                  category.frequency < 2 ? undefined : frequencyHourLabel[hour]
+                  category.times
+                    ? new Date(d.date).toLocaleString(undefined, {
+                        hour: 'numeric',
+                      })
+                    : undefined
                 }
-                deletable={!frequencyHourLabel[hour]}
+                deletable={!category.times.includes(time)}
                 track={track}
                 setTrack={setTrack}
               />

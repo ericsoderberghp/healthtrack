@@ -6,7 +6,7 @@ const label = {
   false: 'no',
 };
 
-const DataYesNo = forwardRef((props, ref) => (
+const YesNoInput = forwardRef((props, ref) => (
   <RadioButtonGroup
     ref={ref}
     direction="row"
@@ -39,6 +39,7 @@ const DataYesNo = forwardRef((props, ref) => (
   </RadioButtonGroup>
 ));
 
-DataYesNo.normalize = (value) => (value === '' ? undefined : JSON.parse(value));
+YesNoInput.normalize = (value) =>
+  value === '' ? undefined : JSON.parse(value);
 
-export default DataYesNo;
+export default YesNoInput;

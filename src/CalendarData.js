@@ -1,22 +1,19 @@
 import React, { useContext } from 'react';
 import { Box, Button, ResponsiveContext, Text } from 'grommet';
+import { NameInput, NumberInput, ScaleInput, YesNoInput } from './components';
 import { addData, deleteData, updateData } from './track';
-import DataYesNo from './DataYesNo';
-import DataScale from './DataScale';
-import DataNumber from './DataNumber';
-import DataName from './DataName';
 
 const TypeInput = {
-  'yes/no': DataYesNo,
-  scale: DataScale,
-  number: DataNumber,
-  name: DataName,
+  'yes/no': YesNoInput,
+  scale: ScaleInput,
+  number: NumberInput,
+  name: NameInput,
 };
 
 const CalendarData = ({
   category,
   data,
-  deletable, // not part of frequency
+  deletable, // not part of category.times
   id,
   label,
   track,
@@ -27,7 +24,7 @@ const CalendarData = ({
 
   const onChange = (value) => {
     let nextTrack;
-    // if unsetting saved frequency data, delete it
+    // if unsetting saved category.times data, delete it
     if (value === undefined && !deletable && data.id)
       nextTrack = deleteData(track, data);
     // otherwise, set the data
@@ -80,10 +77,21 @@ const CalendarData = ({
         />
         {control}
       </Box>
-      <Box flex={false} alignSelf={responsive === 'small' ? 'end' : undefined}>
+      <Box
+        flex={false}
+        alignSelf={responsive === 'small' ? 'end' : undefined}
+        direction="row"
+        align="center"
+        gap="small"
+      >
         <Text truncate margin={{ horizontal: 'small', vertical: 'small' }}>
-          {label} {category.name}
+          {category.name}
         </Text>
+        {label && (
+          <Text color="text-xweak" size="xsmall">
+            {label}
+          </Text>
+        )}
       </Box>
     </Box>
   );

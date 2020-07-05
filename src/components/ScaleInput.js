@@ -1,8 +1,8 @@
 import React, { forwardRef, useState } from 'react';
 import { Box, RadioButtonGroup } from 'grommet';
 
-const DataScale = forwardRef((props, ref) => {
-  // track value internally so we can highlight stars below value
+const ScaleInput = forwardRef((props, ref) => {
+  // track value internally so we can highlight boxes below value
   const [valueOption, setValueOption] = useState();
   let checkedOption;
 
@@ -40,6 +40,7 @@ const DataScale = forwardRef((props, ref) => {
   );
 });
 
-DataScale.normalize = (value) => (value === '' ? undefined : JSON.parse(value));
+ScaleInput.normalize = (value) =>
+  value === '' ? undefined : JSON.parse(value);
 
-export default DataScale;
+export default ScaleInput;

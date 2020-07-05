@@ -7,7 +7,15 @@ import {
   RadioButtonGroup,
   TextInput,
 } from 'grommet';
-import { frequencyHourLabel, frequencyHours, frequencyLabel } from './track';
+
+// old - { name, aspect, type, units, frequency, hour }
+// new - {
+//   name: '',
+//   aspect: behavior|symptom,
+//   type: number|scale|yes/no|name,
+//   units: '',
+//   times: ['T08:00'],
+// }
 
 const CategoryForm = ({ defaultValue, label, onSubmit }) => {
   const [category, setCategory] = useState(defaultValue);
@@ -55,12 +63,12 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
           id="type"
           name="type"
           options={[
+            { value: 'yes/no', label: 'simple yes or no' },
+            { value: 'scale', label: '5-point scale' },
             {
               value: 'number',
               label: 'number - like hours of sleep',
             },
-            { value: 'scale', label: '5-point scale' },
-            { value: 'yes/no', label: 'simple yes or no' },
             { value: 'name', label: 'free form - like "broccoli"' },
           ]}
         />
@@ -70,36 +78,61 @@ const CategoryForm = ({ defaultValue, label, onSubmit }) => {
           <TextInput id="units" name="units" />
         </FormField>
       )}
-      <FormField
-        label="How often do you intend to record it?"
-        name="frequency"
-        htmlFor="frequency"
-      >
+      <FormField label="When do you intend to record it?" htmlFor="daily">
         <RadioButtonGroup
-          id="frequency"
-          name="frequency"
-          options={[0, 1, 2, 3, 4, 6].map((value) => ({
-            value,
-            label: frequencyLabel[value],
-          }))}
+          id="daily"
+          name="daily"
+          value={category.times ? 'daily' : 'once in a while'}
+          options={['once in a while', 'daily']}
+          onChange={(event) => {
+            const nextCategory = JSON.parse(JSON.stringify(category));
+            if (category.times) delete nextCategory.times;
+            else nextCategory.times = ['12:00'];
+            setCategory(nextCategory);
+          }}
         />
+        {category.times && (
+          <Box margin={{ top: 'small' }} gap="small" align="start">
+            {category.times.map((time, index) => (
+              <Box
+                key={index}
+                direction="row"
+                align="center"
+                justify="between"
+                gap="small"
+              >
+                <TextInput
+                  type="time"
+                  value={time}
+                  onChange={(event) => {
+                    const nextCategory = JSON.parse(JSON.stringify(category));
+                    nextCategory.times[index] = event.target.value;
+                    setCategory(nextCategory);
+                  }}
+                />
+                {category.times.length > 1 && (
+                  <Button
+                    label="remove"
+                    onClick={() => {
+                      const nextCategory = JSON.parse(JSON.stringify(category));
+                      nextCategory.times.splice(index, 1);
+                      setCategory(nextCategory);
+                    }}
+                  />
+                )}
+              </Box>
+            ))}
+            <Button
+              label="add another time"
+              onClick={() => {
+                const nextCategory = JSON.parse(JSON.stringify(category));
+                nextCategory.times.push('');
+                setCategory(nextCategory);
+              }}
+            />
+          </Box>
+        )}
       </FormField>
-      {category.frequency === 1 && (
-        <FormField
-          label="When do you intend to record it?"
-          name="hour"
-          htmlFor="hour"
-        >
-          <RadioButtonGroup
-            id="hour"
-            name="hour"
-            options={frequencyHours.map((value) => ({
-              value,
-              label: frequencyHourLabel[value],
-            }))}
-          />
-        </FormField>
-      )}
       <Box margin={{ top: 'large' }} align="start">
         <Button type="submit" label={label} primary title={label} />
       </Box>

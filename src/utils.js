@@ -59,6 +59,15 @@ export const betweenDates = (date1, date2, date3) => {
   return d1 > d2 && d1 < d3;
 };
 
+export const getTime = (date) => {
+  const d = typeof date === 'string' ? new Date(date) : date;
+  const hours = d.getHours();
+  const minutes = d.getMinutes();
+  return `${hours.toString().padStart(2, '0')}:${minutes
+    .toString()
+    .padStart(2, '0')}`;
+};
+
 export const alignDate = (date, offset = 0) => {
   const result = new Date(date);
   result.setHours(12 + offset);
@@ -67,27 +76,21 @@ export const alignDate = (date, offset = 0) => {
   return result;
 };
 
-// assumes date is aligned already
-export const frequencyDates = (date, frequency, hour = 12) => {
-  if (frequency === 1) return [alignDate(date, hour - 12)];
-  if (frequency === 2) return [alignDate(date, -4), alignDate(date, +4)];
-  if (frequency === 3)
-    return [alignDate(date, -4), alignDate(date), alignDate(date, +4)];
-  if (frequency === 4)
-    return [
-      alignDate(date, -4),
-      alignDate(date),
-      alignDate(date, +4),
-      alignDate(date, +8),
-    ];
-  if (frequency === 6)
-    return [
-      alignDate(date, -4),
-      alignDate(date, -2),
-      alignDate(date),
-      alignDate(date, +2),
-      alignDate(date, +4),
-      alignDate(date, +8),
-    ];
-  return []; // don't handle > 6 frequency yet
+export const setTime = (date, time) => {
+  const result = new Date(date);
+  if (time) {
+    const parts = time.split(':');
+    result.setHours(parts[0]);
+    result.setMinutes(parts[1] || 0);
+    result.setSeconds(parts[2] || 0);
+  }
+  return result;
 };
+
+export const dateTimes = (date, times) =>
+  times.map((time) => setTime(date, time));
+
+export const timeLabel = (date, time) =>
+  setTime(date || new Date(), time).toLocaleString(undefined, {
+    hour: 'numeric',
+  });
