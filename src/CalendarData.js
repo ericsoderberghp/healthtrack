@@ -87,11 +87,7 @@ const CalendarData = ({
         <Text truncate margin={{ horizontal: 'small', vertical: 'small' }}>
           {category.name}
         </Text>
-        {label && (
-          <Text color="text-xweak" size="xsmall">
-            {label}
-          </Text>
-        )}
+        {label && <Text color="text-xweak">{label}</Text>}
       </Box>
     </Box>
   );

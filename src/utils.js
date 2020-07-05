@@ -91,6 +91,8 @@ export const dateTimes = (date, times) =>
   times.map((time) => setTime(date, time));
 
 export const timeLabel = (date, time) =>
-  setTime(date || new Date(), time).toLocaleString(undefined, {
-    hour: 'numeric',
-  });
+  setTime(date || new Date(), time)
+    .toLocaleString(undefined, {
+      hour: 'numeric',
+    })
+    .toLowerCase();

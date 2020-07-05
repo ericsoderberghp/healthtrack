@@ -16,6 +16,7 @@ import {
   sameDate,
   setTime,
   sortOn,
+  timeLabel,
 } from './utils';
 import { addData, addNote, deleteNote, getCategory, updateNote } from './track';
 import CalendarData from './CalendarData';
@@ -176,13 +177,7 @@ const Calendar = () => {
                 id={`${category.name}-${d.id}-${index}`}
                 category={category}
                 data={d}
-                label={
-                  category.times
-                    ? new Date(d.date).toLocaleString(undefined, {
-                        hour: 'numeric',
-                      })
-                    : undefined
-                }
+                label={category.times ? timeLabel(d.date) : undefined}
                 deletable={!category.times.includes(time)}
                 track={track}
                 setTrack={setTrack}
