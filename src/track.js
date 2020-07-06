@@ -4,7 +4,8 @@ import { nextId, sortOn } from './utils';
 export const apiUrl =
   'https://us-central1-healthtrack-279819.cloudfunctions.net/tracks';
 
-const publish = true; // when developing, turn off to keep things local
+// when developing, turn off to keep things local
+const publish = process.env.NODE_ENV !== 'test';
 if (!publish) console.log('!!! NOT PUBLISHING');
 
 export const initialTrack = {
@@ -98,7 +99,7 @@ export const createTrack = (track) => {
   })
     .then((response) => response.json())
     .then((nextTrack) => {
-      localStorage.setItem('track', JSON.stringify(nextTrack));
+      global.localStorage.setItem('track', JSON.stringify(nextTrack));
       return nextTrack;
     });
 };
@@ -121,7 +122,7 @@ export const signIn = (identity) => {
   });
 };
 
-export const signOut = () => localStorage.removeItem('track');
+export const signOut = () => global.localStorage.removeItem('track');
 
 export const deleteTrack = (track) =>
   fetch(`${apiUrl}/${track.id}`, {
@@ -129,14 +130,14 @@ export const deleteTrack = (track) =>
     headers: {
       Authorization: `Bearer ${track.token}`,
     },
-  }).then(() => localStorage.removeItem('track'));
+  }).then(() => global.localStorage.removeItem('track'));
 
 export const useTrack = () => {
   const [track, setTrack] = useState();
 
   // initialize track
   useEffect(() => {
-    const stored = localStorage.getItem('track');
+    const stored = global.localStorage.getItem('track');
     if (stored) {
       const lastTrack = JSON.parse(stored);
       if (publish) {
@@ -149,14 +150,14 @@ export const useTrack = () => {
         }).then((response) => {
           if (!response.ok) {
             if (response.status === 404) {
-              localStorage.removeItem('track');
+              global.localStorage.removeItem('track');
               setTrack(false);
             }
           } else
             return response.json().then((nextTrack) => {
               nextTrack.unchanged = true;
               upgrade(nextTrack);
-              localStorage.setItem('track', JSON.stringify(nextTrack));
+              global.localStorage.setItem('track', JSON.stringify(nextTrack));
               setTrack(nextTrack);
             });
         });
@@ -195,8 +196,9 @@ export const useTrack = () => {
   return [
     track,
     (nextTrack) => {
-      if (nextTrack) localStorage.setItem('track', JSON.stringify(nextTrack));
-      else localStorage.removeItem('track');
+      if (nextTrack)
+        global.localStorage.setItem('track', JSON.stringify(nextTrack));
+      else global.localStorage.removeItem('track');
       if (nextTrack && track) delete nextTrack.unchanged; // must be changing it
       setTrack(nextTrack);
     },

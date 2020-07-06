@@ -1,0 +1,527 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders home 1`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 fZoPPO"
+  style="min-height: 100%;"
+>
+  <div
+    class="StyledGrid-sc-1wofa1l-0 jkgEes"
+    style="min-height: 100%;"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 kOYHGA"
+    >
+      <nav
+        class="StyledBox-sc-13pk1d4-0 PHNoe"
+      >
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          title="calendar"
+          type="button"
+        >
+          <svg
+            aria-label="Calendar"
+            class="StyledIcon-ofa7kd-0 NqKYz"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+        />
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          title="correlate"
+          type="button"
+        >
+          <svg
+            aria-label="Test"
+            class="StyledIcon-ofa7kd-0 NqKYz"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M8.9997,0.99999995 L8.9997,8.0003 L1.9997,20.0003 L1.9997,23.0003 L21.9997,23.0003 L21.9997,20.0003 L14.9997,8.0003 L14.9997,0.99999995 M15,18 C15.5522847,18 16,17.5522847 16,17 C16,16.4477153 15.5522847,16 15,16 C14.4477153,16 14,16.4477153 14,17 C14,17.5522847 14.4477153,18 15,18 Z M9,20 C9.55228475,20 10,19.5522847 10,19 C10,18.4477153 9.55228475,18 9,18 C8.44771525,18 8,18.4477153 8,19 C8,19.5522847 8.44771525,20 9,20 Z M18,13 C11,9.99999996 12,17.0000002 6,14 M5.9997,1.0003 L17.9997,1.0003"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+        />
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          title="categories"
+          type="button"
+        >
+          <svg
+            aria-label="Tag"
+            class="StyledIcon-ofa7kd-0 NqKYz"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.7058543,22.2941457 C11.3160217,22.6839783 10.6897542,22.6897542 10.2968194,22.2968194 L1.70318058,13.7031806 C1.31482467,13.3148247 1.32097101,12.679029 1.70585426,12.2941457 L13,1 L23,1 L23,11 L11.7058543,22.2941457 Z M6,12 L12,18 M9,9 L15,15 M17,6 C17,5.4475 17.4475,5 18,5 C18.5525,5 19,5.4475 19,6 C19,6.5525 18.5525,7 18,7 C17.4475,7 17,6.5525 17,6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+        />
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 jzhQtd"
+          kind="default"
+          title="guide"
+          type="button"
+        >
+          <svg
+            aria-label="User"
+            class="StyledIcon-ofa7kd-0 NqKYz"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M8,24 L8,19 M16,24 L16,19 M3,24 L3,19 C3,14.0294373 7.02943725,11 12,11 C16.9705627,11 21,14.0294373 21,19 L21,24 M12,11 C14.7614237,11 17,8.76142375 17,6 C17,3.23857625 14.7614237,1 12,1 C9.23857625,1 7,3.23857625 7,6 C7,8.76142375 9.23857625,11 12,11 Z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </nav>
+      <div
+        class="StyledBox-sc-13pk1d4-0 fAFdFO"
+      >
+        <h1
+          class="StyledHeading-sc-1rdh4aw-0 bozgir"
+        >
+          Hi 
+          Test Track
+        </h1>
+        <p
+          class="StyledParagraph-tbetod-0 gfTpGC"
+        >
+          This is a tool that can help remove uncertainty from managing your health.
+        </p>
+        <p
+          class="StyledParagraph-tbetod-0 gfTpGC"
+        >
+          To begin with, think about some symptom you experience that you don't know the cause of. For example, migraine headaches. Then, think about some of your behaviors that might be affecting it, such as not getting enough sleep, not getting enough exercise, or consuming alcohol. Add categories for your symptoms and behaviors. When adding them, think about how much detail you want to capture and how often you expect to track them. The simpler you can make it, the easier it will be to keep track. You can always adjust over time.
+        </p>
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          type="button"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 gPerFl"
+          >
+            <svg
+              aria-label="Tag"
+              class="StyledIcon-ofa7kd-0 NqKYz"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M11.7058543,22.2941457 C11.3160217,22.6839783 10.6897542,22.6897542 10.2968194,22.2968194 L1.70318058,13.7031806 C1.31482467,13.3148247 1.32097101,12.679029 1.70585426,12.2941457 L13,1 L23,1 L23,11 L11.7058543,22.2941457 Z M6,12 L12,18 M9,9 L15,15 M17,6 C17,5.4475 17.4475,5 18,5 C18.5525,5 19,5.4475 19,6 C19,6.5525 18.5525,7 18,7 C17.4475,7 17,6.5525 17,6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+            <div
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+            />
+            setup categories
+          </div>
+        </button>
+        <p
+          class="StyledParagraph-tbetod-0 gfTpGC"
+        >
+          Once you've got your categories in place, start tracking your behaviors and experiences over time. You'll be guided to enter data for the categories you indicated should be captured daily. You can always add more data too.
+        </p>
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          type="button"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 gPerFl"
+          >
+            <svg
+              aria-label="Calendar"
+              class="StyledIcon-ofa7kd-0 NqKYz"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+            <div
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+            />
+            enter data
+          </div>
+        </button>
+        <p
+          class="StyledParagraph-tbetod-0 gfTpGC"
+        >
+          When you've got a few weeks of data recorded, look for correlations between your behaviors and symptoms.
+        </p>
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          type="button"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 gPerFl"
+          >
+            <svg
+              aria-label="Test"
+              class="StyledIcon-ofa7kd-0 NqKYz"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M8.9997,0.99999995 L8.9997,8.0003 L1.9997,20.0003 L1.9997,23.0003 L21.9997,23.0003 L21.9997,20.0003 L14.9997,8.0003 L14.9997,0.99999995 M15,18 C15.5522847,18 16,17.5522847 16,17 C16,16.4477153 15.5522847,16 15,16 C14.4477153,16 14,16.4477153 14,17 C14,17.5522847 14.4477153,18 15,18 Z M9,20 C9.55228475,20 10,19.5522847 10,19 C10,18.4477153 9.55228475,18 9,18 C8.44771525,18 8,18.4477153 8,19 C8,19.5522847 8.44771525,20 9,20 Z M18,13 C11,9.99999996 12,17.0000002 6,14 M5.9997,1.0003 L17.9997,1.0003"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+            <div
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+            />
+            correlate
+          </div>
+        </button>
+        <p
+          class="StyledParagraph-tbetod-0 gfTpGC"
+        >
+          Make this tool work for you. You can always adjust the categories as you go. Good luck!
+        </p>
+      </div>
+      <div
+        class="StyledBox-sc-13pk1d4-0 hJnoUe"
+      >
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          title="data"
+          type="button"
+        >
+          Data
+        </button>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
+        />
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          title="notes"
+          type="button"
+        >
+          Notes
+        </button>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
+        />
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          type="button"
+        >
+          Sign out
+        </button>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
+        />
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          title="delete everything"
+          type="button"
+        >
+          Delete everything
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders home 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 fZoPPO"
+  style="min-height: 100%;"
+>
+  <div
+    class="StyledGrid-sc-1wofa1l-0 jkgEes"
+    style="min-height: 100%;"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 kOYHGA"
+    >
+      <nav
+        class="StyledBox-sc-13pk1d4-0 PHNoe"
+      >
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          title="calendar"
+          type="button"
+        >
+          <svg
+            aria-label="Calendar"
+            class="StyledIcon-ofa7kd-0 NqKYz"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+        />
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          title="correlate"
+          type="button"
+        >
+          <svg
+            aria-label="Test"
+            class="StyledIcon-ofa7kd-0 NqKYz"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M8.9997,0.99999995 L8.9997,8.0003 L1.9997,20.0003 L1.9997,23.0003 L21.9997,23.0003 L21.9997,20.0003 L14.9997,8.0003 L14.9997,0.99999995 M15,18 C15.5522847,18 16,17.5522847 16,17 C16,16.4477153 15.5522847,16 15,16 C14.4477153,16 14,16.4477153 14,17 C14,17.5522847 14.4477153,18 15,18 Z M9,20 C9.55228475,20 10,19.5522847 10,19 C10,18.4477153 9.55228475,18 9,18 C8.44771525,18 8,18.4477153 8,19 C8,19.5522847 8.44771525,20 9,20 Z M18,13 C11,9.99999996 12,17.0000002 6,14 M5.9997,1.0003 L17.9997,1.0003"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+        />
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          title="categories"
+          type="button"
+        >
+          <svg
+            aria-label="Tag"
+            class="StyledIcon-ofa7kd-0 NqKYz"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.7058543,22.2941457 C11.3160217,22.6839783 10.6897542,22.6897542 10.2968194,22.2968194 L1.70318058,13.7031806 C1.31482467,13.3148247 1.32097101,12.679029 1.70585426,12.2941457 L13,1 L23,1 L23,11 L11.7058543,22.2941457 Z M6,12 L12,18 M9,9 L15,15 M17,6 C17,5.4475 17.4475,5 18,5 C18.5525,5 19,5.4475 19,6 C19,6.5525 18.5525,7 18,7 C17.4475,7 17,6.5525 17,6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+        />
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 jzhQtd"
+          kind="default"
+          title="guide"
+          type="button"
+        >
+          <svg
+            aria-label="User"
+            class="StyledIcon-ofa7kd-0 NqKYz"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M8,24 L8,19 M16,24 L16,19 M3,24 L3,19 C3,14.0294373 7.02943725,11 12,11 C16.9705627,11 21,14.0294373 21,19 L21,24 M12,11 C14.7614237,11 17,8.76142375 17,6 C17,3.23857625 14.7614237,1 12,1 C9.23857625,1 7,3.23857625 7,6 C7,8.76142375 9.23857625,11 12,11 Z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </nav>
+      <div
+        class="StyledBox-sc-13pk1d4-0 fAFdFO"
+      >
+        <h1
+          class="StyledHeading-sc-1rdh4aw-0 bozgir"
+        >
+          Hi 
+          Test Track
+        </h1>
+        <p
+          class="StyledParagraph-tbetod-0 gfTpGC"
+        >
+          This is a tool that can help remove uncertainty from managing your health.
+        </p>
+        <p
+          class="StyledParagraph-tbetod-0 gfTpGC"
+        >
+          To begin with, think about some symptom you experience that you don't know the cause of. For example, migraine headaches. Then, think about some of your behaviors that might be affecting it, such as not getting enough sleep, not getting enough exercise, or consuming alcohol. Add categories for your symptoms and behaviors. When adding them, think about how much detail you want to capture and how often you expect to track them. The simpler you can make it, the easier it will be to keep track. You can always adjust over time.
+        </p>
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          type="button"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 gPerFl"
+          >
+            <svg
+              aria-label="Tag"
+              class="StyledIcon-ofa7kd-0 NqKYz"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M11.7058543,22.2941457 C11.3160217,22.6839783 10.6897542,22.6897542 10.2968194,22.2968194 L1.70318058,13.7031806 C1.31482467,13.3148247 1.32097101,12.679029 1.70585426,12.2941457 L13,1 L23,1 L23,11 L11.7058543,22.2941457 Z M6,12 L12,18 M9,9 L15,15 M17,6 C17,5.4475 17.4475,5 18,5 C18.5525,5 19,5.4475 19,6 C19,6.5525 18.5525,7 18,7 C17.4475,7 17,6.5525 17,6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+            <div
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+            />
+            setup categories
+          </div>
+        </button>
+        <p
+          class="StyledParagraph-tbetod-0 gfTpGC"
+        >
+          Once you've got your categories in place, start tracking your behaviors and experiences over time. You'll be guided to enter data for the categories you indicated should be captured daily. You can always add more data too.
+        </p>
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          type="button"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 gPerFl"
+          >
+            <svg
+              aria-label="Calendar"
+              class="StyledIcon-ofa7kd-0 NqKYz"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M2,5 L22,5 L22,22 L2,22 L2,5 Z M18,5 L18,1 M6,5 L6,1 M2,10 L22,10"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+            <div
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+            />
+            enter data
+          </div>
+        </button>
+        <p
+          class="StyledParagraph-tbetod-0 gfTpGC"
+        >
+          When you've got a few weeks of data recorded, look for correlations between your behaviors and symptoms.
+        </p>
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          type="button"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 gPerFl"
+          >
+            <svg
+              aria-label="Test"
+              class="StyledIcon-ofa7kd-0 NqKYz"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M8.9997,0.99999995 L8.9997,8.0003 L1.9997,20.0003 L1.9997,23.0003 L21.9997,23.0003 L21.9997,20.0003 L14.9997,8.0003 L14.9997,0.99999995 M15,18 C15.5522847,18 16,17.5522847 16,17 C16,16.4477153 15.5522847,16 15,16 C14.4477153,16 14,16.4477153 14,17 C14,17.5522847 14.4477153,18 15,18 Z M9,20 C9.55228475,20 10,19.5522847 10,19 C10,18.4477153 9.55228475,18 9,18 C8.44771525,18 8,18.4477153 8,19 C8,19.5522847 8.44771525,20 9,20 Z M18,13 C11,9.99999996 12,17.0000002 6,14 M5.9997,1.0003 L17.9997,1.0003"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+            <div
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+            />
+            correlate
+          </div>
+        </button>
+        <p
+          class="StyledParagraph-tbetod-0 gfTpGC"
+        >
+          Make this tool work for you. You can always adjust the categories as you go. Good luck!
+        </p>
+      </div>
+      <div
+        class="StyledBox-sc-13pk1d4-0 hJnoUe"
+      >
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          title="data"
+          type="button"
+        >
+          Data
+        </button>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
+        />
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          title="notes"
+          type="button"
+        >
+          Notes
+        </button>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
+        />
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          type="button"
+        >
+          Sign out
+        </button>
+        <div
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
+        />
+        <button
+          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          kind="default"
+          title="delete everything"
+          type="button"
+        >
+          Delete everything
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

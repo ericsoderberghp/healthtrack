@@ -5,21 +5,23 @@
   "dependencies": {
     "grommet": "https://github.com/grommet/grommet/tarball/stable",
     "grommet-icons": "https://github.com/grommet/grommet-icons/tarball/stable",
-    "grommet-theme-hpe": "https://github.com/grommet/grommet-theme-hpe/tarball/stable",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.1",
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
+    "@testing-library/react": "^10.4.4",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
     "pre-commit": "^1.2.2",
     "prettier": "^2.0.2",
-    "pretty-quick": "^2.0.1"
+    "pretty-quick": "^2.0.1",
+    "react-test-renderer": "^16.13.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject",
     "e2e": "testcafe firefox test.js --debug-on-fail",
     "prettier": "pretty-quick --staged"
