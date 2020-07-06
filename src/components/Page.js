@@ -2,8 +2,13 @@ import React, { useContext } from 'react';
 import { Box, Grid, Nav, ResponsiveContext } from 'grommet';
 import { Calendar, Tag, Test, User } from 'grommet-icons';
 import RoutedButton from './RoutedButton';
+import TrackContext from '../TrackContext';
 
 const MainNav = ({ pin }) => {
+  const [track] = useContext(TrackContext);
+  let border;
+  if (!track.unchanged)
+    border = { side: pin ? 'bottom' : 'top', size: 'small' };
   return (
     <Nav
       direction="row"
@@ -13,6 +18,7 @@ const MainNav = ({ pin }) => {
       pad={
         pin ? { bottom: 'medium', vertical: 'small' } : { vertical: 'small' }
       }
+      border={border}
       responsive={false}
       style={
         pin ? { position: 'fixed', bottom: 0, left: 0, right: 0 } : undefined
@@ -27,7 +33,7 @@ const MainNav = ({ pin }) => {
 };
 
 const Page = ({ children }) => {
-  const size = useContext(ResponsiveContext);
+  const responsive = useContext(ResponsiveContext);
   return (
     <Grid
       columns={['flex', ['small', 'large'], 'flex']}
@@ -41,9 +47,9 @@ const Page = ({ children }) => {
         margin={{ bottom: 'xlarge' }}
         overflow="hidden"
       >
-        {size !== 'small' && <MainNav />}
+        {responsive !== 'small' && <MainNav />}
         {children}
-        {size === 'small' && <MainNav pin />}
+        {responsive === 'small' && <MainNav pin />}
       </Box>
     </Grid>
   );

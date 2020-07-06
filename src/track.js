@@ -186,7 +186,7 @@ export const useTrack = () => {
             nextTrack.unchanged = true;
             setTrack(nextTrack);
           });
-      }, 15000); // wait for 15 seconds of inactivity
+      }, 10000); // wait for 10 seconds of inactivity
       return () => clearTimeout(timer);
     }
     return undefined;
