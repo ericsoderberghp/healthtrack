@@ -51,7 +51,9 @@ const upgrade = (nextTrack) => {
     if (category.type === 'rating') category.type = 'scale';
   });
   // remove any data without a category
-  nextTrack.data = nextTrack.data.filter((d) => d.category);
+  nextTrack.data = nextTrack.data.filter(
+    (d) => d.category && getCategory(nextTrack, d.category),
+  );
 
   // ensure data values are the appropriate types
   nextTrack.data.forEach((data) => {
@@ -187,7 +189,7 @@ export const useTrack = () => {
             nextTrack.unchanged = true;
             setTrack(nextTrack);
           });
-      }, 10000); // wait for 10 seconds of inactivity
+      }, 5000); // wait for 5 seconds of inactivity
       return () => clearTimeout(timer);
     }
     return undefined;

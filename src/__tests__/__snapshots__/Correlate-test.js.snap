@@ -121,7 +121,7 @@ exports[`renders correlate 1`] = `
             kind="default"
             type="button"
           >
-            Jun 30 - Jul 6
+            Jul 20 - Jul 26
           </button>
         </header>
         <div
@@ -183,7 +183,7 @@ exports[`renders correlate 1`] = `
                       fill="none"
                     >
                       <path
-                        d="M -4,112.8 L -8,79.19999999999999"
+                        d=""
                       />
                       
                     </g>
@@ -205,28 +205,7 @@ exports[`renders correlate 1`] = `
                     stroke="none"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                  >
-                    <g
-                      stroke="none"
-                    >
-                      <title />
-                      <circle
-                        cx="-4"
-                        cy="112.8"
-                        r="6"
-                      />
-                    </g>
-                    <g
-                      stroke="none"
-                    >
-                      <title />
-                      <circle
-                        cx="-8"
-                        cy="79.19999999999999"
-                        r="6"
-                      />
-                    </g>
-                  </g>
+                  />
                 </svg>
               </div>
             </div>
@@ -236,37 +215,37 @@ exports[`renders correlate 1`] = `
               <div
                 class="StyledBox-sc-13pk1d4-0 ecvVmj"
               >
-                6/30
+                7/20
               </div>
               <div
                 class="StyledBox-sc-13pk1d4-0 ecvVmj"
               >
-                7/1
+                7/21
               </div>
               <div
                 class="StyledBox-sc-13pk1d4-0 ecvVmj"
               >
-                7/2
+                7/22
               </div>
               <div
                 class="StyledBox-sc-13pk1d4-0 ecvVmj"
               >
-                7/3
+                7/23
               </div>
               <div
                 class="StyledBox-sc-13pk1d4-0 ecvVmj"
               >
-                7/4
+                7/24
               </div>
               <div
                 class="StyledBox-sc-13pk1d4-0 ecvVmj"
               >
-                7/5
+                7/25
               </div>
               <div
                 class="StyledBox-sc-13pk1d4-0 ecvVmj"
               >
-                7/6
+                7/26
               </div>
             </div>
           </div>
@@ -506,7 +485,7 @@ exports[`renders correlate 2`] = `
             kind="default"
             type="button"
           >
-            Jun 30 - Jul 6
+            Jul 20 - Jul 26
           </button>
         </header>
         <div
@@ -568,7 +547,7 @@ exports[`renders correlate 2`] = `
                       fill="none"
                     >
                       <path
-                        d="M -4,112.8 L -8,79.19999999999999"
+                        d=""
                       />
                       
                     </g>
@@ -590,28 +569,7 @@ exports[`renders correlate 2`] = `
                     stroke="none"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                  >
-                    <g
-                      stroke="none"
-                    >
-                      <title />
-                      <circle
-                        cx="-4"
-                        cy="112.8"
-                        r="6"
-                      />
-                    </g>
-                    <g
-                      stroke="none"
-                    >
-                      <title />
-                      <circle
-                        cx="-8"
-                        cy="79.19999999999999"
-                        r="6"
-                      />
-                    </g>
-                  </g>
+                  />
                 </svg>
               </div>
             </div>
@@ -621,37 +579,37 @@ exports[`renders correlate 2`] = `
               <div
                 class="StyledBox-sc-13pk1d4-0 ecvVmj"
               >
-                6/30
+                7/20
               </div>
               <div
                 class="StyledBox-sc-13pk1d4-0 ecvVmj"
               >
-                7/1
+                7/21
               </div>
               <div
                 class="StyledBox-sc-13pk1d4-0 ecvVmj"
               >
-                7/2
+                7/22
               </div>
               <div
                 class="StyledBox-sc-13pk1d4-0 ecvVmj"
               >
-                7/3
+                7/23
               </div>
               <div
                 class="StyledBox-sc-13pk1d4-0 ecvVmj"
               >
-                7/4
+                7/24
               </div>
               <div
                 class="StyledBox-sc-13pk1d4-0 ecvVmj"
               >
-                7/5
+                7/25
               </div>
               <div
                 class="StyledBox-sc-13pk1d4-0 ecvVmj"
               >
-                7/6
+                7/26
               </div>
             </div>
           </div>

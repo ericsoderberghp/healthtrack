@@ -5,8 +5,8 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import { Box, Button, Header, Heading, Select, Text, TextArea } from 'grommet';
-import { Close, Next, Previous } from 'grommet-icons';
+import { Box, Button, Header, Heading, Text, TextArea } from 'grommet';
+import { Next, Previous } from 'grommet-icons';
 import { DateInput, Page } from './components';
 import TrackContext from './TrackContext';
 import {
@@ -20,6 +20,7 @@ import {
 } from './utils';
 import { addData, addNote, deleteNote, getCategory, updateNote } from './track';
 import CalendarData from './CalendarData';
+import AdditionalDataAdd from './AdditionalDataAdd';
 
 const createTouch = (event) => {
   if (event.changedTouches.length !== 1) return undefined;
@@ -37,7 +38,7 @@ const deltaTouch = (event, start) => {
 const Calendar = () => {
   const [track, setTrack] = useContext(TrackContext);
   const [date, setDate] = useState(alignDate(new Date()));
-  const [showCategorySelect, setShowCategorySelect] = useState();
+  const [showAdditionalDataAdd, setShowAdditionalDataAdd] = useState();
   const [offset, setOffset] = useState(0);
 
   // jump to tomorrow
@@ -179,53 +180,34 @@ const Calendar = () => {
                 id={`${category.name}-${d.id}-${index}`}
                 category={category}
                 data={d}
-                label={category.times ? timeLabel(d.date) : undefined}
+                label={timeLabel(d.date)}
                 deletable={!category.times || !category.times.includes(time)}
                 track={track}
                 setTrack={setTrack}
               />
             );
           })}
-          {showCategorySelect && (
-            <Box
-              pad={{ vertical: 'medium' }}
-              gap="large"
-              border="top"
-              direction="row"
-              justify="end"
-              align="center"
-            >
-              <Select
-                options={track.categories}
-                labelKey="name"
-                valueKey="id"
-                placeholder="select category ..."
-                onChange={({ option }) => {
-                  const newDate = new Date(date);
-                  newDate.setHours(13);
-                  setTrack(
-                    addData(track, {
-                      date: newDate.toISOString(),
-                      category: option.id,
-                    }),
-                  );
-                  setShowCategorySelect(false);
+          {showAdditionalDataAdd && (
+            <Box border="top" pad={{ vertical: 'medium' }}>
+              <AdditionalDataAdd
+                date={date}
+                track={track}
+                onAdd={(data) => {
+                  setTrack(addData(track, data));
+                  setShowAdditionalDataAdd(false);
                 }}
-              />
-              <Button
-                icon={<Close />}
-                onClick={() => setShowCategorySelect(false)}
+                onCancel={() => setShowAdditionalDataAdd(false)}
               />
             </Box>
           )}
           <Box border="top" />
         </Box>
 
-        {!showCategorySelect && (
+        {!showAdditionalDataAdd && (
           <Box align="start" pad="medium">
             <Button
               label="add additional data"
-              onClick={() => setShowCategorySelect(true)}
+              onClick={() => setShowAdditionalDataAdd(true)}
             />
           </Box>
         )}
