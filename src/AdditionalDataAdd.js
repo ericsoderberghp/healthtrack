@@ -25,7 +25,7 @@ const AdditionalDataAdd = ({ date, track, onAdd, onCancel }) => {
         <Select
           id="category"
           name="category"
-          options={track.categories}
+          options={track.categories.filter((c) => !c.times)}
           labelKey="name"
           valueKey={{ key: 'id', reduce: true }}
           placeholder="select category ..."
