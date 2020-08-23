@@ -141,7 +141,7 @@ const Correlate = () => {
         yMax = Math.max(...data.map((d) => d[category.name] || 0));
       }
       const base = {
-        key: category.name,
+        property: category.name,
         round: true,
         color: `graph-${index}`,
         bounds: [
@@ -149,20 +149,11 @@ const Correlate = () => {
           [yMin, yMax],
         ],
       };
-      charts.push({ ...base, type: 'line' });
+      charts.push({ ...base, type: 'line', thickness: 'xxsmall' });
       charts.push({ ...base, type: 'point', thickness: 'small' });
     });
     return charts;
   }, [categories, data]);
-
-  // build labels for DataChart based on number of data points
-  const labels = useMemo(() => {
-    if (data.length <= 7) return data.length;
-    if (data.length % 5 === 0) return 5;
-    if (data.length % 4 === 0) return 4;
-    if (data.length % 3 === 0) return 3;
-    return 2;
-  }, [data]);
 
   return (
     <Page>
@@ -184,11 +175,12 @@ const Correlate = () => {
           <Box margin={{ vertical: 'large' }}>
             <DataChart
               data={data}
+              series={['date', ...categories.map((c) => c.name)]}
               chart={charts}
-              xAxis={{ key: 'date', guide: true, labels }}
+              axis={{ x: { property: 'date', granularity: 'fine' } }}
+              guide={{ x: true }}
               pad="small"
               gap="medium"
-              thickness="xsmall"
               size={{ width: 'fill', height: 'small' }}
             />
           </Box>
