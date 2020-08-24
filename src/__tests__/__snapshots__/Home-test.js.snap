@@ -16,7 +16,7 @@ exports[`renders home 1`] = `
         class="StyledBox-sc-13pk1d4-0 PHNoe"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="calendar"
           type="button"
@@ -38,7 +38,7 @@ exports[`renders home 1`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="correlate"
           type="button"
@@ -60,7 +60,7 @@ exports[`renders home 1`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="categories"
           type="button"
@@ -82,7 +82,7 @@ exports[`renders home 1`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 jzhQtd"
+          class="StyledButtonKind-sc-1vhfpnt-0 bvTaVN"
           kind="default"
           title="guide"
           type="button"
@@ -121,7 +121,7 @@ exports[`renders home 1`] = `
           To begin with, think about some symptom you experience that you don't know the cause of. For example, migraine headaches. Then, think about some of your behaviors that might be affecting it, such as not getting enough sleep, not getting enough exercise, or consuming alcohol. Add categories for your symptoms and behaviors. When adding them, think about how much detail you want to capture and how often you expect to track them. The simpler you can make it, the easier it will be to keep track. You can always adjust over time.
         </p>
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           type="button"
         >
@@ -152,7 +152,7 @@ exports[`renders home 1`] = `
           Once you've got your categories in place, start tracking your behaviors and experiences over time. You'll be guided to enter data for the categories you indicated should be captured daily. You can always add more data too.
         </p>
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           type="button"
         >
@@ -183,7 +183,7 @@ exports[`renders home 1`] = `
           When you've got a few weeks of data recorded, look for correlations between your behaviors and symptoms.
         </p>
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           type="button"
         >
@@ -218,7 +218,7 @@ exports[`renders home 1`] = `
         class="StyledBox-sc-13pk1d4-0 hJnoUe"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="data"
           type="button"
@@ -229,7 +229,7 @@ exports[`renders home 1`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="notes"
           type="button"
@@ -240,7 +240,7 @@ exports[`renders home 1`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           type="button"
         >
@@ -250,7 +250,7 @@ exports[`renders home 1`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="delete everything"
           type="button"
@@ -279,7 +279,7 @@ exports[`renders home 2`] = `
         class="StyledBox-sc-13pk1d4-0 PHNoe"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="calendar"
           type="button"
@@ -301,7 +301,7 @@ exports[`renders home 2`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="correlate"
           type="button"
@@ -323,7 +323,7 @@ exports[`renders home 2`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="categories"
           type="button"
@@ -345,7 +345,7 @@ exports[`renders home 2`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 jzhQtd"
+          class="StyledButtonKind-sc-1vhfpnt-0 bvTaVN"
           kind="default"
           title="guide"
           type="button"
@@ -384,7 +384,7 @@ exports[`renders home 2`] = `
           To begin with, think about some symptom you experience that you don't know the cause of. For example, migraine headaches. Then, think about some of your behaviors that might be affecting it, such as not getting enough sleep, not getting enough exercise, or consuming alcohol. Add categories for your symptoms and behaviors. When adding them, think about how much detail you want to capture and how often you expect to track them. The simpler you can make it, the easier it will be to keep track. You can always adjust over time.
         </p>
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           type="button"
         >
@@ -415,7 +415,7 @@ exports[`renders home 2`] = `
           Once you've got your categories in place, start tracking your behaviors and experiences over time. You'll be guided to enter data for the categories you indicated should be captured daily. You can always add more data too.
         </p>
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           type="button"
         >
@@ -446,7 +446,7 @@ exports[`renders home 2`] = `
           When you've got a few weeks of data recorded, look for correlations between your behaviors and symptoms.
         </p>
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           type="button"
         >
@@ -481,7 +481,7 @@ exports[`renders home 2`] = `
         class="StyledBox-sc-13pk1d4-0 hJnoUe"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="data"
           type="button"
@@ -492,7 +492,7 @@ exports[`renders home 2`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="notes"
           type="button"
@@ -503,7 +503,7 @@ exports[`renders home 2`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           type="button"
         >
@@ -513,7 +513,7 @@ exports[`renders home 2`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="delete everything"
           type="button"

@@ -16,7 +16,7 @@ exports[`renders data 1`] = `
         class="StyledBox-sc-13pk1d4-0 PHNoe"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="calendar"
           type="button"
@@ -38,7 +38,7 @@ exports[`renders data 1`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="correlate"
           type="button"
@@ -60,7 +60,7 @@ exports[`renders data 1`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="categories"
           type="button"
@@ -82,7 +82,7 @@ exports[`renders data 1`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="guide"
           type="button"
@@ -116,7 +116,7 @@ exports[`renders data 1`] = `
             class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
           />
           <button
-            class="StyledButtonKind-sc-1vhfpnt-0 jiUGCi"
+            class="StyledButtonKind-sc-1vhfpnt-0 ikkYDU"
             kind="primary"
             title="add data"
             type="button"
@@ -141,7 +141,7 @@ exports[`renders data 1`] = `
       >
         <ul
           aria-label="data"
-          class="List__StyledList-sc-130gdqg-0 ckPrwz"
+          class="List__StyledList-sc-130gdqg-0 ejwoGX"
           tabindex="0"
         >
           <li
@@ -310,7 +310,7 @@ exports[`renders data 1`] = `
         class="StyledBox-sc-13pk1d4-0 iTGgII"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           type="button"
         >
@@ -357,7 +357,7 @@ exports[`renders data 2`] = `
         class="StyledBox-sc-13pk1d4-0 PHNoe"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="calendar"
           type="button"
@@ -379,7 +379,7 @@ exports[`renders data 2`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="correlate"
           type="button"
@@ -401,7 +401,7 @@ exports[`renders data 2`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="categories"
           type="button"
@@ -423,7 +423,7 @@ exports[`renders data 2`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="guide"
           type="button"
@@ -457,7 +457,7 @@ exports[`renders data 2`] = `
             class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
           />
           <button
-            class="StyledButtonKind-sc-1vhfpnt-0 jiUGCi"
+            class="StyledButtonKind-sc-1vhfpnt-0 ikkYDU"
             kind="primary"
             title="add data"
             type="button"
@@ -482,7 +482,7 @@ exports[`renders data 2`] = `
       >
         <ul
           aria-label="data"
-          class="List__StyledList-sc-130gdqg-0 ckPrwz"
+          class="List__StyledList-sc-130gdqg-0 ejwoGX"
           tabindex="0"
         >
           <li
@@ -651,7 +651,7 @@ exports[`renders data 2`] = `
         class="StyledBox-sc-13pk1d4-0 iTGgII"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           type="button"
         >

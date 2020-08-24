@@ -163,9 +163,12 @@ const Correlate = () => {
           <Heading>correlate</Heading>
           <DateInput
             name="dates"
-            label={`${dateFormat.format(
-              new Date(dates[0]),
-            )} - ${dateFormat.format(new Date(dates[1]))}`}
+            buttonProps={{
+              label: `${dateFormat.format(
+                new Date(dates[0]),
+              )} - ${dateFormat.format(new Date(dates[1]))}`,
+              reverse: true,
+            }}
             size={size === 'small' ? size : undefined}
             value={dates}
             onChange={({ value }) => setDates(value)}

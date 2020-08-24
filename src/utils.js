@@ -70,6 +70,7 @@ export const toDateFormat = (date, hours, minutes) =>
 const appDateExp = new RegExp(/^(\d+)-(\d+)-(\d+) (\d+):(\d+)$/);
 
 export const parseDate = (date, zeroMonth = false) => {
+  if (!date) return [];
   let d;
   if (date instanceof Date) d = date;
   // already a Date object

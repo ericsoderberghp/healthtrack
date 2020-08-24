@@ -16,7 +16,7 @@ exports[`renders category edit 1`] = `
         class="StyledBox-sc-13pk1d4-0 PHNoe"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="calendar"
           type="button"
@@ -38,7 +38,7 @@ exports[`renders category edit 1`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="correlate"
           type="button"
@@ -60,7 +60,7 @@ exports[`renders category edit 1`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="categories"
           type="button"
@@ -82,7 +82,7 @@ exports[`renders category edit 1`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="guide"
           type="button"
@@ -116,7 +116,7 @@ exports[`renders category edit 1`] = `
             class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
           />
           <button
-            class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+            class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
             kind="default"
             type="button"
           >
@@ -145,14 +145,14 @@ exports[`renders category edit 1`] = `
               name
             </label>
             <div
-              class="StyledBox-sc-13pk1d4-0 kpwHpK FormField__FormFieldContentBox-m9hood-1 ckZStK"
+              class="StyledBox-sc-13pk1d4-0 bFwQzJ FormField__FormFieldContentBox-m9hood-1 ckZStK"
             >
               <div
                 class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
               >
                 <input
                   autocomplete="off"
-                  class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+                  class="StyledTextInput-sc-1x30a0s-0 fVbmbP"
                   id="name"
                   name="name"
                   value="test-yesno"
@@ -170,14 +170,14 @@ exports[`renders category edit 1`] = `
               What kind of measurement is this?
             </label>
             <div
-              class="StyledBox-sc-13pk1d4-0 loXryH FormField__FormFieldContentBox-m9hood-1 ckZStK"
+              class="StyledBox-sc-13pk1d4-0 jqTrUE FormField__FormFieldContentBox-m9hood-1 ckZStK"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bFwQzJ"
                 id="aspect"
               >
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 kKDEPl"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
@@ -215,7 +215,7 @@ exports[`renders category edit 1`] = `
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 kKDEPl"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
@@ -254,14 +254,14 @@ exports[`renders category edit 1`] = `
               Pick a level of detail that works for you. For example, do you want to track how many minutes you napped, how 'good' it felt, or just that you took a nap?
             </span>
             <div
-              class="StyledBox-sc-13pk1d4-0 loXryH FormField__FormFieldContentBox-m9hood-1 ckZStK"
+              class="StyledBox-sc-13pk1d4-0 jqTrUE FormField__FormFieldContentBox-m9hood-1 ckZStK"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bFwQzJ"
                 id="type"
               >
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 kKDEPl"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
@@ -299,7 +299,7 @@ exports[`renders category edit 1`] = `
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 kKDEPl"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
@@ -324,7 +324,7 @@ exports[`renders category edit 1`] = `
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 kKDEPl"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
@@ -349,7 +349,7 @@ exports[`renders category edit 1`] = `
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 kKDEPl"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
@@ -383,14 +383,14 @@ exports[`renders category edit 1`] = `
               When do you intend to record it?
             </label>
             <div
-              class="StyledBox-sc-13pk1d4-0 loXryH FormField__FormFieldContentBox-m9hood-1 ckZStK"
+              class="StyledBox-sc-13pk1d4-0 jqTrUE FormField__FormFieldContentBox-m9hood-1 ckZStK"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bFwQzJ"
                 id="daily"
               >
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 kKDEPl"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
                   for="daily-once in a while"
                 >
                   <div
@@ -417,7 +417,7 @@ exports[`renders category edit 1`] = `
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 kKDEPl"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
                   for="daily-daily"
                 >
                   <div
@@ -465,7 +465,7 @@ exports[`renders category edit 1`] = `
                   >
                     <input
                       autocomplete="off"
-                      class="StyledTextInput-sc-1x30a0s-0 dcnGDe"
+                      class="StyledTextInput-sc-1x30a0s-0 hsswYj"
                       type="time"
                       value="16:00"
                     />
@@ -475,7 +475,7 @@ exports[`renders category edit 1`] = `
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
                 />
                 <button
-                  class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+                  class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
                   kind="default"
                   type="button"
                 >
@@ -488,7 +488,7 @@ exports[`renders category edit 1`] = `
             class="StyledBox-sc-13pk1d4-0 iKKViu"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 jiUGCi"
+              class="StyledButtonKind-sc-1vhfpnt-0 ikkYDU"
               kind="primary"
               title="Update"
               type="submit"
@@ -502,7 +502,7 @@ exports[`renders category edit 1`] = `
         class="StyledBox-sc-13pk1d4-0 dQKwvF"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           type="button"
         >
@@ -530,7 +530,7 @@ exports[`renders category edit 2`] = `
         class="StyledBox-sc-13pk1d4-0 PHNoe"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="calendar"
           type="button"
@@ -552,7 +552,7 @@ exports[`renders category edit 2`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="correlate"
           type="button"
@@ -574,7 +574,7 @@ exports[`renders category edit 2`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="categories"
           type="button"
@@ -596,7 +596,7 @@ exports[`renders category edit 2`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           title="guide"
           type="button"
@@ -630,7 +630,7 @@ exports[`renders category edit 2`] = `
             class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
           />
           <button
-            class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+            class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
             kind="default"
             type="button"
           >
@@ -659,14 +659,14 @@ exports[`renders category edit 2`] = `
               name
             </label>
             <div
-              class="StyledBox-sc-13pk1d4-0 kpwHpK FormField__FormFieldContentBox-m9hood-1 ckZStK"
+              class="StyledBox-sc-13pk1d4-0 bFwQzJ FormField__FormFieldContentBox-m9hood-1 ckZStK"
             >
               <div
                 class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
               >
                 <input
                   autocomplete="off"
-                  class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+                  class="StyledTextInput-sc-1x30a0s-0 fVbmbP"
                   id="name"
                   name="name"
                   value="test-yesno"
@@ -684,14 +684,14 @@ exports[`renders category edit 2`] = `
               What kind of measurement is this?
             </label>
             <div
-              class="StyledBox-sc-13pk1d4-0 loXryH FormField__FormFieldContentBox-m9hood-1 ckZStK"
+              class="StyledBox-sc-13pk1d4-0 jqTrUE FormField__FormFieldContentBox-m9hood-1 ckZStK"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bFwQzJ"
                 id="aspect"
               >
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 kKDEPl"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
@@ -729,7 +729,7 @@ exports[`renders category edit 2`] = `
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 kKDEPl"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
@@ -768,14 +768,14 @@ exports[`renders category edit 2`] = `
               Pick a level of detail that works for you. For example, do you want to track how many minutes you napped, how 'good' it felt, or just that you took a nap?
             </span>
             <div
-              class="StyledBox-sc-13pk1d4-0 loXryH FormField__FormFieldContentBox-m9hood-1 ckZStK"
+              class="StyledBox-sc-13pk1d4-0 jqTrUE FormField__FormFieldContentBox-m9hood-1 ckZStK"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bFwQzJ"
                 id="type"
               >
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 kKDEPl"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
@@ -813,7 +813,7 @@ exports[`renders category edit 2`] = `
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 kKDEPl"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
@@ -838,7 +838,7 @@ exports[`renders category edit 2`] = `
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 kKDEPl"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
@@ -863,7 +863,7 @@ exports[`renders category edit 2`] = `
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 kKDEPl"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
@@ -897,14 +897,14 @@ exports[`renders category edit 2`] = `
               When do you intend to record it?
             </label>
             <div
-              class="StyledBox-sc-13pk1d4-0 loXryH FormField__FormFieldContentBox-m9hood-1 ckZStK"
+              class="StyledBox-sc-13pk1d4-0 jqTrUE FormField__FormFieldContentBox-m9hood-1 ckZStK"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bFwQzJ"
                 id="daily"
               >
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 kKDEPl"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
                   for="daily-once in a while"
                 >
                   <div
@@ -931,7 +931,7 @@ exports[`renders category edit 2`] = `
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 kKDEPl"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
                   for="daily-daily"
                 >
                   <div
@@ -979,7 +979,7 @@ exports[`renders category edit 2`] = `
                   >
                     <input
                       autocomplete="off"
-                      class="StyledTextInput-sc-1x30a0s-0 dcnGDe"
+                      class="StyledTextInput-sc-1x30a0s-0 hsswYj"
                       type="time"
                       value="16:00"
                     />
@@ -989,7 +989,7 @@ exports[`renders category edit 2`] = `
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
                 />
                 <button
-                  class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+                  class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
                   kind="default"
                   type="button"
                 >
@@ -1002,7 +1002,7 @@ exports[`renders category edit 2`] = `
             class="StyledBox-sc-13pk1d4-0 iKKViu"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 jiUGCi"
+              class="StyledButtonKind-sc-1vhfpnt-0 ikkYDU"
               kind="primary"
               title="Update"
               type="submit"
@@ -1016,7 +1016,7 @@ exports[`renders category edit 2`] = `
         class="StyledBox-sc-13pk1d4-0 dQKwvF"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 Gjrpb"
+          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
           kind="default"
           type="button"
         >
