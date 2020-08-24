@@ -52,12 +52,26 @@ const Correlate = () => {
   const [categories, setCategories] = useState([]);
   const [addCategory, setAddCategory] = useState();
 
-  // initialize categories to daily symptoms
+  // initialize categories to local storage or daily symptoms
   useEffect(() => {
+    const stored = global.localStorage.getItem('correlate');
+    const correlate = stored && JSON.parse(stored);
     setCategories(
-      track.categories.filter((c) => c.aspect === 'symptom' && c.times),
+      track.categories.filter((c) =>
+        correlate
+          ? correlate.categories.find((name) => name === c.name)
+          : c.aspect === 'symptom' && c.times,
+      ),
     );
   }, [track.categories]);
+
+  useEffect(() => {
+    // save categories in local storage when they change
+    global.localStorage.setItem(
+      'correlate',
+      JSON.stringify({ categories: categories.map((c) => c.name) }),
+    );
+  }, [categories]);
 
   // build data for DataChart
   const data = useMemo(() => {
