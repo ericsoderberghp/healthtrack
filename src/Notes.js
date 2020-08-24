@@ -4,6 +4,7 @@ import { Add, User } from 'grommet-icons';
 import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
+import { toDate } from './utils';
 
 const Notes = () => {
   const { push } = useContext(RouterContext);
@@ -31,7 +32,7 @@ const Notes = () => {
           secondaryKey={(item) => (
             <Box key={item.date} alignSelf="start">
               <Text weight="bold">
-                {new Date(item.date).toLocaleString(undefined, {
+                {toDate(item.date).toLocaleString(undefined, {
                   month: 'short',
                   day: 'numeric',
                 })}

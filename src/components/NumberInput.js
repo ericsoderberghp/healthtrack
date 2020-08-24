@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { Box, Text, TextInput } from 'grommet';
 
-const NumberInput = forwardRef(({ units, value, ...rest }, ref) => (
+const NumberInput = forwardRef(({ units, ...rest }, ref) => (
   <Box
     flex
     direction="row"
@@ -9,15 +9,7 @@ const NumberInput = forwardRef(({ units, value, ...rest }, ref) => (
     background="background-contrast"
     round="xsmall"
   >
-    <TextInput
-      ref={ref}
-      type="number"
-      step=".1"
-      size="large"
-      plain
-      value={value || ''}
-      {...rest}
-    />
+    <TextInput ref={ref} type="number" step=".1" size="large" plain {...rest} />
     {units && (
       <Text size="large" margin={{ right: 'small' }}>
         {units}

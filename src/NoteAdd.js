@@ -5,6 +5,7 @@ import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
 import { addNote } from './track';
+import { toDateFormat } from './utils';
 import NoteForm from './NoteForm';
 
 const NoteAdd = () => {
@@ -26,7 +27,7 @@ const NoteAdd = () => {
           <RoutedButton icon={<Close />} path="/notes" />
         </Header>
         <NoteForm
-          defaultValue={{ text: '', date: new Date().toISOString() }}
+          defaultValue={{ text: '', date: toDateFormat(new Date()) }}
           label="Add"
           onSubmit={onSubmit}
         />

@@ -1,12 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Box, Button, Form, FormField } from 'grommet';
-import {
-  DateInput,
-  NameInput,
-  NumberInput,
-  ScaleInput,
-  YesNoInput,
-} from './components';
+import { Box, Button, DateInput, Form, FormField } from 'grommet';
+import { NameInput, NumberInput, ScaleInput, YesNoInput } from './components';
+import { toDate, toDateFormat } from './utils';
 
 const TypeInput = {
   'yes/no': YesNoInput,
@@ -16,7 +11,10 @@ const TypeInput = {
 };
 
 const DataForm = ({ category, defaultValue, label, onSubmit, track }) => {
-  const [data, setData] = useState(defaultValue);
+  const [data, setData] = useState({
+    ...defaultValue,
+    date: toDate(defaultValue.date).toISOString(),
+  });
 
   const suggestions = useMemo(() => {
     if (category && category.type === 'name') {
@@ -49,6 +47,7 @@ const DataForm = ({ category, defaultValue, label, onSubmit, track }) => {
         // normalize non-string values
         data.value = Input.normalize(data.value);
         if (!data.date) data.date = new Date().toISOString();
+        data.date = toDateFormat(new Date(data.date));
         if (!data.name)
           data.name =
             typeof data.value === 'string' ? data.value : category.name;

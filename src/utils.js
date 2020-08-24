@@ -53,28 +53,68 @@ export const nextId = (array) => {
   return nextId;
 };
 
+const toZeroPadString = (num, size) => `${num}`.padStart(size, '0');
+
+export const toDateFormat = (date, hours, minutes) =>
+  `${date.getFullYear()}-${toZeroPadString(
+    date.getMonth() + 1,
+    2,
+  )}-${toZeroPadString(date.getDate(), 2)} ${toZeroPadString(
+    hours !== undefined ? hours : date.getHours(),
+    2,
+  )}:${toZeroPadString(
+    minutes !== undefined ? minutes : date.getMinutes(),
+    2,
+  )}`;
+
+const appDateExp = new RegExp(/^(\d+)-(\d+)-(\d+) (\d+):(\d+)$/);
+
+export const parseDate = (date, zeroMonth = false) => {
+  let d;
+  if (date instanceof Date) d = date;
+  // already a Date object
+  else if (date.indexOf('Z') !== -1) d = new Date(date); // UTC date
+  if (d) {
+    return [
+      d.getFullYear(),
+      d.getMonth() + (zeroMonth ? 0 : 1),
+      d.getDate(),
+      d.getHours(),
+      d.getMinutes(),
+    ];
+  }
+  // app date format: 'YYYY-MM-DD HH:mm'
+  return date
+    .match(appDateExp)
+    .slice(1)
+    .map((f) => Number.parseInt(f, 10))
+    .map((f, i) => (i === 1 && zeroMonth ? f - 1 : f));
+};
+
+export const toDate = (date) => new Date(...parseDate(date, true));
+
 export const sameDate = (date1, date2, includeHour) => {
-  const d1 = typeof date1 === 'string' ? new Date(date1) : date1;
-  const d2 = typeof date2 === 'string' ? new Date(date2) : date2;
+  const d1 = parseDate(date1);
+  const d2 = parseDate(date2);
   return (
-    d1.getFullYear() === d2.getFullYear() &&
-    d1.getMonth() === d2.getMonth() &&
-    d1.getDate() === d2.getDate() &&
-    (!includeHour || d1.getHours() === d2.getHours())
+    d1[0] === d2[0] &&
+    d1[1] === d2[1] &&
+    d1[2] === d2[2] &&
+    (!includeHour || d1[3] === d2[3])
   );
 };
 
 export const betweenDates = (date1, date2, date3) => {
-  const d1 = new Date(date1);
-  const d2 = new Date(date2);
+  const d1 = toDate(date1);
+  const d2 = toDate(date2);
   d2.setHours(0);
-  const d3 = new Date(date3);
+  const d3 = toDate(date3);
   d3.setHours(24);
   return d1 > d2 && d1 < d3;
 };
 
 export const getTime = (date) => {
-  const d = typeof date === 'string' ? new Date(date) : date;
+  const d = toDate(date);
   const hours = d.getHours();
   const minutes = d.getMinutes();
   return `${hours.toString().padStart(2, '0')}:${minutes
@@ -105,7 +145,7 @@ export const dateTimes = (date, times) =>
   times.map((time) => setTime(date, time));
 
 export const timeLabel = (date, time) =>
-  setTime(date || new Date(), time)
+  setTime(toDate(date) || new Date(), time)
     .toLocaleString(undefined, {
       hour: 'numeric',
     })

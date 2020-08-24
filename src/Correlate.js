@@ -3,13 +3,14 @@ import {
   Box,
   Button,
   DataChart,
+  DateInput,
   Header,
   Heading,
   ResponsiveContext,
   Select,
 } from 'grommet';
 import { Add, Close } from 'grommet-icons';
-import { DateInput, Page } from './components';
+import { Page } from './components';
 import TrackContext from './TrackContext';
 import { alignDate, betweenDates, sameDate } from './utils';
 

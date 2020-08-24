@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { nextId, sortOn } from './utils';
+import { nextId, sortOn, toDateFormat } from './utils';
 
 export const apiUrl =
   'https://us-central1-healthtrack-279819.cloudfunctions.net/tracks';
@@ -88,6 +88,25 @@ const upgrade = (nextTrack) => {
       delete category.hour;
     }
   });
+
+  // convert universal dates to local dates, assume Pacific Time
+  const convertDate = (datum) => {
+    if (datum.date.indexOf('Z') !== -1) {
+      const date = new Date(datum.date);
+      // one-time special case for Christina's data
+      if (
+        nextTrack.id === 'Christina-Monaco-christina-monacofamily-org' &&
+        date.getFullYear() === 2020 &&
+        (date.getMonth() < 7 || (date.getMonth() === 7 && date.getDate() < 20))
+      ) {
+        // subtract two hours to convert from PT to CT
+        date.setHours(date.getHours() - 2);
+      }
+      datum.date = toDateFormat(date);
+    }
+  };
+  nextTrack.data.forEach((datum) => convertDate(datum));
+  nextTrack.notes.forEach((datum) => convertDate(datum));
 };
 
 export const createTrack = (track) => {
@@ -227,7 +246,7 @@ export const addData = (track, nextData) => {
   const nextTrack = JSON.parse(JSON.stringify(track));
   nextTrack.data.unshift({
     id: nextId(nextTrack.data),
-    date: new Date().toISOString(),
+    date: toDateFormat(new Date()),
     ...nextData,
   });
   sortOn(nextTrack.data, 'date', 'desc');
@@ -253,7 +272,7 @@ export const addNote = (track, nextNote) => {
   const nextTrack = JSON.parse(JSON.stringify(track));
   nextTrack.notes.unshift({
     id: nextId(nextTrack.notes),
-    date: new Date().toISOString(),
+    date: toDateFormat(new Date()),
     text: '',
     ...nextNote,
   });

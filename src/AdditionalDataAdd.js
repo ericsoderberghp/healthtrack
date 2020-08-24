@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Button, Form, FormField, Select, TextInput } from 'grommet';
+import { toDateFormat } from './utils';
 
 const AdditionalDataAdd = ({ date, track, onAdd, onCancel }) => {
   const [data, setData] = useState({
@@ -16,7 +17,7 @@ const AdditionalDataAdd = ({ date, track, onAdd, onCancel }) => {
         const [hours, minutes] = data.time.split(':');
         dataDate.setHours(hours);
         dataDate.setMinutes(minutes);
-        data.date = dataDate.toISOString();
+        data.date = toDateFormat(dataDate, hours, minutes);
         delete data.time;
         onAdd(data);
       }}

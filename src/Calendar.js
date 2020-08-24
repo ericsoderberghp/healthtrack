@@ -5,18 +5,26 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import { Box, Button, Header, Heading, Text, TextArea } from 'grommet';
+import {
+  Box,
+  Button,
+  DateInput,
+  Header,
+  Heading,
+  Text,
+  TextArea,
+} from 'grommet';
 import { Next, Previous } from 'grommet-icons';
-import { DateInput, Page } from './components';
+import { Page } from './components';
 import TrackContext from './TrackContext';
 import {
   alignDate,
   dateTimes,
   getTime,
   sameDate,
-  setTime,
   sortOn,
   timeLabel,
+  toDateFormat,
 } from './utils';
 import { addData, addNote, deleteNote, getCategory, updateNote } from './track';
 import CalendarData from './CalendarData';
@@ -41,18 +49,6 @@ const Calendar = () => {
   const [showAdditionalDataAdd, setShowAdditionalDataAdd] = useState();
   const [offset, setOffset] = useState(0);
 
-  // jump to tomorrow
-  // TODO: test that this works, not sure that it does
-  useEffect(() => {
-    const tomorrow = setTime(new Date(), '02:00');
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    const timer = setTimeout(
-      () => setDate(alignDate(new Date())),
-      tomorrow - new Date(),
-    );
-    return () => clearTimeout(timer);
-  }, [date, track]);
-
   // categories that want something each day
   const categories = useMemo(() => track.categories.filter((c) => c.times), [
     track,
@@ -74,7 +70,7 @@ const Calendar = () => {
         // insert any missing times
         dateTimes(date, category.times).forEach((fd) => {
           if (!cData.find((d) => sameDate(d.date, fd, true)))
-            result.push({ category: category.id, date: fd.toISOString() });
+            result.push({ category: category.id, date: toDateFormat(fd) });
         });
       }
     });

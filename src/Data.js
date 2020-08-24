@@ -5,6 +5,7 @@ import { Page, RoutedButton } from './components';
 import TrackContext from './TrackContext';
 import { RouterContext } from './Router';
 import { getCategory } from './track';
+import { toDate } from './utils';
 
 const Data = () => {
   const { push } = useContext(RouterContext);
@@ -99,7 +100,7 @@ const Data = () => {
             );
           }}
           secondaryKey={(item) => {
-            return new Date(item.date).toLocaleString(undefined, {
+            return toDate(item.date).toLocaleString(undefined, {
               month: 'short',
               day: 'numeric',
             });
