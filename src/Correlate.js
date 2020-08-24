@@ -181,10 +181,13 @@ const Correlate = () => {
               data={data}
               series={['date', ...categories.map((c) => c.name)]}
               chart={charts}
-              axis={{ x: { property: 'date', granularity: 'fine' } }}
-              guide={{ x: true }}
-              pad="small"
-              gap="medium"
+              axis={{
+                x: {
+                  property: 'date',
+                  granularity: data.length < 8 ? 'fine' : 'coarse',
+                },
+              }}
+              guide={{ x: { granularity: 'fine' } }}
               size={{ width: 'fill', height: 'small' }}
             />
           </Box>
