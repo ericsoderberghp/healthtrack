@@ -159,13 +159,14 @@ const Correlate = () => {
         property: category.name,
         round: true,
         color: `graph-${index}`,
+        opacity: 'strong',
         bounds: [
           [0, data.length - 1],
           [yMin, yMax],
         ],
       };
       charts.push({ ...base, type: 'line', thickness: 'xxsmall' });
-      charts.push({ ...base, type: 'point', thickness: 'small' });
+      charts.push({ ...base, type: 'point', thickness: 'medium' });
     });
     return charts;
   }, [categories, data]);

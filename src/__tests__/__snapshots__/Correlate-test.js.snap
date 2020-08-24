@@ -193,6 +193,7 @@ exports[`renders correlate 1`] = `
                 >
                   <g
                     fill="none"
+                    opacity="0.8"
                     stroke="#4d648d"
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -221,6 +222,7 @@ exports[`renders correlate 1`] = `
                 >
                   <g
                     fill="#4d648d"
+                    opacity="0.8"
                     stroke="none"
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -576,6 +578,7 @@ exports[`renders correlate 2`] = `
                 >
                   <g
                     fill="none"
+                    opacity="0.8"
                     stroke="#4d648d"
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -604,6 +607,7 @@ exports[`renders correlate 2`] = `
                 >
                   <g
                     fill="#4d648d"
+                    opacity="0.8"
                     stroke="none"
                     stroke-linecap="round"
                     stroke-linejoin="round"
