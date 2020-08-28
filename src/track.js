@@ -136,7 +136,6 @@ export const signIn = (identity) => {
   }).then((response) => {
     if (response.ok)
       return response.json().then((nextTrack) => {
-        nextTrack.unchanged = true;
         return nextTrack;
       });
     return undefined;
@@ -155,6 +154,7 @@ export const deleteTrack = (track) =>
 
 export const useTrack = () => {
   const [track, setTrack] = useState();
+  const [changed, setChanged] = useState();
 
   // initialize track
   useEffect(() => {
@@ -176,25 +176,26 @@ export const useTrack = () => {
             }
           } else
             return response.json().then((nextTrack) => {
-              nextTrack.unchanged = true;
               upgrade(nextTrack);
               global.localStorage.setItem('track', JSON.stringify(nextTrack));
               setTrack(nextTrack);
+              setChanged(false);
             });
         });
       } else {
         // !publish
-        lastTrack.unchanged = true;
         upgrade(lastTrack);
         setTrack(lastTrack);
+        setChanged(false);
       }
     } else setTrack(false);
   }, []);
 
   useEffect(() => {
-    if (publish && track && !track.unchanged) {
-      // lazily publish when the user hasn't edited it for a while
-      const timer = setTimeout(() => {
+    const timer = setTimeout(() => {
+      if (publish && track && changed) {
+        // lazily publish when the user hasn't edited it for a while
+        setChanged(false);
         fetch(`${apiUrl}/${track.id}`, {
           method: 'PUT',
           headers: {
@@ -202,17 +203,13 @@ export const useTrack = () => {
             'Content-Type': 'application/json; charset=UTF-8',
           },
           body: JSON.stringify(track),
-        })
-          .then((response) => response.json())
-          .then((nextTrack) => {
-            nextTrack.unchanged = true;
-            setTrack(nextTrack);
-          });
-      }, 5000); // wait for 5 seconds of inactivity
-      return () => clearTimeout(timer);
-    }
-    return undefined;
-  }, [track]);
+        }).then((response) => response.json());
+        // if user has changed the track after we sent the PUT,
+        // we don't wan't to overwrite their changes.
+      }
+    }, 5000); // wait for 5 seconds of inactivity
+    return () => clearTimeout(timer);
+  }, [changed, track]);
 
   return [
     track,
@@ -220,11 +217,11 @@ export const useTrack = () => {
       if (nextTrack)
         global.localStorage.setItem('track', JSON.stringify(nextTrack));
       else global.localStorage.removeItem('track');
-      if (nextTrack && track) delete nextTrack.unchanged; // must be changing it
+      if (nextTrack && track) setChanged(true); // must be changing it
       setTrack(nextTrack);
     },
     () => {
-      if (!publish || !track.unchanged) return { then: (f) => f() }; // simulate promise
+      if (!publish || changed) return { then: (f) => f() }; // simulate promise
       return fetch(`${apiUrl}/${track.id}`, {
         method: 'GET',
         headers: {
@@ -233,9 +230,9 @@ export const useTrack = () => {
       }).then((response) => {
         if (response.ok)
           return response.json().then((nextTrack) => {
-            nextTrack.unchanged = true;
             upgrade(nextTrack);
             setTrack(nextTrack);
+            setChanged(false);
           });
       });
     },

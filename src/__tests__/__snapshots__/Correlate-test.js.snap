@@ -124,7 +124,7 @@ exports[`renders correlate 1`] = `
             <div
               class="StyledBox-sc-13pk1d4-0 gPerFl"
             >
-              Aug 17 - Aug 23
+              Aug 21 - Aug 27
               <div
                 class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
               />
@@ -236,26 +236,6 @@ exports[`renders correlate 1`] = `
               <div
                 class="StyledBox-sc-13pk1d4-0 ucRJb"
               >
-                8/17
-              </div>
-              <div
-                class="StyledBox-sc-13pk1d4-0 ucRJb"
-              >
-                8/18
-              </div>
-              <div
-                class="StyledBox-sc-13pk1d4-0 ucRJb"
-              >
-                8/19
-              </div>
-              <div
-                class="StyledBox-sc-13pk1d4-0 ucRJb"
-              >
-                8/20
-              </div>
-              <div
-                class="StyledBox-sc-13pk1d4-0 ucRJb"
-              >
                 8/21
               </div>
               <div
@@ -267,6 +247,26 @@ exports[`renders correlate 1`] = `
                 class="StyledBox-sc-13pk1d4-0 ucRJb"
               >
                 8/23
+              </div>
+              <div
+                class="StyledBox-sc-13pk1d4-0 ucRJb"
+              >
+                8/24
+              </div>
+              <div
+                class="StyledBox-sc-13pk1d4-0 ucRJb"
+              >
+                8/25
+              </div>
+              <div
+                class="StyledBox-sc-13pk1d4-0 ucRJb"
+              >
+                8/26
+              </div>
+              <div
+                class="StyledBox-sc-13pk1d4-0 ucRJb"
+              >
+                8/27
               </div>
             </div>
           </div>
@@ -509,7 +509,7 @@ exports[`renders correlate 2`] = `
             <div
               class="StyledBox-sc-13pk1d4-0 gPerFl"
             >
-              Aug 17 - Aug 23
+              Aug 21 - Aug 27
               <div
                 class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
               />
@@ -621,26 +621,6 @@ exports[`renders correlate 2`] = `
               <div
                 class="StyledBox-sc-13pk1d4-0 ucRJb"
               >
-                8/17
-              </div>
-              <div
-                class="StyledBox-sc-13pk1d4-0 ucRJb"
-              >
-                8/18
-              </div>
-              <div
-                class="StyledBox-sc-13pk1d4-0 ucRJb"
-              >
-                8/19
-              </div>
-              <div
-                class="StyledBox-sc-13pk1d4-0 ucRJb"
-              >
-                8/20
-              </div>
-              <div
-                class="StyledBox-sc-13pk1d4-0 ucRJb"
-              >
                 8/21
               </div>
               <div
@@ -652,6 +632,26 @@ exports[`renders correlate 2`] = `
                 class="StyledBox-sc-13pk1d4-0 ucRJb"
               >
                 8/23
+              </div>
+              <div
+                class="StyledBox-sc-13pk1d4-0 ucRJb"
+              >
+                8/24
+              </div>
+              <div
+                class="StyledBox-sc-13pk1d4-0 ucRJb"
+              >
+                8/25
+              </div>
+              <div
+                class="StyledBox-sc-13pk1d4-0 ucRJb"
+              >
+                8/26
+              </div>
+              <div
+                class="StyledBox-sc-13pk1d4-0 ucRJb"
+              >
+                8/27
               </div>
             </div>
           </div>

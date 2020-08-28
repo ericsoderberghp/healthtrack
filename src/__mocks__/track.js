@@ -80,7 +80,6 @@ const track = {
     { id: 1, text: 'surfed Grandview', date: '2020-06-20T19:00:00.564Z' },
   ],
   email: 'test@my.com',
-  unchanged: true,
 };
 
 export default track;
