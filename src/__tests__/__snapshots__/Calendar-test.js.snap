@@ -111,7 +111,7 @@ exports[`renders the calendar 1`] = `
           <h1
             class="StyledHeading-sc-1rdh4aw-0 bozgir"
           >
-            Aug 27
+            Aug 31
           </h1>
           <div
             class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
@@ -218,11 +218,11 @@ exports[`renders the calendar 1`] = `
                   <input
                     autocomplete="off"
                     class="StyledTextInput-sc-1x30a0s-0 deAfJe"
-                    id="test-number-undefined-0"
-                    name="test-number-undefined-0"
+                    id="test-number-3-0"
+                    name="test-number-3-0"
                     step=".1"
                     type="number"
-                    value=""
+                    value="8"
                   />
                 </div>
                 <span
@@ -231,6 +231,16 @@ exports[`renders the calendar 1`] = `
                   hours
                 </span>
               </div>
+              <div
+                class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jzYoll"
+              />
+              <button
+                class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+                kind="default"
+                type="button"
+              >
+                clear
+              </button>
             </div>
           </div>
           <div
@@ -258,19 +268,19 @@ exports[`renders the calendar 1`] = `
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bIdaiR"
-                id="test-scale-undefined-1"
+                id="test-scale-2-1"
               >
                 <label
                   class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
-                  for="test-scale-undefined-1-1"
+                  for="test-scale-2-1-1"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 gzfjUM StyledRadioButton-g1f6ld-5 dUxqYi"
                   >
                     <input
                       class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
-                      id="test-scale-undefined-1-1"
-                      name="test-scale-undefined-1"
+                      id="test-scale-2-1-1"
+                      name="test-scale-2-1"
                       type="radio"
                       value="1"
                     />
@@ -284,15 +294,15 @@ exports[`renders the calendar 1`] = `
                 />
                 <label
                   class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
-                  for="test-scale-undefined-1-2"
+                  for="test-scale-2-1-2"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 gzfjUM StyledRadioButton-g1f6ld-5 dUxqYi"
                   >
                     <input
                       class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
-                      id="test-scale-undefined-1-2"
-                      name="test-scale-undefined-1"
+                      id="test-scale-2-1-2"
+                      name="test-scale-2-1"
                       type="radio"
                       value="2"
                     />
@@ -306,20 +316,21 @@ exports[`renders the calendar 1`] = `
                 />
                 <label
                   class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
-                  for="test-scale-undefined-1-3"
+                  for="test-scale-2-1-3"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 gzfjUM StyledRadioButton-g1f6ld-5 dUxqYi"
                   >
                     <input
+                      checked=""
                       class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
-                      id="test-scale-undefined-1-3"
-                      name="test-scale-undefined-1"
+                      id="test-scale-2-1-3"
+                      name="test-scale-2-1"
                       type="radio"
                       value="3"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 hTUWxU"
+                      class="StyledBox-sc-13pk1d4-0 ejfZBv"
                     />
                   </div>
                 </label>
@@ -328,15 +339,15 @@ exports[`renders the calendar 1`] = `
                 />
                 <label
                   class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
-                  for="test-scale-undefined-1-4"
+                  for="test-scale-2-1-4"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 gzfjUM StyledRadioButton-g1f6ld-5 dUxqYi"
                   >
                     <input
                       class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
-                      id="test-scale-undefined-1-4"
-                      name="test-scale-undefined-1"
+                      id="test-scale-2-1-4"
+                      name="test-scale-2-1"
                       type="radio"
                       value="4"
                     />
@@ -350,15 +361,15 @@ exports[`renders the calendar 1`] = `
                 />
                 <label
                   class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
-                  for="test-scale-undefined-1-5"
+                  for="test-scale-2-1-5"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 gzfjUM StyledRadioButton-g1f6ld-5 dUxqYi"
                   >
                     <input
                       class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
-                      id="test-scale-undefined-1-5"
-                      name="test-scale-undefined-1"
+                      id="test-scale-2-1-5"
+                      name="test-scale-2-1"
                       type="radio"
                       value="5"
                     />
@@ -368,6 +379,16 @@ exports[`renders the calendar 1`] = `
                   </div>
                 </label>
               </div>
+              <div
+                class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jzYoll"
+              />
+              <button
+                class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+                kind="default"
+                type="button"
+              >
+                clear
+              </button>
             </div>
           </div>
           <div
@@ -402,12 +423,22 @@ exports[`renders the calendar 1`] = `
                   <input
                     autocomplete="off"
                     class="StyledTextInput-sc-1x30a0s-0 deAfJe"
-                    id="test-name-undefined-2"
-                    name="test-name-undefined-2"
-                    value=""
+                    id="test-name-4-2"
+                    name="test-name-4-2"
+                    value="test-value"
                   />
                 </div>
               </div>
+              <div
+                class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jzYoll"
+              />
+              <button
+                class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+                kind="default"
+                type="button"
+              >
+                clear
+              </button>
             </div>
           </div>
           <div
@@ -435,27 +466,28 @@ exports[`renders the calendar 1`] = `
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bIdaiR"
-                id="test-yesno-undefined-3"
+                id="test-yesno-1-3"
               >
                 <label
                   class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
-                  for="test-yesno-undefined-3-true"
+                  for="test-yesno-1-3-true"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 gzfjUM StyledRadioButton-g1f6ld-5 dUxqYi"
                   >
                     <input
+                      checked=""
                       class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
-                      id="test-yesno-undefined-3-true"
-                      name="test-yesno-undefined-3"
+                      id="test-yesno-1-3-true"
+                      name="test-yesno-1-3"
                       type="radio"
                       value="true"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 icKYeQ"
+                      class="StyledBox-sc-13pk1d4-0 jFtAjn"
                     >
                       <span
-                        class="StyledText-sc-1sadyjn-0 cPZwFq"
+                        class="StyledText-sc-1sadyjn-0 jcNVWY"
                       >
                         yes
                       </span>
@@ -467,15 +499,15 @@ exports[`renders the calendar 1`] = `
                 />
                 <label
                   class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
-                  for="test-yesno-undefined-3-false"
+                  for="test-yesno-1-3-false"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 gzfjUM StyledRadioButton-g1f6ld-5 dUxqYi"
                   >
                     <input
                       class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
-                      id="test-yesno-undefined-3-false"
-                      name="test-yesno-undefined-3"
+                      id="test-yesno-1-3-false"
+                      name="test-yesno-1-3"
                       type="radio"
                       value="false"
                     />
@@ -491,6 +523,16 @@ exports[`renders the calendar 1`] = `
                   </div>
                 </label>
               </div>
+              <div
+                class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jzYoll"
+              />
+              <button
+                class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+                kind="default"
+                type="button"
+              >
+                clear
+              </button>
             </div>
           </div>
           <div
@@ -636,7 +678,7 @@ exports[`renders the calendar 2`] = `
           <h1
             class="StyledHeading-sc-1rdh4aw-0 bozgir"
           >
-            Aug 27
+            Aug 31
           </h1>
           <div
             class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
@@ -743,11 +785,11 @@ exports[`renders the calendar 2`] = `
                   <input
                     autocomplete="off"
                     class="StyledTextInput-sc-1x30a0s-0 deAfJe"
-                    id="test-number-undefined-0"
-                    name="test-number-undefined-0"
+                    id="test-number-3-0"
+                    name="test-number-3-0"
                     step=".1"
                     type="number"
-                    value=""
+                    value="8"
                   />
                 </div>
                 <span
@@ -756,6 +798,16 @@ exports[`renders the calendar 2`] = `
                   hours
                 </span>
               </div>
+              <div
+                class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jzYoll"
+              />
+              <button
+                class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+                kind="default"
+                type="button"
+              >
+                clear
+              </button>
             </div>
           </div>
           <div
@@ -783,19 +835,19 @@ exports[`renders the calendar 2`] = `
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bIdaiR"
-                id="test-scale-undefined-1"
+                id="test-scale-2-1"
               >
                 <label
                   class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
-                  for="test-scale-undefined-1-1"
+                  for="test-scale-2-1-1"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 gzfjUM StyledRadioButton-g1f6ld-5 dUxqYi"
                   >
                     <input
                       class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
-                      id="test-scale-undefined-1-1"
-                      name="test-scale-undefined-1"
+                      id="test-scale-2-1-1"
+                      name="test-scale-2-1"
                       type="radio"
                       value="1"
                     />
@@ -809,15 +861,15 @@ exports[`renders the calendar 2`] = `
                 />
                 <label
                   class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
-                  for="test-scale-undefined-1-2"
+                  for="test-scale-2-1-2"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 gzfjUM StyledRadioButton-g1f6ld-5 dUxqYi"
                   >
                     <input
                       class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
-                      id="test-scale-undefined-1-2"
-                      name="test-scale-undefined-1"
+                      id="test-scale-2-1-2"
+                      name="test-scale-2-1"
                       type="radio"
                       value="2"
                     />
@@ -831,20 +883,21 @@ exports[`renders the calendar 2`] = `
                 />
                 <label
                   class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
-                  for="test-scale-undefined-1-3"
+                  for="test-scale-2-1-3"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 gzfjUM StyledRadioButton-g1f6ld-5 dUxqYi"
                   >
                     <input
+                      checked=""
                       class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
-                      id="test-scale-undefined-1-3"
-                      name="test-scale-undefined-1"
+                      id="test-scale-2-1-3"
+                      name="test-scale-2-1"
                       type="radio"
                       value="3"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 hTUWxU"
+                      class="StyledBox-sc-13pk1d4-0 ejfZBv"
                     />
                   </div>
                 </label>
@@ -853,15 +906,15 @@ exports[`renders the calendar 2`] = `
                 />
                 <label
                   class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
-                  for="test-scale-undefined-1-4"
+                  for="test-scale-2-1-4"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 gzfjUM StyledRadioButton-g1f6ld-5 dUxqYi"
                   >
                     <input
                       class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
-                      id="test-scale-undefined-1-4"
-                      name="test-scale-undefined-1"
+                      id="test-scale-2-1-4"
+                      name="test-scale-2-1"
                       type="radio"
                       value="4"
                     />
@@ -875,15 +928,15 @@ exports[`renders the calendar 2`] = `
                 />
                 <label
                   class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
-                  for="test-scale-undefined-1-5"
+                  for="test-scale-2-1-5"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 gzfjUM StyledRadioButton-g1f6ld-5 dUxqYi"
                   >
                     <input
                       class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
-                      id="test-scale-undefined-1-5"
-                      name="test-scale-undefined-1"
+                      id="test-scale-2-1-5"
+                      name="test-scale-2-1"
                       type="radio"
                       value="5"
                     />
@@ -893,6 +946,16 @@ exports[`renders the calendar 2`] = `
                   </div>
                 </label>
               </div>
+              <div
+                class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jzYoll"
+              />
+              <button
+                class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+                kind="default"
+                type="button"
+              >
+                clear
+              </button>
             </div>
           </div>
           <div
@@ -927,12 +990,22 @@ exports[`renders the calendar 2`] = `
                   <input
                     autocomplete="off"
                     class="StyledTextInput-sc-1x30a0s-0 deAfJe"
-                    id="test-name-undefined-2"
-                    name="test-name-undefined-2"
-                    value=""
+                    id="test-name-4-2"
+                    name="test-name-4-2"
+                    value="test-value"
                   />
                 </div>
               </div>
+              <div
+                class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jzYoll"
+              />
+              <button
+                class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+                kind="default"
+                type="button"
+              >
+                clear
+              </button>
             </div>
           </div>
           <div
@@ -960,27 +1033,28 @@ exports[`renders the calendar 2`] = `
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bIdaiR"
-                id="test-yesno-undefined-3"
+                id="test-yesno-1-3"
               >
                 <label
                   class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
-                  for="test-yesno-undefined-3-true"
+                  for="test-yesno-1-3-true"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 gzfjUM StyledRadioButton-g1f6ld-5 dUxqYi"
                   >
                     <input
+                      checked=""
                       class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
-                      id="test-yesno-undefined-3-true"
-                      name="test-yesno-undefined-3"
+                      id="test-yesno-1-3-true"
+                      name="test-yesno-1-3"
                       type="radio"
                       value="true"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 icKYeQ"
+                      class="StyledBox-sc-13pk1d4-0 jFtAjn"
                     >
                       <span
-                        class="StyledText-sc-1sadyjn-0 cPZwFq"
+                        class="StyledText-sc-1sadyjn-0 jcNVWY"
                       >
                         yes
                       </span>
@@ -992,15 +1066,15 @@ exports[`renders the calendar 2`] = `
                 />
                 <label
                   class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
-                  for="test-yesno-undefined-3-false"
+                  for="test-yesno-1-3-false"
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 gzfjUM StyledRadioButton-g1f6ld-5 dUxqYi"
                   >
                     <input
                       class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
-                      id="test-yesno-undefined-3-false"
-                      name="test-yesno-undefined-3"
+                      id="test-yesno-1-3-false"
+                      name="test-yesno-1-3"
                       type="radio"
                       value="false"
                     />
@@ -1016,6 +1090,16 @@ exports[`renders the calendar 2`] = `
                   </div>
                 </label>
               </div>
+              <div
+                class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jzYoll"
+              />
+              <button
+                class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+                kind="default"
+                type="button"
+              >
+                clear
+              </button>
             </div>
           </div>
           <div

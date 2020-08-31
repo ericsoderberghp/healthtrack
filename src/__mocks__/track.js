@@ -1,3 +1,8 @@
+const today = new Date().toISOString().split('T')[0];
+const tmp = new Date();
+tmp.setDate(-1);
+const yesterday = tmp.toISOString().split('T')[0];
+
 const track = {
   id: 'test-track',
   categories: [
@@ -44,35 +49,35 @@ const track = {
       category: 1,
       value: true,
       name: 'test-yesno',
-      date: '2020-07-05T23:00:00.451Z',
+      date: `${today} 16:00`,
     },
     {
       id: 2,
       category: 2,
       value: 3,
       name: 'test-scale',
-      date: '2020-07-05T23:00:00.792Z',
+      date: `${today} 12:00`,
     },
     {
       id: 3,
       category: 3,
       value: 8,
       name: 'test-number',
-      date: '2020-07-05T19:00:00.792Z',
+      date: `${today} 08:00`,
     },
     {
       id: 4,
       category: 4,
       value: 'test-value',
       name: 'test-value',
-      date: '2020-07-05T23:00:00.451Z',
+      date: `${today} 12:00`,
     },
     {
       id: 5,
       category: 2,
       value: 2,
       name: 'test-scale',
-      date: '2020-07-04T23:00:00.792Z',
+      date: `${yesterday} 16:00`,
     },
   ],
   name: 'Test Track',

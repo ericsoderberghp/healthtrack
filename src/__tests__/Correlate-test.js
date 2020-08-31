@@ -10,8 +10,8 @@ afterEach(cleanup);
 
 it('renders correlate', async () => {
   process.env.NODE_ENV = 'test';
-  const { container, findByDisplayValue } = render(<App />);
+  const { container, findByText } = render(<App />);
   expect(container.firstChild).toMatchSnapshot();
-  await findByDisplayValue('test-scale');
+  await findByText('test-scale');
   expect(container.firstChild).toMatchSnapshot();
 });

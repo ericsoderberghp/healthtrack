@@ -7,12 +7,10 @@ import {
   Header,
   Heading,
   ResponsiveContext,
-  Select,
-  TextInput,
 } from 'grommet';
-import { Add, Close } from 'grommet-icons';
 import { Page } from './components';
 import TrackContext from './TrackContext';
+import CriteriaEdit from './CriteriaEdit';
 import { alignDate, betweenDates, sameDate } from './utils';
 
 const now = alignDate(new Date());
@@ -23,26 +21,6 @@ const dateFormat = new Intl.DateTimeFormat(undefined, {
   day: 'numeric',
 });
 
-const SelectCategory = ({ track, value, onChange }) => {
-  const [options, setOptions] = useState(track.categories);
-  return (
-    <Select
-      options={options}
-      labelKey="name"
-      valueKey="id" // not reduced
-      value={value}
-      onSearch={(search) => {
-        if (search) {
-          const exp = new RegExp(search, 'i');
-          setOptions(track.categories.filter((c) => exp.test(c.name)));
-        } else setOptions(track.categories);
-      }}
-      onChange={({ option }) => onChange(option)}
-      onClose={() => setOptions(track.categories)}
-    />
-  );
-};
-
 const Correlate = () => {
   const size = useContext(ResponsiveContext);
   const [track] = useContext(TrackContext);
@@ -51,7 +29,7 @@ const Correlate = () => {
     now.toISOString(),
   ]);
   const [criteria, setCriteria] = useState([]);
-  const [addCriteria, setAddCriteria] = useState();
+  const [editing, setEditing] = useState();
 
   // initialize categories to local storage or daily symptoms
   useEffect(() => {
@@ -62,7 +40,7 @@ const Correlate = () => {
       const nextCriteria = [];
       track.categories.forEach((c) => {
         if (c.aspect === 'symptom' && c.times) {
-          nextCriteria.push({ category: c.id, key: c.name });
+          nextCriteria.push({ category: c.id });
         }
       });
       setCriteria(nextCriteria);
@@ -74,6 +52,28 @@ const Correlate = () => {
     global.localStorage.setItem('correlate', JSON.stringify(criteria));
   }, [criteria]);
 
+  const keys = useMemo(
+    () =>
+      criteria.map(({ category: categoryId, name }) => {
+        const category = track.categories.find((c) => c.id === categoryId);
+        if (category.type === 'name' && name) return `${category.name}-${name}`;
+        return category.name;
+      }),
+    [criteria, track.categories],
+  );
+
+  const series = useMemo(
+    () => [
+      'date',
+      ...criteria.map(({ category: categoryId, name }, index) => {
+        const category = track.categories.find((c) => c.id === categoryId);
+        const label = category.type === 'name' && name ? name : category.name;
+        return { property: keys[index], label };
+      }),
+    ],
+    [criteria, keys, track.categories],
+  );
+
   // build data for DataChart, array per criteria/chart
   const data = useMemo(() => {
     const data = [];
@@ -81,11 +81,11 @@ const Correlate = () => {
       const [date1, date2] = dates.map((d) => new Date(d));
 
       // prune the data down to just what the criteria matches
-      const criteriaData = criteria.map(({ category, pattern }) =>
+      const criteriaData = criteria.map(({ category, name }) =>
         track.data.filter(
           (datum) =>
             datum.category === category &&
-            (!pattern || datum.value.match(new RegExp(pattern, 'g'))) &&
+            (!name || datum.value.match(new RegExp(name, 'g'))) &&
             betweenDates(datum.date, date1, date2),
         ),
       );
@@ -96,7 +96,8 @@ const Correlate = () => {
       while (date <= date2) {
         const datum = { date: date.toISOString() };
         // create a keyed value on the current day for each category
-        criteria.forEach(({ category: categoryId, key }, index) => {
+        criteria.forEach(({ category: categoryId }, index) => {
+          const key = keys[index];
           const category = track.categories.find((c) => c.id === categoryId);
           let dayValue = undefined;
           criteriaData[index]
@@ -127,12 +128,13 @@ const Correlate = () => {
       }
     }
     return data;
-  }, [criteria, dates, track]);
+  }, [criteria, dates, keys, track]);
 
   // build charts for DataChart
   const charts = useMemo(() => {
     const charts = [];
-    criteria.forEach(({ category: categoryId, key }, index) => {
+    criteria.forEach(({ category: categoryId }, index) => {
+      const key = keys[index];
       const category = track.categories.find((c) => c.id === categoryId);
       // For number categories, pick min/max to be just outside the
       // data set. This works better for things like weight.
@@ -171,7 +173,7 @@ const Correlate = () => {
       charts.push({ ...base, type: 'point', thickness: 'medium' });
     });
     return charts;
-  }, [criteria, data, track]);
+  }, [criteria, data, keys, track]);
 
   return (
     <Page>
@@ -196,7 +198,7 @@ const Correlate = () => {
           <Box margin={{ vertical: 'large' }}>
             <DataChart
               data={data}
-              series={['date', ...criteria.map((c) => c.key)]}
+              series={series}
               chart={charts}
               axis={{
                 x: {
@@ -206,101 +208,23 @@ const Correlate = () => {
               }}
               guide={{ x: { granularity: 'fine' } }}
               size={{ width: 'fill', height: 'small' }}
+              detail
+              legend
             />
           </Box>
         )}
 
-        <Box gap="medium">
-          {criteria.map(({ category: categoryId, pattern }, index) => {
-            const category = track.categories.find((c) => c.id === categoryId);
-            return (
-              <Box
-                key={index}
-                direction="row"
-                gap="medium"
-                justify="between"
-                align="start"
-              >
-                <Box gap="xsmall">
-                  <Box direction="row" gap="small" align="center">
-                    {/* TODO: match point style */}
-                    <Box
-                      pad="small"
-                      background={`graph-${index}`}
-                      round="full"
-                    />
-                    <SelectCategory
-                      track={track}
-                      value={category}
-                      onChange={(nextCategory) => {
-                        const nextCriteria = JSON.parse(
-                          JSON.stringify(criteria),
-                        );
-                        nextCriteria[index].category = nextCategory.id;
-                        nextCriteria[index].key = nextCategory.name;
-                        setCriteria(nextCriteria);
-                      }}
-                    />
-                  </Box>
-                  {category.type === 'name' && (
-                    <Box direction="row" gap="small" align="center">
-                      <Box pad="small" />
-                      <TextInput
-                        placeholder="matching ..."
-                        value={pattern || ''}
-                        onChange={(event) => {
-                          const nextPattern = event.target.value;
-                          const nextCriteria = JSON.parse(
-                            JSON.stringify(criteria),
-                          );
-                          nextCriteria[index].pattern = nextPattern;
-                          nextCriteria[index].key = nextPattern
-                            ? `${category.name}-${nextPattern}`
-                            : category.name;
-                          setCriteria(nextCriteria);
-                        }}
-                      />
-                    </Box>
-                  )}
-                </Box>
-                <Button
-                  icon={<Close />}
-                  onClick={() => {
-                    const nextCriteria = JSON.parse(JSON.stringify(criteria));
-                    nextCriteria.splice(index, 1);
-                    setCriteria(nextCriteria);
-                  }}
-                />
-              </Box>
-            );
-          })}
-
-          {addCriteria ? (
-            <Box direction="row" gap="medium" justify="between" align="center">
-              <Box direction="row" gap="small" align="center">
-                <Box pad="small" round="full" />
-                <SelectCategory
-                  track={track}
-                  value={''}
-                  onChange={(nextCategory) => {
-                    const nextCriteria = JSON.parse(JSON.stringify(criteria));
-                    nextCriteria.push({
-                      category: nextCategory.id,
-                      key: nextCategory.name,
-                    });
-                    setCriteria(nextCriteria);
-                    setAddCriteria(false);
-                  }}
-                />
-              </Box>
-              <Button icon={<Close />} onClick={() => setAddCriteria(false)} />
-            </Box>
-          ) : (
-            <Box direction="row" justify="end">
-              <Button icon={<Add />} onClick={() => setAddCriteria(true)} />
-            </Box>
-          )}
-        </Box>
+        {editing ? (
+          <CriteriaEdit
+            criteria={criteria}
+            onChange={setCriteria}
+            onDone={() => setEditing(false)}
+          />
+        ) : (
+          <Box alignSelf="start">
+            <Button label="edit" onClick={() => setEditing(true)} />
+          </Box>
+        )}
       </Box>
     </Page>
   );
