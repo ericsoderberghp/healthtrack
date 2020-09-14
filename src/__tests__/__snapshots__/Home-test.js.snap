@@ -2,28 +2,28 @@
 
 exports[`renders home 1`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 fZoPPO"
+  class="StyledGrommet-sc-19lkkz7-0 giDtBV"
   style="min-height: 100%;"
 >
   <div
-    class="StyledGrid-sc-1wofa1l-0 jkgEes"
+    class="StyledGrid-sc-1wofa1l-0 hobPWL"
     style="min-height: 100%;"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kOYHGA"
+      class="StyledBox-sc-13pk1d4-0 doPhmD"
     >
       <nav
-        class="StyledBox-sc-13pk1d4-0 PHNoe"
+        class="StyledBox-sc-13pk1d4-0 fAULsd"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="calendar"
           type="button"
         >
           <svg
             aria-label="Calendar"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -35,17 +35,17 @@ exports[`renders home 1`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="correlate"
           type="button"
         >
           <svg
             aria-label="Test"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -57,17 +57,17 @@ exports[`renders home 1`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="categories"
           type="button"
         >
           <svg
             aria-label="Tag"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -79,17 +79,17 @@ exports[`renders home 1`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 bvTaVN"
+          class="StyledButtonKind-sc-1vhfpnt-0 iYmSHW"
           kind="default"
           title="guide"
           type="button"
         >
           <svg
             aria-label="User"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -102,35 +102,35 @@ exports[`renders home 1`] = `
         </button>
       </nav>
       <div
-        class="StyledBox-sc-13pk1d4-0 fAFdFO"
+        class="StyledBox-sc-13pk1d4-0 iflIwB"
       >
         <h1
-          class="StyledHeading-sc-1rdh4aw-0 bozgir"
+          class="StyledHeading-sc-1rdh4aw-0 hJqdQU"
         >
           Hi 
           Test Track
         </h1>
         <p
-          class="StyledParagraph-tbetod-0 gfTpGC"
+          class="StyledParagraph-tbetod-0 YsHh"
         >
           This is a tool that can help remove uncertainty from managing your health.
         </p>
         <p
-          class="StyledParagraph-tbetod-0 gfTpGC"
+          class="StyledParagraph-tbetod-0 YsHh"
         >
           To begin with, think about some symptom you experience that you don't know the cause of. For example, migraine headaches. Then, think about some of your behaviors that might be affecting it, such as not getting enough sleep, not getting enough exercise, or consuming alcohol. Add categories for your symptoms and behaviors. When adding them, think about how much detail you want to capture and how often you expect to track them. The simpler you can make it, the easier it will be to keep track. You can always adjust over time.
         </p>
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 gPerFl"
+            class="StyledBox-sc-13pk1d4-0 hUYUlu"
           >
             <svg
               aria-label="Tag"
-              class="StyledIcon-ofa7kd-0 NqKYz"
+              class="StyledIcon-ofa7kd-0 iTZpZQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -141,27 +141,27 @@ exports[`renders home 1`] = `
               />
             </svg>
             <div
-              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bZqeeV"
             />
             setup categories
           </div>
         </button>
         <p
-          class="StyledParagraph-tbetod-0 gfTpGC"
+          class="StyledParagraph-tbetod-0 YsHh"
         >
           Once you've got your categories in place, start tracking your behaviors and experiences over time. You'll be guided to enter data for the categories you indicated should be captured daily. You can always add more data too.
         </p>
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 gPerFl"
+            class="StyledBox-sc-13pk1d4-0 hUYUlu"
           >
             <svg
               aria-label="Calendar"
-              class="StyledIcon-ofa7kd-0 NqKYz"
+              class="StyledIcon-ofa7kd-0 iTZpZQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -172,27 +172,27 @@ exports[`renders home 1`] = `
               />
             </svg>
             <div
-              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bZqeeV"
             />
             enter data
           </div>
         </button>
         <p
-          class="StyledParagraph-tbetod-0 gfTpGC"
+          class="StyledParagraph-tbetod-0 YsHh"
         >
           When you've got a few weeks of data recorded, look for correlations between your behaviors and symptoms.
         </p>
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 gPerFl"
+            class="StyledBox-sc-13pk1d4-0 hUYUlu"
           >
             <svg
               aria-label="Test"
-              class="StyledIcon-ofa7kd-0 NqKYz"
+              class="StyledIcon-ofa7kd-0 iTZpZQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -203,22 +203,22 @@ exports[`renders home 1`] = `
               />
             </svg>
             <div
-              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bZqeeV"
             />
             correlate
           </div>
         </button>
         <p
-          class="StyledParagraph-tbetod-0 gfTpGC"
+          class="StyledParagraph-tbetod-0 YsHh"
         >
           Make this tool work for you. You can always adjust the categories as you go. Good luck!
         </p>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 hJnoUe"
+        class="StyledBox-sc-13pk1d4-0 dRCPqB"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="data"
           type="button"
@@ -226,10 +226,10 @@ exports[`renders home 1`] = `
           Data
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 dMKzjf"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="notes"
           type="button"
@@ -237,20 +237,20 @@ exports[`renders home 1`] = `
           Notes
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 dMKzjf"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           type="button"
         >
           Sign out
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 dMKzjf"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="delete everything"
           type="button"
@@ -265,28 +265,28 @@ exports[`renders home 1`] = `
 
 exports[`renders home 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 fZoPPO"
+  class="StyledGrommet-sc-19lkkz7-0 giDtBV"
   style="min-height: 100%;"
 >
   <div
-    class="StyledGrid-sc-1wofa1l-0 jkgEes"
+    class="StyledGrid-sc-1wofa1l-0 hobPWL"
     style="min-height: 100%;"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kOYHGA"
+      class="StyledBox-sc-13pk1d4-0 doPhmD"
     >
       <nav
-        class="StyledBox-sc-13pk1d4-0 PHNoe"
+        class="StyledBox-sc-13pk1d4-0 fAULsd"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="calendar"
           type="button"
         >
           <svg
             aria-label="Calendar"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -298,17 +298,17 @@ exports[`renders home 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="correlate"
           type="button"
         >
           <svg
             aria-label="Test"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -320,17 +320,17 @@ exports[`renders home 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="categories"
           type="button"
         >
           <svg
             aria-label="Tag"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -342,17 +342,17 @@ exports[`renders home 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 bvTaVN"
+          class="StyledButtonKind-sc-1vhfpnt-0 iYmSHW"
           kind="default"
           title="guide"
           type="button"
         >
           <svg
             aria-label="User"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -365,35 +365,35 @@ exports[`renders home 2`] = `
         </button>
       </nav>
       <div
-        class="StyledBox-sc-13pk1d4-0 fAFdFO"
+        class="StyledBox-sc-13pk1d4-0 iflIwB"
       >
         <h1
-          class="StyledHeading-sc-1rdh4aw-0 bozgir"
+          class="StyledHeading-sc-1rdh4aw-0 hJqdQU"
         >
           Hi 
           Test Track
         </h1>
         <p
-          class="StyledParagraph-tbetod-0 gfTpGC"
+          class="StyledParagraph-tbetod-0 YsHh"
         >
           This is a tool that can help remove uncertainty from managing your health.
         </p>
         <p
-          class="StyledParagraph-tbetod-0 gfTpGC"
+          class="StyledParagraph-tbetod-0 YsHh"
         >
           To begin with, think about some symptom you experience that you don't know the cause of. For example, migraine headaches. Then, think about some of your behaviors that might be affecting it, such as not getting enough sleep, not getting enough exercise, or consuming alcohol. Add categories for your symptoms and behaviors. When adding them, think about how much detail you want to capture and how often you expect to track them. The simpler you can make it, the easier it will be to keep track. You can always adjust over time.
         </p>
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 gPerFl"
+            class="StyledBox-sc-13pk1d4-0 hUYUlu"
           >
             <svg
               aria-label="Tag"
-              class="StyledIcon-ofa7kd-0 NqKYz"
+              class="StyledIcon-ofa7kd-0 iTZpZQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -404,27 +404,27 @@ exports[`renders home 2`] = `
               />
             </svg>
             <div
-              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bZqeeV"
             />
             setup categories
           </div>
         </button>
         <p
-          class="StyledParagraph-tbetod-0 gfTpGC"
+          class="StyledParagraph-tbetod-0 YsHh"
         >
           Once you've got your categories in place, start tracking your behaviors and experiences over time. You'll be guided to enter data for the categories you indicated should be captured daily. You can always add more data too.
         </p>
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 gPerFl"
+            class="StyledBox-sc-13pk1d4-0 hUYUlu"
           >
             <svg
               aria-label="Calendar"
-              class="StyledIcon-ofa7kd-0 NqKYz"
+              class="StyledIcon-ofa7kd-0 iTZpZQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -435,27 +435,27 @@ exports[`renders home 2`] = `
               />
             </svg>
             <div
-              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bZqeeV"
             />
             enter data
           </div>
         </button>
         <p
-          class="StyledParagraph-tbetod-0 gfTpGC"
+          class="StyledParagraph-tbetod-0 YsHh"
         >
           When you've got a few weeks of data recorded, look for correlations between your behaviors and symptoms.
         </p>
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 gPerFl"
+            class="StyledBox-sc-13pk1d4-0 hUYUlu"
           >
             <svg
               aria-label="Test"
-              class="StyledIcon-ofa7kd-0 NqKYz"
+              class="StyledIcon-ofa7kd-0 iTZpZQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -466,22 +466,22 @@ exports[`renders home 2`] = `
               />
             </svg>
             <div
-              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bZqeeV"
             />
             correlate
           </div>
         </button>
         <p
-          class="StyledParagraph-tbetod-0 gfTpGC"
+          class="StyledParagraph-tbetod-0 YsHh"
         >
           Make this tool work for you. You can always adjust the categories as you go. Good luck!
         </p>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 hJnoUe"
+        class="StyledBox-sc-13pk1d4-0 dRCPqB"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="data"
           type="button"
@@ -489,10 +489,10 @@ exports[`renders home 2`] = `
           Data
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 dMKzjf"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="notes"
           type="button"
@@ -500,20 +500,20 @@ exports[`renders home 2`] = `
           Notes
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 dMKzjf"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           type="button"
         >
           Sign out
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jtjTeE"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 dMKzjf"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="delete everything"
           type="button"

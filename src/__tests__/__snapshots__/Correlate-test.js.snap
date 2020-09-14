@@ -2,28 +2,28 @@
 
 exports[`renders correlate 1`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 fZoPPO"
+  class="StyledGrommet-sc-19lkkz7-0 giDtBV"
   style="min-height: 100%;"
 >
   <div
-    class="StyledGrid-sc-1wofa1l-0 jkgEes"
+    class="StyledGrid-sc-1wofa1l-0 hobPWL"
     style="min-height: 100%;"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kOYHGA"
+      class="StyledBox-sc-13pk1d4-0 doPhmD"
     >
       <nav
-        class="StyledBox-sc-13pk1d4-0 PHNoe"
+        class="StyledBox-sc-13pk1d4-0 fAULsd"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="calendar"
           type="button"
         >
           <svg
             aria-label="Calendar"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -35,17 +35,17 @@ exports[`renders correlate 1`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 bvTaVN"
+          class="StyledButtonKind-sc-1vhfpnt-0 iYmSHW"
           kind="default"
           title="correlate"
           type="button"
         >
           <svg
             aria-label="Test"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -57,17 +57,17 @@ exports[`renders correlate 1`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="categories"
           type="button"
         >
           <svg
             aria-label="Tag"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -79,17 +79,17 @@ exports[`renders correlate 1`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="guide"
           type="button"
         >
           <svg
             aria-label="User"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -102,35 +102,35 @@ exports[`renders correlate 1`] = `
         </button>
       </nav>
       <div
-        class="StyledBox-sc-13pk1d4-0 fGNJtn"
+        class="StyledBox-sc-13pk1d4-0 jytkhI"
       >
         <header
-          class="StyledBox-sc-13pk1d4-0 TLWLY"
+          class="StyledBox-sc-13pk1d4-0 bWsGPT"
         >
           <h1
-            class="StyledHeading-sc-1rdh4aw-0 bozgir"
+            class="StyledHeading-sc-1rdh4aw-0 hJqdQU"
           >
             correlate
           </h1>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
           />
           <button
             aria-label="Open Drop"
-            class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+            class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
             kind="default"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 gPerFl"
+              class="StyledBox-sc-13pk1d4-0 hUYUlu"
             >
-              Aug 25 - Aug 31
+              Sep 8 - Sep 14
               <div
-                class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+                class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bZqeeV"
               />
               <svg
                 aria-label="Calendar"
-                class="StyledIcon-ofa7kd-0 kfECiH"
+                class="StyledIcon-ofa7kd-0 eiZIKg"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -144,51 +144,51 @@ exports[`renders correlate 1`] = `
           </button>
         </header>
         <div
-          class="StyledBox-sc-13pk1d4-0 hXorhD"
+          class="StyledBox-sc-13pk1d4-0 BEvog"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+            class="StyledBox-sc-13pk1d4-0 gAsOLC"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+              class="StyledBox-sc-13pk1d4-0 gAsOLC"
             >
               <div
-                class="StyledStack-ajspsk-0 blvUmF"
+                class="StyledStack-ajspsk-0 iwHUEa"
               >
                 <div
-                  class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+                  class="StyledStack__StyledStackLayer-ajspsk-1 lgopjm"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 hiwgjb"
+                    class="StyledBox-sc-13pk1d4-0 bSQhCc"
                   >
                     <div
-                      class="StyledBox-sc-13pk1d4-0 cVtJhS"
+                      class="StyledBox-sc-13pk1d4-0 kHQWKV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 cVtJhS"
+                      class="StyledBox-sc-13pk1d4-0 kHQWKV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 cVtJhS"
+                      class="StyledBox-sc-13pk1d4-0 kHQWKV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 cVtJhS"
+                      class="StyledBox-sc-13pk1d4-0 kHQWKV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 cVtJhS"
+                      class="StyledBox-sc-13pk1d4-0 kHQWKV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 cVtJhS"
+                      class="StyledBox-sc-13pk1d4-0 kHQWKV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 cVtJhS"
+                      class="StyledBox-sc-13pk1d4-0 kHQWKV"
                     />
                   </div>
                 </div>
                 <div
-                  class="StyledStack__StyledStackLayer-ajspsk-1 bEYrkt"
+                  class="StyledStack__StyledStackLayer-ajspsk-1 kOplDO"
                 >
                   <svg
-                    class="StyledChart-sc-1nae0gf-0 kHcRKn"
+                    class="StyledChart-sc-1nae0gf-0 clJfKA"
                     height="192"
                     preserveAspectRatio="none"
                     viewBox="0 0 0 192"
@@ -214,10 +214,10 @@ exports[`renders correlate 1`] = `
                   </svg>
                 </div>
                 <div
-                  class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+                  class="StyledStack__StyledStackLayer-ajspsk-1 lgopjm"
                 >
                   <svg
-                    class="StyledChart-sc-1nae0gf-0 kHcRKn"
+                    class="StyledChart-sc-1nae0gf-0 clJfKA"
                     height="192"
                     preserveAspectRatio="none"
                     viewBox="0 0 0 192"
@@ -244,127 +244,127 @@ exports[`renders correlate 1`] = `
                   </svg>
                 </div>
                 <div
-                  class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+                  class="StyledStack__StyledStackLayer-ajspsk-1 lgopjm"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 iLSfXS Detail__DetailControl-huiwg9-0 bASkfp"
+                    class="StyledBox-sc-13pk1d4-0 eWlJSh Detail__DetailControl-huiwg9-0 ideHq"
                     tabindex="0"
                   >
                     <div
-                      class="StyledBox-sc-13pk1d4-0 ucRJb"
+                      class="StyledBox-sc-13pk1d4-0 doyoYY"
                     >
                       <div
-                        class="StyledBox-sc-13pk1d4-0 jumnLP"
+                        class="StyledBox-sc-13pk1d4-0 giilDw"
                       />
                     </div>
                     <div
-                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxhHbG"
+                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hUIATV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 ucRJb"
+                      class="StyledBox-sc-13pk1d4-0 doyoYY"
                     >
                       <div
-                        class="StyledBox-sc-13pk1d4-0 jumnLP"
+                        class="StyledBox-sc-13pk1d4-0 giilDw"
                       />
                     </div>
                     <div
-                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxhHbG"
+                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hUIATV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 ucRJb"
+                      class="StyledBox-sc-13pk1d4-0 doyoYY"
                     >
                       <div
-                        class="StyledBox-sc-13pk1d4-0 jumnLP"
+                        class="StyledBox-sc-13pk1d4-0 giilDw"
                       />
                     </div>
                     <div
-                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxhHbG"
+                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hUIATV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 ucRJb"
+                      class="StyledBox-sc-13pk1d4-0 doyoYY"
                     >
                       <div
-                        class="StyledBox-sc-13pk1d4-0 jumnLP"
+                        class="StyledBox-sc-13pk1d4-0 giilDw"
                       />
                     </div>
                     <div
-                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxhHbG"
+                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hUIATV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 ucRJb"
+                      class="StyledBox-sc-13pk1d4-0 doyoYY"
                     >
                       <div
-                        class="StyledBox-sc-13pk1d4-0 jumnLP"
+                        class="StyledBox-sc-13pk1d4-0 giilDw"
                       />
                     </div>
                     <div
-                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxhHbG"
+                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hUIATV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 ucRJb"
+                      class="StyledBox-sc-13pk1d4-0 doyoYY"
                     >
                       <div
-                        class="StyledBox-sc-13pk1d4-0 jumnLP"
+                        class="StyledBox-sc-13pk1d4-0 giilDw"
                       />
                     </div>
                     <div
-                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxhHbG"
+                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hUIATV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 ucRJb"
+                      class="StyledBox-sc-13pk1d4-0 doyoYY"
                     >
                       <div
-                        class="StyledBox-sc-13pk1d4-0 jumnLP"
+                        class="StyledBox-sc-13pk1d4-0 giilDw"
                       />
                     </div>
                   </div>
                 </div>
               </div>
               <div
-                class="StyledBox-sc-13pk1d4-0 gcyZcJ"
+                class="StyledBox-sc-13pk1d4-0 ivjhlG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ucRJb"
+                  class="StyledBox-sc-13pk1d4-0 doyoYY"
                 >
-                  8/25
+                  9/8
                 </div>
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ucRJb"
+                  class="StyledBox-sc-13pk1d4-0 doyoYY"
                 >
-                  8/26
+                  9/9
                 </div>
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ucRJb"
+                  class="StyledBox-sc-13pk1d4-0 doyoYY"
                 >
-                  8/27
+                  9/10
                 </div>
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ucRJb"
+                  class="StyledBox-sc-13pk1d4-0 doyoYY"
                 >
-                  8/28
+                  9/11
                 </div>
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ucRJb"
+                  class="StyledBox-sc-13pk1d4-0 doyoYY"
                 >
-                  8/29
+                  9/12
                 </div>
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ucRJb"
+                  class="StyledBox-sc-13pk1d4-0 doyoYY"
                 >
-                  8/30
+                  9/13
                 </div>
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ucRJb"
+                  class="StyledBox-sc-13pk1d4-0 doyoYY"
                 >
-                  8/31
+                  9/14
                 </div>
               </div>
             </div>
             <div
-              class="StyledBox-sc-13pk1d4-0 fcWPWr"
+              class="StyledBox-sc-13pk1d4-0 kOmPRQ"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dYrbLt"
+                class="StyledBox-sc-13pk1d4-0 jWmmDS"
               >
                 <svg
                   fill="#4d648d"
@@ -380,10 +380,10 @@ exports[`renders correlate 1`] = `
                   />
                 </svg>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cPZcyD"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gxLRPg"
                 />
                 <span
-                  class="StyledText-sc-1sadyjn-0 hUokoe"
+                  class="StyledText-sc-1sadyjn-0 PRJF"
                 >
                   test-scale
                 </span>
@@ -392,10 +392,10 @@ exports[`renders correlate 1`] = `
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 jIHfqG"
+          class="StyledBox-sc-13pk1d4-0 cFGHQp"
         >
           <button
-            class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+            class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
             kind="default"
             type="button"
           >
@@ -410,28 +410,28 @@ exports[`renders correlate 1`] = `
 
 exports[`renders correlate 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 fZoPPO"
+  class="StyledGrommet-sc-19lkkz7-0 giDtBV"
   style="min-height: 100%;"
 >
   <div
-    class="StyledGrid-sc-1wofa1l-0 jkgEes"
+    class="StyledGrid-sc-1wofa1l-0 hobPWL"
     style="min-height: 100%;"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kOYHGA"
+      class="StyledBox-sc-13pk1d4-0 doPhmD"
     >
       <nav
-        class="StyledBox-sc-13pk1d4-0 PHNoe"
+        class="StyledBox-sc-13pk1d4-0 fAULsd"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="calendar"
           type="button"
         >
           <svg
             aria-label="Calendar"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -443,17 +443,17 @@ exports[`renders correlate 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 bvTaVN"
+          class="StyledButtonKind-sc-1vhfpnt-0 iYmSHW"
           kind="default"
           title="correlate"
           type="button"
         >
           <svg
             aria-label="Test"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -465,17 +465,17 @@ exports[`renders correlate 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="categories"
           type="button"
         >
           <svg
             aria-label="Tag"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -487,17 +487,17 @@ exports[`renders correlate 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="guide"
           type="button"
         >
           <svg
             aria-label="User"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -510,35 +510,35 @@ exports[`renders correlate 2`] = `
         </button>
       </nav>
       <div
-        class="StyledBox-sc-13pk1d4-0 fGNJtn"
+        class="StyledBox-sc-13pk1d4-0 jytkhI"
       >
         <header
-          class="StyledBox-sc-13pk1d4-0 TLWLY"
+          class="StyledBox-sc-13pk1d4-0 bWsGPT"
         >
           <h1
-            class="StyledHeading-sc-1rdh4aw-0 bozgir"
+            class="StyledHeading-sc-1rdh4aw-0 hJqdQU"
           >
             correlate
           </h1>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
           />
           <button
             aria-label="Open Drop"
-            class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+            class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
             kind="default"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 gPerFl"
+              class="StyledBox-sc-13pk1d4-0 hUYUlu"
             >
-              Aug 25 - Aug 31
+              Sep 8 - Sep 14
               <div
-                class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+                class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bZqeeV"
               />
               <svg
                 aria-label="Calendar"
-                class="StyledIcon-ofa7kd-0 kfECiH"
+                class="StyledIcon-ofa7kd-0 eiZIKg"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -552,51 +552,51 @@ exports[`renders correlate 2`] = `
           </button>
         </header>
         <div
-          class="StyledBox-sc-13pk1d4-0 hXorhD"
+          class="StyledBox-sc-13pk1d4-0 BEvog"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+            class="StyledBox-sc-13pk1d4-0 gAsOLC"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+              class="StyledBox-sc-13pk1d4-0 gAsOLC"
             >
               <div
-                class="StyledStack-ajspsk-0 blvUmF"
+                class="StyledStack-ajspsk-0 iwHUEa"
               >
                 <div
-                  class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+                  class="StyledStack__StyledStackLayer-ajspsk-1 lgopjm"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 hiwgjb"
+                    class="StyledBox-sc-13pk1d4-0 bSQhCc"
                   >
                     <div
-                      class="StyledBox-sc-13pk1d4-0 cVtJhS"
+                      class="StyledBox-sc-13pk1d4-0 kHQWKV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 cVtJhS"
+                      class="StyledBox-sc-13pk1d4-0 kHQWKV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 cVtJhS"
+                      class="StyledBox-sc-13pk1d4-0 kHQWKV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 cVtJhS"
+                      class="StyledBox-sc-13pk1d4-0 kHQWKV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 cVtJhS"
+                      class="StyledBox-sc-13pk1d4-0 kHQWKV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 cVtJhS"
+                      class="StyledBox-sc-13pk1d4-0 kHQWKV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 cVtJhS"
+                      class="StyledBox-sc-13pk1d4-0 kHQWKV"
                     />
                   </div>
                 </div>
                 <div
-                  class="StyledStack__StyledStackLayer-ajspsk-1 bEYrkt"
+                  class="StyledStack__StyledStackLayer-ajspsk-1 kOplDO"
                 >
                   <svg
-                    class="StyledChart-sc-1nae0gf-0 kHcRKn"
+                    class="StyledChart-sc-1nae0gf-0 clJfKA"
                     height="192"
                     preserveAspectRatio="none"
                     viewBox="0 0 0 192"
@@ -622,10 +622,10 @@ exports[`renders correlate 2`] = `
                   </svg>
                 </div>
                 <div
-                  class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+                  class="StyledStack__StyledStackLayer-ajspsk-1 lgopjm"
                 >
                   <svg
-                    class="StyledChart-sc-1nae0gf-0 kHcRKn"
+                    class="StyledChart-sc-1nae0gf-0 clJfKA"
                     height="192"
                     preserveAspectRatio="none"
                     viewBox="0 0 0 192"
@@ -652,127 +652,127 @@ exports[`renders correlate 2`] = `
                   </svg>
                 </div>
                 <div
-                  class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+                  class="StyledStack__StyledStackLayer-ajspsk-1 lgopjm"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 iLSfXS Detail__DetailControl-huiwg9-0 bASkfp"
+                    class="StyledBox-sc-13pk1d4-0 eWlJSh Detail__DetailControl-huiwg9-0 ideHq"
                     tabindex="0"
                   >
                     <div
-                      class="StyledBox-sc-13pk1d4-0 ucRJb"
+                      class="StyledBox-sc-13pk1d4-0 doyoYY"
                     >
                       <div
-                        class="StyledBox-sc-13pk1d4-0 jumnLP"
+                        class="StyledBox-sc-13pk1d4-0 giilDw"
                       />
                     </div>
                     <div
-                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxhHbG"
+                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hUIATV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 ucRJb"
+                      class="StyledBox-sc-13pk1d4-0 doyoYY"
                     >
                       <div
-                        class="StyledBox-sc-13pk1d4-0 jumnLP"
+                        class="StyledBox-sc-13pk1d4-0 giilDw"
                       />
                     </div>
                     <div
-                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxhHbG"
+                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hUIATV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 ucRJb"
+                      class="StyledBox-sc-13pk1d4-0 doyoYY"
                     >
                       <div
-                        class="StyledBox-sc-13pk1d4-0 jumnLP"
+                        class="StyledBox-sc-13pk1d4-0 giilDw"
                       />
                     </div>
                     <div
-                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxhHbG"
+                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hUIATV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 ucRJb"
+                      class="StyledBox-sc-13pk1d4-0 doyoYY"
                     >
                       <div
-                        class="StyledBox-sc-13pk1d4-0 jumnLP"
+                        class="StyledBox-sc-13pk1d4-0 giilDw"
                       />
                     </div>
                     <div
-                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxhHbG"
+                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hUIATV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 ucRJb"
+                      class="StyledBox-sc-13pk1d4-0 doyoYY"
                     >
                       <div
-                        class="StyledBox-sc-13pk1d4-0 jumnLP"
+                        class="StyledBox-sc-13pk1d4-0 giilDw"
                       />
                     </div>
                     <div
-                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxhHbG"
+                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hUIATV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 ucRJb"
+                      class="StyledBox-sc-13pk1d4-0 doyoYY"
                     >
                       <div
-                        class="StyledBox-sc-13pk1d4-0 jumnLP"
+                        class="StyledBox-sc-13pk1d4-0 giilDw"
                       />
                     </div>
                     <div
-                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxhHbG"
+                      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hUIATV"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 ucRJb"
+                      class="StyledBox-sc-13pk1d4-0 doyoYY"
                     >
                       <div
-                        class="StyledBox-sc-13pk1d4-0 jumnLP"
+                        class="StyledBox-sc-13pk1d4-0 giilDw"
                       />
                     </div>
                   </div>
                 </div>
               </div>
               <div
-                class="StyledBox-sc-13pk1d4-0 gcyZcJ"
+                class="StyledBox-sc-13pk1d4-0 ivjhlG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ucRJb"
+                  class="StyledBox-sc-13pk1d4-0 doyoYY"
                 >
-                  8/25
+                  9/8
                 </div>
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ucRJb"
+                  class="StyledBox-sc-13pk1d4-0 doyoYY"
                 >
-                  8/26
+                  9/9
                 </div>
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ucRJb"
+                  class="StyledBox-sc-13pk1d4-0 doyoYY"
                 >
-                  8/27
+                  9/10
                 </div>
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ucRJb"
+                  class="StyledBox-sc-13pk1d4-0 doyoYY"
                 >
-                  8/28
+                  9/11
                 </div>
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ucRJb"
+                  class="StyledBox-sc-13pk1d4-0 doyoYY"
                 >
-                  8/29
+                  9/12
                 </div>
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ucRJb"
+                  class="StyledBox-sc-13pk1d4-0 doyoYY"
                 >
-                  8/30
+                  9/13
                 </div>
                 <div
-                  class="StyledBox-sc-13pk1d4-0 ucRJb"
+                  class="StyledBox-sc-13pk1d4-0 doyoYY"
                 >
-                  8/31
+                  9/14
                 </div>
               </div>
             </div>
             <div
-              class="StyledBox-sc-13pk1d4-0 fcWPWr"
+              class="StyledBox-sc-13pk1d4-0 kOmPRQ"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 dYrbLt"
+                class="StyledBox-sc-13pk1d4-0 jWmmDS"
               >
                 <svg
                   fill="#4d648d"
@@ -788,10 +788,10 @@ exports[`renders correlate 2`] = `
                   />
                 </svg>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cPZcyD"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gxLRPg"
                 />
                 <span
-                  class="StyledText-sc-1sadyjn-0 hUokoe"
+                  class="StyledText-sc-1sadyjn-0 PRJF"
                 >
                   test-scale
                 </span>
@@ -800,10 +800,10 @@ exports[`renders correlate 2`] = `
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 jIHfqG"
+          class="StyledBox-sc-13pk1d4-0 cFGHQp"
         >
           <button
-            class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+            class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
             kind="default"
             type="button"
           >

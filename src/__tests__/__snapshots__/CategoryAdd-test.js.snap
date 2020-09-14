@@ -2,28 +2,28 @@
 
 exports[`renders category add 1`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 fZoPPO"
+  class="StyledGrommet-sc-19lkkz7-0 giDtBV"
   style="min-height: 100%;"
 >
   <div
-    class="StyledGrid-sc-1wofa1l-0 jkgEes"
+    class="StyledGrid-sc-1wofa1l-0 hobPWL"
     style="min-height: 100%;"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kOYHGA"
+      class="StyledBox-sc-13pk1d4-0 doPhmD"
     >
       <nav
-        class="StyledBox-sc-13pk1d4-0 PHNoe"
+        class="StyledBox-sc-13pk1d4-0 fAULsd"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="calendar"
           type="button"
         >
           <svg
             aria-label="Calendar"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -35,17 +35,17 @@ exports[`renders category add 1`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="correlate"
           type="button"
         >
           <svg
             aria-label="Test"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -57,17 +57,17 @@ exports[`renders category add 1`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="categories"
           type="button"
         >
           <svg
             aria-label="Tag"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -79,17 +79,17 @@ exports[`renders category add 1`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="guide"
           type="button"
         >
           <svg
             aria-label="User"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -102,27 +102,27 @@ exports[`renders category add 1`] = `
         </button>
       </nav>
       <div
-        class="StyledBox-sc-13pk1d4-0 kmnMBf"
+        class="StyledBox-sc-13pk1d4-0 ddDSug"
       >
         <header
-          class="StyledBox-sc-13pk1d4-0 TLWLY"
+          class="StyledBox-sc-13pk1d4-0 bWsGPT"
         >
           <h1
-            class="StyledHeading-sc-1rdh4aw-0 bozgir"
+            class="StyledHeading-sc-1rdh4aw-0 hJqdQU"
           >
             add category
           </h1>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
           />
           <button
-            class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+            class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
             kind="default"
             type="button"
           >
             <svg
               aria-label="Close"
-              class="StyledIcon-ofa7kd-0 NqKYz"
+              class="StyledIcon-ofa7kd-0 iTZpZQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -136,23 +136,23 @@ exports[`renders category add 1`] = `
         </header>
         <form>
           <div
-            class="StyledBox-sc-13pk1d4-0 bDztYr FormField__FormFieldBox-m9hood-0 eenrNp"
+            class="StyledBox-sc-13pk1d4-0 hBCIJc FormField__FormFieldBox-m9hood-0 eQPoge"
           >
             <label
-              class="StyledText-sc-1sadyjn-0 enbIRN"
+              class="StyledText-sc-1sadyjn-0 cMsYYm"
               for="name"
             >
               name
             </label>
             <div
-              class="StyledBox-sc-13pk1d4-0 bFwQzJ FormField__FormFieldContentBox-m9hood-1 ckZStK"
+              class="StyledBox-sc-13pk1d4-0 gAsOLC FormField__FormFieldContentBox-m9hood-1"
             >
               <div
-                class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+                class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 flNVco"
               >
                 <input
                   autocomplete="off"
-                  class="StyledTextInput-sc-1x30a0s-0 fVbmbP"
+                  class="StyledTextInput-sc-1x30a0s-0 ishQAc"
                   id="name"
                   name="name"
                   value=""
@@ -161,64 +161,64 @@ exports[`renders category add 1`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bDztYr FormField__FormFieldBox-m9hood-0 eenrNp"
+            class="StyledBox-sc-13pk1d4-0 hBCIJc FormField__FormFieldBox-m9hood-0 eQPoge"
           >
             <label
-              class="StyledText-sc-1sadyjn-0 enbIRN"
+              class="StyledText-sc-1sadyjn-0 cMsYYm"
               for="aspect"
             >
               What kind of measurement is this?
             </label>
             <div
-              class="StyledBox-sc-13pk1d4-0 jqTrUE FormField__FormFieldContentBox-m9hood-1 ckZStK"
+              class="StyledBox-sc-13pk1d4-0 iIIbdL FormField__FormFieldContentBox-m9hood-1"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+                class="StyledBox-sc-13pk1d4-0 gAsOLC"
                 id="aspect"
               >
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 cywtwT"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
+                    class="StyledBox-sc-13pk1d4-0 iXCcFC StyledRadioButton-g1f6ld-5 gFvNRB"
                   >
                     <input
-                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
+                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 fcnQDm"
                       name="aspect"
                       type="radio"
                       value="behavior"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 hETYOr StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 GRgRM"
+                      class="StyledBox-sc-13pk1d4-0 ljravc StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 csMKZz"
                     />
                   </div>
                   <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2 gMQgqV"
+                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
                   >
                     behavior - something you do, like exercise
                   </span>
                 </label>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iIznZT"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 cywtwT"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
+                    class="StyledBox-sc-13pk1d4-0 iXCcFC StyledRadioButton-g1f6ld-5 gFvNRB"
                   >
                     <input
-                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
+                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 fcnQDm"
                       name="aspect"
                       type="radio"
                       value="symptom"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 hETYOr StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 GRgRM"
+                      class="StyledBox-sc-13pk1d4-0 ljravc StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 csMKZz"
                     />
                   </div>
                   <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2 gMQgqV"
+                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
                   >
                     symptom - something you feel, like fatigue
                   </span>
@@ -227,119 +227,119 @@ exports[`renders category add 1`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bDztYr FormField__FormFieldBox-m9hood-0 eenrNp"
+            class="StyledBox-sc-13pk1d4-0 hBCIJc FormField__FormFieldBox-m9hood-0 eQPoge"
           >
             <label
-              class="StyledText-sc-1sadyjn-0 enbIRN"
+              class="StyledText-sc-1sadyjn-0 cMsYYm"
               for="type"
             >
               How do you want to record it?
             </label>
             <span
-              class="StyledText-sc-1sadyjn-0 kCsFbb"
+              class="StyledText-sc-1sadyjn-0 dzbOsk"
             >
               Pick a level of detail that works for you. For example, do you want to track how many minutes you napped, how 'good' it felt, or just that you took a nap?
             </span>
             <div
-              class="StyledBox-sc-13pk1d4-0 jqTrUE FormField__FormFieldContentBox-m9hood-1 ckZStK"
+              class="StyledBox-sc-13pk1d4-0 iIIbdL FormField__FormFieldContentBox-m9hood-1"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+                class="StyledBox-sc-13pk1d4-0 gAsOLC"
                 id="type"
               >
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 cywtwT"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
+                    class="StyledBox-sc-13pk1d4-0 iXCcFC StyledRadioButton-g1f6ld-5 gFvNRB"
                   >
                     <input
-                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
+                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 fcnQDm"
                       name="type"
                       type="radio"
                       value="yes/no"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 hETYOr StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 GRgRM"
+                      class="StyledBox-sc-13pk1d4-0 ljravc StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 csMKZz"
                     />
                   </div>
                   <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2 gMQgqV"
+                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
                   >
                     simple yes or no
                   </span>
                 </label>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iIznZT"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 cywtwT"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
+                    class="StyledBox-sc-13pk1d4-0 iXCcFC StyledRadioButton-g1f6ld-5 gFvNRB"
                   >
                     <input
-                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
+                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 fcnQDm"
                       name="type"
                       type="radio"
                       value="scale"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 hETYOr StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 GRgRM"
+                      class="StyledBox-sc-13pk1d4-0 ljravc StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 csMKZz"
                     />
                   </div>
                   <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2 gMQgqV"
+                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
                   >
                     5-point scale
                   </span>
                 </label>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iIznZT"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 cywtwT"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
+                    class="StyledBox-sc-13pk1d4-0 iXCcFC StyledRadioButton-g1f6ld-5 gFvNRB"
                   >
                     <input
-                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
+                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 fcnQDm"
                       name="type"
                       type="radio"
                       value="number"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 hETYOr StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 GRgRM"
+                      class="StyledBox-sc-13pk1d4-0 ljravc StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 csMKZz"
                     />
                   </div>
                   <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2 gMQgqV"
+                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
                   >
                     number - like hours of sleep
                   </span>
                 </label>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iIznZT"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 cywtwT"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
+                    class="StyledBox-sc-13pk1d4-0 iXCcFC StyledRadioButton-g1f6ld-5 gFvNRB"
                   >
                     <input
-                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
+                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 fcnQDm"
                       name="type"
                       type="radio"
                       value="name"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 hETYOr StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 GRgRM"
+                      class="StyledBox-sc-13pk1d4-0 ljravc StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 csMKZz"
                     />
                   </div>
                   <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2 gMQgqV"
+                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
                   >
                     free form - like "broccoli"
                   </span>
@@ -348,41 +348,41 @@ exports[`renders category add 1`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bDztYr FormField__FormFieldBox-m9hood-0 eenrNp"
+            class="StyledBox-sc-13pk1d4-0 hBCIJc FormField__FormFieldBox-m9hood-0 eQPoge"
           >
             <label
-              class="StyledText-sc-1sadyjn-0 enbIRN"
+              class="StyledText-sc-1sadyjn-0 cMsYYm"
               for="daily"
             >
               When do you intend to record it?
             </label>
             <div
-              class="StyledBox-sc-13pk1d4-0 jqTrUE FormField__FormFieldContentBox-m9hood-1 ckZStK"
+              class="StyledBox-sc-13pk1d4-0 iIIbdL FormField__FormFieldContentBox-m9hood-1"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+                class="StyledBox-sc-13pk1d4-0 gAsOLC"
                 id="daily"
               >
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 cywtwT"
                   for="daily-once in a while"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
+                    class="StyledBox-sc-13pk1d4-0 iXCcFC StyledRadioButton-g1f6ld-5 gFvNRB"
                   >
                     <input
                       checked=""
-                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
+                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 fcnQDm"
                       id="daily-once in a while"
                       name="daily"
                       type="radio"
                       value="once in a while"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 inbyYP StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 GRgRM"
+                      class="StyledBox-sc-13pk1d4-0 jbSSsE StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 csMKZz"
                     >
                       <svg
-                        class="StyledRadioButton__StyledRadioButtonIcon-g1f6ld-3 jSybPd"
+                        class="StyledRadioButton__StyledRadioButtonIcon-g1f6ld-3 hJfuhK"
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
                       >
@@ -395,34 +395,34 @@ exports[`renders category add 1`] = `
                     </div>
                   </div>
                   <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2 gMQgqV"
+                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
                   >
                     once in a while
                   </span>
                 </label>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iIznZT"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 cywtwT"
                   for="daily-daily"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
+                    class="StyledBox-sc-13pk1d4-0 iXCcFC StyledRadioButton-g1f6ld-5 gFvNRB"
                   >
                     <input
-                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
+                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 fcnQDm"
                       id="daily-daily"
                       name="daily"
                       type="radio"
                       value="daily"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 hETYOr StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 GRgRM"
+                      class="StyledBox-sc-13pk1d4-0 ljravc StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 csMKZz"
                     />
                   </div>
                   <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2 gMQgqV"
+                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
                   >
                     daily
                   </span>
@@ -431,10 +431,10 @@ exports[`renders category add 1`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 iKKViu"
+            class="StyledBox-sc-13pk1d4-0 kJWJNx"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 ikkYDU"
+              class="StyledButtonKind-sc-1vhfpnt-0 hidbfr"
               kind="primary"
               title="Add"
               type="submit"
@@ -451,28 +451,28 @@ exports[`renders category add 1`] = `
 
 exports[`renders category add 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 fZoPPO"
+  class="StyledGrommet-sc-19lkkz7-0 giDtBV"
   style="min-height: 100%;"
 >
   <div
-    class="StyledGrid-sc-1wofa1l-0 jkgEes"
+    class="StyledGrid-sc-1wofa1l-0 hobPWL"
     style="min-height: 100%;"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kOYHGA"
+      class="StyledBox-sc-13pk1d4-0 doPhmD"
     >
       <nav
-        class="StyledBox-sc-13pk1d4-0 PHNoe"
+        class="StyledBox-sc-13pk1d4-0 fAULsd"
       >
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="calendar"
           type="button"
         >
           <svg
             aria-label="Calendar"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -484,17 +484,17 @@ exports[`renders category add 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="correlate"
           type="button"
         >
           <svg
             aria-label="Test"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -506,17 +506,17 @@ exports[`renders category add 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="categories"
           type="button"
         >
           <svg
             aria-label="Tag"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -528,17 +528,17 @@ exports[`renders category add 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
         />
         <button
-          class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+          class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
           kind="default"
           title="guide"
           type="button"
         >
           <svg
             aria-label="User"
-            class="StyledIcon-ofa7kd-0 NqKYz"
+            class="StyledIcon-ofa7kd-0 iTZpZQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -551,27 +551,27 @@ exports[`renders category add 2`] = `
         </button>
       </nav>
       <div
-        class="StyledBox-sc-13pk1d4-0 kmnMBf"
+        class="StyledBox-sc-13pk1d4-0 ddDSug"
       >
         <header
-          class="StyledBox-sc-13pk1d4-0 TLWLY"
+          class="StyledBox-sc-13pk1d4-0 bWsGPT"
         >
           <h1
-            class="StyledHeading-sc-1rdh4aw-0 bozgir"
+            class="StyledHeading-sc-1rdh4aw-0 hJqdQU"
           >
             add category
           </h1>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cxqgXz"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eHjkEI"
           />
           <button
-            class="StyledButtonKind-sc-1vhfpnt-0 fPzdzZ"
+            class="StyledButtonKind-sc-1vhfpnt-0 bwxgsy"
             kind="default"
             type="button"
           >
             <svg
               aria-label="Close"
-              class="StyledIcon-ofa7kd-0 NqKYz"
+              class="StyledIcon-ofa7kd-0 iTZpZQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -585,23 +585,23 @@ exports[`renders category add 2`] = `
         </header>
         <form>
           <div
-            class="StyledBox-sc-13pk1d4-0 bDztYr FormField__FormFieldBox-m9hood-0 eenrNp"
+            class="StyledBox-sc-13pk1d4-0 hBCIJc FormField__FormFieldBox-m9hood-0 eQPoge"
           >
             <label
-              class="StyledText-sc-1sadyjn-0 enbIRN"
+              class="StyledText-sc-1sadyjn-0 cMsYYm"
               for="name"
             >
               name
             </label>
             <div
-              class="StyledBox-sc-13pk1d4-0 bFwQzJ FormField__FormFieldContentBox-m9hood-1 ckZStK"
+              class="StyledBox-sc-13pk1d4-0 gAsOLC FormField__FormFieldContentBox-m9hood-1"
             >
               <div
-                class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+                class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 flNVco"
               >
                 <input
                   autocomplete="off"
-                  class="StyledTextInput-sc-1x30a0s-0 fVbmbP"
+                  class="StyledTextInput-sc-1x30a0s-0 ishQAc"
                   id="name"
                   name="name"
                   value=""
@@ -610,64 +610,64 @@ exports[`renders category add 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bDztYr FormField__FormFieldBox-m9hood-0 eenrNp"
+            class="StyledBox-sc-13pk1d4-0 hBCIJc FormField__FormFieldBox-m9hood-0 eQPoge"
           >
             <label
-              class="StyledText-sc-1sadyjn-0 enbIRN"
+              class="StyledText-sc-1sadyjn-0 cMsYYm"
               for="aspect"
             >
               What kind of measurement is this?
             </label>
             <div
-              class="StyledBox-sc-13pk1d4-0 jqTrUE FormField__FormFieldContentBox-m9hood-1 ckZStK"
+              class="StyledBox-sc-13pk1d4-0 iIIbdL FormField__FormFieldContentBox-m9hood-1"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+                class="StyledBox-sc-13pk1d4-0 gAsOLC"
                 id="aspect"
               >
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 cywtwT"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
+                    class="StyledBox-sc-13pk1d4-0 iXCcFC StyledRadioButton-g1f6ld-5 gFvNRB"
                   >
                     <input
-                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
+                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 fcnQDm"
                       name="aspect"
                       type="radio"
                       value="behavior"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 hETYOr StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 GRgRM"
+                      class="StyledBox-sc-13pk1d4-0 ljravc StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 csMKZz"
                     />
                   </div>
                   <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2 gMQgqV"
+                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
                   >
                     behavior - something you do, like exercise
                   </span>
                 </label>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iIznZT"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 cywtwT"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
+                    class="StyledBox-sc-13pk1d4-0 iXCcFC StyledRadioButton-g1f6ld-5 gFvNRB"
                   >
                     <input
-                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
+                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 fcnQDm"
                       name="aspect"
                       type="radio"
                       value="symptom"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 hETYOr StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 GRgRM"
+                      class="StyledBox-sc-13pk1d4-0 ljravc StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 csMKZz"
                     />
                   </div>
                   <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2 gMQgqV"
+                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
                   >
                     symptom - something you feel, like fatigue
                   </span>
@@ -676,119 +676,119 @@ exports[`renders category add 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bDztYr FormField__FormFieldBox-m9hood-0 eenrNp"
+            class="StyledBox-sc-13pk1d4-0 hBCIJc FormField__FormFieldBox-m9hood-0 eQPoge"
           >
             <label
-              class="StyledText-sc-1sadyjn-0 enbIRN"
+              class="StyledText-sc-1sadyjn-0 cMsYYm"
               for="type"
             >
               How do you want to record it?
             </label>
             <span
-              class="StyledText-sc-1sadyjn-0 kCsFbb"
+              class="StyledText-sc-1sadyjn-0 dzbOsk"
             >
               Pick a level of detail that works for you. For example, do you want to track how many minutes you napped, how 'good' it felt, or just that you took a nap?
             </span>
             <div
-              class="StyledBox-sc-13pk1d4-0 jqTrUE FormField__FormFieldContentBox-m9hood-1 ckZStK"
+              class="StyledBox-sc-13pk1d4-0 iIIbdL FormField__FormFieldContentBox-m9hood-1"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+                class="StyledBox-sc-13pk1d4-0 gAsOLC"
                 id="type"
               >
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 cywtwT"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
+                    class="StyledBox-sc-13pk1d4-0 iXCcFC StyledRadioButton-g1f6ld-5 gFvNRB"
                   >
                     <input
-                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
+                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 fcnQDm"
                       name="type"
                       type="radio"
                       value="yes/no"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 hETYOr StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 GRgRM"
+                      class="StyledBox-sc-13pk1d4-0 ljravc StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 csMKZz"
                     />
                   </div>
                   <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2 gMQgqV"
+                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
                   >
                     simple yes or no
                   </span>
                 </label>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iIznZT"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 cywtwT"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
+                    class="StyledBox-sc-13pk1d4-0 iXCcFC StyledRadioButton-g1f6ld-5 gFvNRB"
                   >
                     <input
-                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
+                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 fcnQDm"
                       name="type"
                       type="radio"
                       value="scale"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 hETYOr StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 GRgRM"
+                      class="StyledBox-sc-13pk1d4-0 ljravc StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 csMKZz"
                     />
                   </div>
                   <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2 gMQgqV"
+                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
                   >
                     5-point scale
                   </span>
                 </label>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iIznZT"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 cywtwT"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
+                    class="StyledBox-sc-13pk1d4-0 iXCcFC StyledRadioButton-g1f6ld-5 gFvNRB"
                   >
                     <input
-                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
+                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 fcnQDm"
                       name="type"
                       type="radio"
                       value="number"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 hETYOr StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 GRgRM"
+                      class="StyledBox-sc-13pk1d4-0 ljravc StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 csMKZz"
                     />
                   </div>
                   <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2 gMQgqV"
+                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
                   >
                     number - like hours of sleep
                   </span>
                 </label>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iIznZT"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 cywtwT"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
+                    class="StyledBox-sc-13pk1d4-0 iXCcFC StyledRadioButton-g1f6ld-5 gFvNRB"
                   >
                     <input
-                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
+                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 fcnQDm"
                       name="type"
                       type="radio"
                       value="name"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 hETYOr StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 GRgRM"
+                      class="StyledBox-sc-13pk1d4-0 ljravc StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 csMKZz"
                     />
                   </div>
                   <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2 gMQgqV"
+                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
                   >
                     free form - like "broccoli"
                   </span>
@@ -797,41 +797,41 @@ exports[`renders category add 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 bDztYr FormField__FormFieldBox-m9hood-0 eenrNp"
+            class="StyledBox-sc-13pk1d4-0 hBCIJc FormField__FormFieldBox-m9hood-0 eQPoge"
           >
             <label
-              class="StyledText-sc-1sadyjn-0 enbIRN"
+              class="StyledText-sc-1sadyjn-0 cMsYYm"
               for="daily"
             >
               When do you intend to record it?
             </label>
             <div
-              class="StyledBox-sc-13pk1d4-0 jqTrUE FormField__FormFieldContentBox-m9hood-1 ckZStK"
+              class="StyledBox-sc-13pk1d4-0 iIIbdL FormField__FormFieldContentBox-m9hood-1"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+                class="StyledBox-sc-13pk1d4-0 gAsOLC"
                 id="daily"
               >
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 cywtwT"
                   for="daily-once in a while"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
+                    class="StyledBox-sc-13pk1d4-0 iXCcFC StyledRadioButton-g1f6ld-5 gFvNRB"
                   >
                     <input
                       checked=""
-                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
+                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 fcnQDm"
                       id="daily-once in a while"
                       name="daily"
                       type="radio"
                       value="once in a while"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 inbyYP StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 GRgRM"
+                      class="StyledBox-sc-13pk1d4-0 jbSSsE StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 csMKZz"
                     >
                       <svg
-                        class="StyledRadioButton__StyledRadioButtonIcon-g1f6ld-3 jSybPd"
+                        class="StyledRadioButton__StyledRadioButtonIcon-g1f6ld-3 hJfuhK"
                         preserveAspectRatio="xMidYMid meet"
                         viewBox="0 0 24 24"
                       >
@@ -844,34 +844,34 @@ exports[`renders category add 2`] = `
                     </div>
                   </div>
                   <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2 gMQgqV"
+                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
                   >
                     once in a while
                   </span>
                 </label>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iIznZT"
                 />
                 <label
-                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 clVOLE"
+                  class="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 cywtwT"
                   for="daily-daily"
                 >
                   <div
-                    class="StyledBox-sc-13pk1d4-0 haldyp StyledRadioButton-g1f6ld-5 dUxqYi"
+                    class="StyledBox-sc-13pk1d4-0 iXCcFC StyledRadioButton-g1f6ld-5 gFvNRB"
                   >
                     <input
-                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 hBCEfd"
+                      class="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 fcnQDm"
                       id="daily-daily"
                       name="daily"
                       type="radio"
                       value="daily"
                     />
                     <div
-                      class="StyledBox-sc-13pk1d4-0 hETYOr StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 GRgRM"
+                      class="StyledBox-sc-13pk1d4-0 ljravc StyledRadioButton__StyledRadioButtonBox-g1f6ld-4 csMKZz"
                     />
                   </div>
                   <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2 gMQgqV"
+                    class="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
                   >
                     daily
                   </span>
@@ -880,10 +880,10 @@ exports[`renders category add 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 iKKViu"
+            class="StyledBox-sc-13pk1d4-0 kJWJNx"
           >
             <button
-              class="StyledButtonKind-sc-1vhfpnt-0 ikkYDU"
+              class="StyledButtonKind-sc-1vhfpnt-0 hidbfr"
               kind="primary"
               title="Add"
               type="submit"
